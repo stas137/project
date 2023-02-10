@@ -1,0 +1,16 @@
+.Button {
+  /* display: flex; */
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.clear {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.Button svg {
+  display: flex;
+}
