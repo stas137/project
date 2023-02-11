@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:i18next/recommended',
     // 'standard-with-typescript'
   ],
   overrides: [],
@@ -18,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'linebreak-style': 0,
     indent: ['error', 2],
@@ -37,6 +38,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'import/no-extraneous-dependencies': 'warn',
     'no-undef': 'warn',
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
