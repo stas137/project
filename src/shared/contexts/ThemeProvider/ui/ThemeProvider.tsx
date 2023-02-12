@@ -23,7 +23,11 @@ const ThemeProvider: FC = ({ children }) => {
 
   const defaultValue = useMemo(() => ({ theme, setTheme }), [theme]);
 
-  return <ThemeContext.Provider value={defaultValue}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={defaultValue}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 export default ThemeProvider;
