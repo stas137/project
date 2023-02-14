@@ -24,9 +24,16 @@ module.exports = {
   rules: {
     'linebreak-style': 0,
     indent: ['error', 2],
-    'react/jsx-indent': ['error', 2, { checkAttributes: true, indentLogicalExpressions: true }],
+    'react/jsx-indent': [
+      'error',
+      2,
+      { checkAttributes: true, indentLogicalExpressions: true },
+    ],
     'react/jsx-indent-props': ['error', 2],
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', 'tsx'] }],
+    'react/jsx-filename-extension': [
+      'error',
+      { extensions: ['.js', '.jsx', 'tsx'] },
+    ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',

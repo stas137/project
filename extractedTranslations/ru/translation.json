@@ -1,5 +1,12 @@
 {
+  "about": "about",
   "about-page": "about-page",
   "language": "language",
-  "main-page": "main-page"
+  "main": "main",
+  "main-page": "main-page",
+  "page-not-found": "page-not-found",
+  "reload-page": "reload-page",
+  "some-wrong": "some-wrong",
+  "throw-error": "throw-error",
+  "toggle": "toggle"
 }

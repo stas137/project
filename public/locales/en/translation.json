@@ -4,5 +4,9 @@
   "translate": "translate",
   "main": "Main",
   "about": "About",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "page-not-found": "Page not found",
+  "some-wrong": "Something went wrong",
+  "reload-page": "Reload page",
+  "throw-error": "Throw error"
 }
