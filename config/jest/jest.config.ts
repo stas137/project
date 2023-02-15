@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+const path = require('path');
+
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -28,6 +30,17 @@ export default {
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ['node_modules'],
 
+  modulePaths: [
+    '<rootDir>src',
+  ],
+
+  moduleNameMapper: {
+    // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    //   '<rootDir>/__mocks__/fileMock.js',
+    '\\.(sc?ss)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
+
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
 
@@ -37,6 +50,9 @@ export default {
     // '**/?(*.)+(spec|test).[tj]s?(x)',
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+
+  // In jest.config.js add (if you haven't already)
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

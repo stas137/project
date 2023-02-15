@@ -10,7 +10,6 @@ module.exports = {
     'plugin:i18next/recommended',
     // 'standard-with-typescript'
   ],
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -44,12 +43,21 @@ module.exports = {
     'no-shadow': 'off',
     'react/jsx-props-no-spreading': 'warn',
     'no-unused-vars': 'warn',
-    'import/no-extraneous-dependencies': 'warn',
+    'import/no-extraneous-dependencies': 'off',
     'no-undef': 'warn',
-    'i18next/no-literal-string': ['warn', { markupOnly: true }],
-    'max-len': ['warn', { ignoreComments: true }],
+    'i18next/no-literal-string': ['warn',
+      { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+    'max-len': ['warn', { ignoreComments: true, code: 100 }],
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
