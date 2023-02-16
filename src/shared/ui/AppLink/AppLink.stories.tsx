@@ -12,7 +12,7 @@ export default {
   },
   args: {
     to: '/',
-  }
+  },
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
