@@ -11,6 +11,14 @@
   outline: none;
 }
 
+.outline {
+  padding: 8px 10px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background: none;
+  outline: none;
+}
+
 .Button svg {
   display: flex;
 }
