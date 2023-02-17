@@ -1,5 +1,6 @@
 {
-  "language": "ru",
+  "language": "russian",
+  "language-short": "ru",
   "test": "test",
   "translate": "translate",
   "main": "Main",
