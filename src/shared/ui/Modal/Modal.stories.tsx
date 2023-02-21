@@ -2,24 +2,28 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import AboutPage from './AboutPage';
+import { Modal } from './Modal';
 
 export default {
-  title: 'pages/AboutPage',
-  component: AboutPage,
+  title: 'shared/Modal',
+  component: Modal,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof AboutPage>;
+} as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof AboutPage> = (args: any) => <AboutPage {...args} />;
+const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
+  isOpen: true,
+  children: 'Text',
 };
 // Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark = Template.bind({});
 Dark.args = {
+  isOpen: true,
+  children: 'Text',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

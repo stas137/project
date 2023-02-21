@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
 import MainIcon from 'shared/assets/icons/home.svg';
 import AboutIcon from 'shared/assets/icons/document.svg';
 import cls from './Sidebar.module.scss';
@@ -60,7 +60,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         data-testid="sidebar-toggle"
         onClick={onToggle}
         className={cls.collapsedBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
+        variant={ButtonVariant.BACKGROUND_INVERTED}
         square
         size={ButtonSize.L}
       >
