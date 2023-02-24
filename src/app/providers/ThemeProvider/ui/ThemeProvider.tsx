@@ -23,6 +23,8 @@ export const ThemeContext = createContext<ThemeContextProps>({});
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme)
   || Theme.LIGHT;
 
+document.body.className = defaultTheme;
+
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const {
     initialTheme,

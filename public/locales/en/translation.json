@@ -10,5 +10,7 @@
   "some-wrong": "Something went wrong",
   "reload-page": "Reload page",
   "throw-error": "Throw error",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }
