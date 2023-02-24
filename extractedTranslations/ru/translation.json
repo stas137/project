@@ -2,6 +2,8 @@
   "Login": "Login",
   "about": "about",
   "about-page": "about-page",
+  "decrement": "decrement",
+  "increment": "increment",
   "language": "language",
   "language-short": "language-short",
   "main": "main",
