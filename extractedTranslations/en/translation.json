@@ -6,11 +6,14 @@
   "increment": "",
   "language": "language",
   "language-short": "language-short",
+  "login": "login",
   "main": "main",
   "main-page": "main-page",
   "page-not-found": "page-not-found",
+  "password": "password",
   "reload-page": "reload-page",
   "some-wrong": "some-wrong",
   "throw-error": "throw-error",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "username": "username"
 }
