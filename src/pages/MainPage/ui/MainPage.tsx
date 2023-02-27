@@ -16,12 +16,6 @@ const MainPage = () => {
     <div>
       <BugButton />
       {t('main-page')}
-
-      <Input
-        placeholder="Input text"
-        value={value}
-        onChange={onChange}
-      />
     </div>
   );
 };
