@@ -91,3 +91,10 @@ SquareSizeXL.args = {
   size: ButtonSize.XL,
 };
 // OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: '>',
+  variant: ButtonVariant.OUTLINE,
+  disabled: true,
+};

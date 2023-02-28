@@ -48,14 +48,4 @@ describe('Counter test', () => {
     fireEvent.click(screen.getByTestId('decrement-btn'));
     expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   });
-
-  // it('Test toggle', () => {
-  //   // const SidebarWithTranslation = withTranslation()(Sidebar);
-  //   // render(<SidebarWithTranslation />);
-  //   ComponentRender(<Sidebar />);
-  //   const toggleBtn = screen.getByTestId('sidebar-toggle');
-  //   expect(screen.getByTestId('sidebar')).toBeInTheDocument();
-  //   fireEvent.click(toggleBtn);
-  //   expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
-  // });
 });
