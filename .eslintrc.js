@@ -49,7 +49,7 @@ module.exports = {
       'warn',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to'],
+        ignoreAttribute: ['data-testid', 'to', 'name'],
       },
     ],
     'max-len': ['warn', { ignoreComments: true, code: 100 }],
