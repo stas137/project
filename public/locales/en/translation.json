@@ -17,5 +17,6 @@
   "password": "password",
   "form-auth": "Form authorization",
   "logout": "Logout",
-  "incorrect-credentials": "Incorrect username or password"
+  "incorrect-credentials": "Incorrect username or password",
+  "profile": "Profile"
 }

@@ -8,7 +8,16 @@
   "comments": [
     { "id": "1", "body": "some comment", "postId": "1" }
   ],
-  "profile": { "name": "typicode" },
+  "profile": { 
+    "firstname": "Ivan",
+    "lastname": "Ivanov",
+    "age": 35,
+    "currency": "RUB",
+    "country": "RUS",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "",
+   },
   "users": [{
     "id": "1",
     "username": "admin",

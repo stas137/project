@@ -17,5 +17,6 @@
   "password": "пароль",
   "form-auth": "Форма авторизации",
   "logout": "Выйти",
-  "incorrect-credentials": "Неправильный логин или пароль"
+  "incorrect-credentials": "Неправильный логин или пароль",
+  "profile": "Профиль"
 }

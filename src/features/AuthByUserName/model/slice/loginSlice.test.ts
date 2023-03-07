@@ -22,7 +22,7 @@ describe('loginSlice.test', () => {
     const actionCreator = loginByUsername.pending;
     const action = actionCreator('', { username: 'Ivan', password: '123' });
 
-    console.log(action);
+    // console.log(action);
 
     expect(loginReducer(state as LoginSchema, action)).toEqual({ isLoading: true });
   });

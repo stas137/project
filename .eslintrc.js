@@ -42,7 +42,7 @@ module.exports = {
     'import/extensions': 'off',
     'no-shadow': 'off',
     'react/jsx-props-no-spreading': 'warn',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-undef': 'warn',
     'i18next/no-literal-string': [

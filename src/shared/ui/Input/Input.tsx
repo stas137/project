@@ -12,7 +12,6 @@ interface InputProps extends HTMLInputProps {
   type?: string;
   placeholder?: string;
   autofocus?: boolean;
-  isShow?: boolean;
   onChange?: (value: string) => void;
 }
 
@@ -24,7 +23,6 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder = '',
     autoFocus = false,
-    isShow = false,
     ...otherProps
   } = props;
 
@@ -51,11 +49,11 @@ export const Input = memo((props: InputProps) => {
   };
 
   useEffect(() => {
-    if (autoFocus && isShow) {
+    if (autoFocus) {
       setIsFocused(true);
       inputRef?.current.focus();
     }
-  }, [autoFocus, isShow]);
+  }, [autoFocus]);
 
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>

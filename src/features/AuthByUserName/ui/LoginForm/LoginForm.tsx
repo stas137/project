@@ -1,7 +1,7 @@
 import { getLoginError } from 'features/AuthByUserName/model/selectors/getLoginError/getLoginError';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
@@ -10,6 +10,7 @@ import {
   DynamicModuleLoader,
   Reducers,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -19,16 +20,16 @@ import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
   className?: string;
-  isOpen?: boolean;
+  onSuccess: () => void;
 }
 
 const initialReducers: Reducers = {
   login: loginReducer,
 };
 
-const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -44,11 +45,14 @@ const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(
-    () => {
-      // @ts-ignore
-      dispatch(loginByUsername({ username, password }));
+    async () => {
+      const result = await dispatch(loginByUsername({ username, password }));
+
+      if (result.meta.requestStatus === 'fulfilled') {
+        onSuccess();
+      }
     },
-    [dispatch, username, password],
+    [dispatch, username, password, onSuccess],
   );
 
   return (
@@ -70,7 +74,6 @@ const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
           className={cls.input}
           autoFocus
           value={username}
-          isShow={isOpen}
           onChange={onChangeUsername}
         />
         <Input
