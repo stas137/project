@@ -14,9 +14,8 @@ export default {
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
-  children: 'Text',
+export const Primary = Template.bind({});
+Primary.args = {
 };
 // Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 

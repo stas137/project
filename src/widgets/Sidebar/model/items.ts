@@ -6,7 +6,7 @@ import AboutIcon from 'shared/assets/icons/document.svg';
 export interface SidebarItemType {
   path: string;
   text: string;
-  Icon: React.VFC<React.SVGProps<SVGElement>>;
+  Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
