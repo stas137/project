@@ -13,10 +13,12 @@
   "login": "Войти",
   "increment": "Увеличить",
   "decrement": "Уменьшить",
-  "username": "имя пользователя",
-  "password": "пароль",
+  "username": "Имя пользователя",
+  "password": "Пароль",
   "form-auth": "Форма авторизации",
   "logout": "Выйти",
   "incorrect-credentials": "Неправильный логин или пароль",
-  "profile": "Профиль"
+  "profile": "Профиль",
+  "currency": "Валюта",
+  "country": "Страна"
 }

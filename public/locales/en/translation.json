@@ -13,10 +13,12 @@
   "login": "Login",
   "increment": "Increment",
   "decrement": "Decrement",
-  "username": "user name",
+  "username": "User name",
   "password": "password",
   "form-auth": "Form authorization",
   "logout": "Logout",
   "incorrect-credentials": "Incorrect username or password",
-  "profile": "Profile"
+  "profile": "Profile",
+  "currency": "Currency",
+  "country": "Country"
 }

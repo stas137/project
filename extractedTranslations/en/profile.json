@@ -1,6 +1,17 @@
 {
+  "age": "",
+  "avatar": "",
+  "cancel": "",
+  "city": "",
+  "country": "",
+  "currency": "",
   "edit": "",
+  "error": "",
+  "firstname": "",
   "lastname": "",
   "name": "",
-  "profile": ""
+  "profile": "",
+  "reload-page": "",
+  "save": "",
+  "username": ""
 }
