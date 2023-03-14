@@ -8,10 +8,15 @@
   "edit": "",
   "error": "",
   "firstname": "",
+  "incorrect_age": "",
+  "incorrect_country": "",
+  "incorrect_user_data": "",
   "lastname": "",
   "name": "",
+  "no_data": "",
   "profile": "",
   "reload-page": "",
   "save": "",
+  "server_error": "",
   "username": ""
 }

@@ -31,7 +31,7 @@
   "profile": {
     "firstname": "Ivan",
     "lastname": "Ivanov",
-    "age": "35",
+    "age": 30,
     "currency": "EUR",
     "country": "Belarus",
     "city": "Moscow",
