@@ -4,7 +4,7 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import AvatarImg from 'shared/assets/tests/avatar.jpg';
+// import AvatarImg from 'shared/assets/tests/avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -25,7 +25,7 @@ Primary.args = {
     age: 32,
     city: 'Moscow',
     username: 'admin',
-    avatar: AvatarImg,
+    avatar: '',
     currency: Currency.EUR,
     country: Country.Russia,
   },
@@ -49,7 +49,7 @@ Dark.args = {
     age: 32,
     city: 'Moscow',
     username: 'admin',
-    avatar: AvatarImg,
+    avatar: '',
     currency: Currency.EUR,
     country: Country.Russia,
   },
