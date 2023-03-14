@@ -1,10 +1,12 @@
 import {
   FC, useMemo, useState, createContext,
 } from 'react';
+import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
 
 export enum Theme {
   LIGHT = 'app_light_theme',
   DARK = 'app_dark_theme',
+  ORANGE = 'app_orange_theme',
 }
 
 export interface ThemeContextProps {
@@ -15,8 +17,6 @@ export interface ThemeContextProps {
 interface ThemeProviderProps {
   initialTheme?: Theme;
 }
-
-export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
 export const ThemeContext = createContext<ThemeContextProps>({});
 

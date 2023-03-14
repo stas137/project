@@ -2,8 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from 'shared/contexts/ThemeProvider';
 
 import { Sidebar } from './Sidebar';
 
