@@ -5,6 +5,8 @@
   "translate": "translate",
   "main": "Main",
   "about": "About",
+  "profile": "Profile",
+  "articles": "Articles",
   "toggle": "Toggle",
   "page-not-found": "Page not found",
   "some-wrong": "Something went wrong",
@@ -18,7 +20,6 @@
   "form-auth": "Form authorization",
   "logout": "Logout",
   "incorrect-credentials": "Incorrect username or password",
-  "profile": "Profile",
   "currency": "Currency",
   "country": "Country"
 }
