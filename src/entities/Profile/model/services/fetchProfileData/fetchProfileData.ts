@@ -10,7 +10,9 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
 
     try {
       if (localStorage.getItem(LOCAL_STORAGE_USER_KEY)) {
-        extra.api.defaults.headers.common.Authorization = localStorage.getItem(LOCAL_STORAGE_USER_KEY);
+        extra.api.defaults.headers.common.Authorization = localStorage.getItem(
+          LOCAL_STORAGE_USER_KEY,
+        );
       }
 
       const response = await extra.api.get<Profile>('/profile');

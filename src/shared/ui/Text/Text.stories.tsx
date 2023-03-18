@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
-import { Text, TextVariant } from './Text';
+import { Text, TextSize, TextVariant } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -55,3 +55,10 @@ OnlyTextDark.args = {
   text: 'Text lorem lorem',
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryL = Template.bind({});
+PrimaryL.args = {
+  title: 'Title lorem lorem',
+  text: 'Text lorem lorem',
+  size: TextSize.L,
+};

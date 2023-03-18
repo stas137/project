@@ -1,3 +1,5 @@
 {
-  
+  "article-not-found": "Article is not found",
+  "article-loader-error": "Article loader error",
+  "copy": "Copy"
 }
