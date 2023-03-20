@@ -8,6 +8,8 @@
   "avatar": "avatar",
   "cancel": "cancel",
   "city": "city",
+  "comments": "comments",
+  "comments-not-found": "",
   "copy": "copy",
   "country": "country",
   "currency": "currency",

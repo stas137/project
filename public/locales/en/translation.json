@@ -21,5 +21,6 @@
   "logout": "Logout",
   "incorrect-credentials": "Incorrect username or password",
   "currency": "Currency",
-  "country": "Country"
+  "country": "Country",
+  "comments-not-found": "Comments not found"
 }

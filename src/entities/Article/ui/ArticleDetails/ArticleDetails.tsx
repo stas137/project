@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -6,12 +6,13 @@ import {
   DynamicModuleLoader,
   Reducers,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/profile-24x24.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
   ArticleBlock,
   ArticleBlockType,
@@ -85,11 +86,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(articleId));
-    }
-  }, [dispatch, articleId]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(articleId));
+  });
 
   if (isLoading) {
     content = (

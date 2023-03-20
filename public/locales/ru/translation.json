@@ -21,5 +21,6 @@
   "logout": "Выйти",
   "incorrect-credentials": "Неправильный логин или пароль",
   "currency": "Валюта",
-  "country": "Страна"
+  "country": "Страна",
+  "comments-not-found": "Комментариев нет"
 }

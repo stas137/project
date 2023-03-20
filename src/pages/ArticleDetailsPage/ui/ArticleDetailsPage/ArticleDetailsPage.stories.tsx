@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import ArticleDetailsPage from './ArticleDetailsPage';
@@ -66,9 +67,9 @@ const article: Article = {
 export const Primary = Template.bind({});
 Primary.args = {
 };
-// Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
+Primary.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

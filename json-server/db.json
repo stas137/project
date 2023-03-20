@@ -80,14 +80,14 @@
     {
       "id": "2",
       "text": "some comment 2",
-      "articleId": "1",
+      "articleId": "2",
       "userId": "1"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "profile": {
@@ -105,13 +105,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://cspromogame.ru//storage/upload_images/avatars/3419.jpg"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "1234",
-      "role": "MANAGER"
+      "role": "MANAGER",
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ]
 }
