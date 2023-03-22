@@ -29,7 +29,9 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -88,18 +90,56 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "text": "123",
+      "userId": "1",
+      "articleId": "1",
+      "id": "1oPdbau"
+    },
+    {
+      "text": "1234",
+      "userId": "2",
+      "articleId": "1",
+      "id": "fc_4dD4"
+    },
+    {
+      "text": "11",
+      "userId": "2",
+      "articleId": "1",
+      "id": "AESOBel"
+    },
+    {
+      "text": "yo yo",
+      "userId": "2",
+      "articleId": "1",
+      "id": "SxazY_y"
     }
   ],
-  "profile": {
-    "firstname": "Ivan",
-    "lastname": "Ivanov",
-    "age": 30,
-    "currency": "EUR",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Ivan",
+      "lastname": "Ivanov",
+      "age": 30,
+      "currency": "EUR",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "admin",
+      "avatar": "https://cspromogame.ru//storage/upload_images/avatars/3419.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Petya",
+      "lastname": "Petrov",
+      "age": 35,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "manager",
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+    }
+  ],
   "users": [
     {
       "id": "1",

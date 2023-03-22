@@ -22,5 +22,7 @@
   "incorrect-credentials": "Неправильный логин или пароль",
   "currency": "Валюта",
   "country": "Страна",
-  "comments-not-found": "Комментариев нет"
+  "comments-not-found": "Комментариев нет",
+  "input-comment": "Введите комментарий",
+  "send": "Отправить"
 }

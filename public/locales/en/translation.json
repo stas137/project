@@ -22,5 +22,7 @@
   "incorrect-credentials": "Incorrect username or password",
   "currency": "Currency",
   "country": "Country",
-  "comments-not-found": "Comments not found"
+  "comments-not-found": "Comments not found",
+  "input-comment": "Input comment",
+  "send": "Send"
 }

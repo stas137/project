@@ -3,9 +3,13 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { LOCAL_STORAGE_USER_KEY } from 'shared/const/localstorage';
 import { Profile } from '../../types/ProfileSchema';
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<
+Profile,
+string,
+ThunkConfig<string>
+>(
   'profile/fetchProfileData',
-  async (_, thunkAPI) => {
+  async (profileId, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
 
     try {
@@ -15,7 +19,7 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
         );
       }
 
-      const response = await extra.api.get<Profile>('/profile');
+      const response = await extra.api.get<Profile>(`/profile/${profileId}`);
 
       if (!response.data) {
         throw new Error();

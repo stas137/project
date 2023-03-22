@@ -46,8 +46,6 @@ export const Select = memo((props: SelectProps) => {
     [cls.readonly]: readonly,
   };
 
-  console.log('Select: ', { readonly });
-
   return (
     <div className={classNames(cls.Wrapper, mods, [className])}>
       {label && (

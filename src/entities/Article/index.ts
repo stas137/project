@@ -9,3 +9,7 @@ export {
 export {
   ArticleDetailsSchema,
 } from './model/types/ArticleDetailsSchema';
+
+export {
+  getArticleDetailsData,
+} from './model/selectors/articleDetails';
