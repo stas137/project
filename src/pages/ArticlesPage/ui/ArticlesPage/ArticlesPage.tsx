@@ -57,7 +57,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.ArticlesPage, {}, [className])}>
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        {__PROJECT__ !== 'storybook'
+         && <ArticleViewSelector view={view} onViewClick={onChangeView} />}
         <ArticleList
           isLoading={isLoading}
           view={view}

@@ -50,25 +50,10 @@
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "Block title",
-          "paragraphs": [
-            "Современная сфера веб-разработки пестрит всевозможными технологиями и инструментами, среди которых новичок может легко растеряться. Статья посвящена общему обзору принципов фронтенд- и бэкенд-разработки, а также знакомит начинающих с наиболее актуальными инструментами и навыками, которые им потребуются для успешного продвижения по карьерному пути.",
-            "lorem4",
-            "lorem5"
-          ]
-        },
-        {
           "id": "2",
           "type": "IMAGE",
           "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
           "title": "Picture 1"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n          <html>\n            <body>\n              <p id='hello'></p>              <script>\n                document.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         }
       ]
     },
@@ -100,25 +85,10 @@
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         },
         {
-          "id": "5",
-          "type": "TEXT",
-          "title": "Block title",
-          "paragraphs": [
-            "Современная сфера веб-разработки пестрит всевозможными технологиями и инструментами, среди которых новичок может легко растеряться. Статья посвящена общему обзору принципов фронтенд- и бэкенд-разработки, а также знакомит начинающих с наиболее актуальными инструментами и навыками, которые им потребуются для успешного продвижения по карьерному пути.",
-            "lorem4",
-            "lorem5"
-          ]
-        },
-        {
           "id": "2",
           "type": "IMAGE",
           "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
           "title": "Picture 1"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n          <html>\n            <body>\n              <p id='hello'></p>              <script>\n                document.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         }
       ]
     },
@@ -150,25 +120,465 @@
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         },
         {
-          "id": "5",
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "title": "Javascript news 4",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
-            "Современная сфера веб-разработки пестрит всевозможными технологиями и инструментами, среди которых новичок может легко растеряться. Статья посвящена общему обзору принципов фронтенд- и бэкенд-разработки, а также знакомит начинающих с наиболее актуальными инструментами и навыками, которые им потребуются для успешного продвижения по карьерному пути.",
-            "lorem4",
-            "lorem5"
+            "lorem1",
+            "lorem2",
+            "lorem3"
           ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         },
         {
           "id": "2",
           "type": "IMAGE",
           "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
           "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "title": "Javascript news 5",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
-          "id": "3",
+          "id": "4",
           "type": "CODE",
-          "code": "<!DOCTYPE html>\n          <html>\n            <body>\n              <p id='hello'></p>              <script>\n                document.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "title": "Javascript news 6",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "title": "Javascript news 7",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "title": "Javascript news 8",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "userId": "1",
+      "title": "Javascript news 9",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "title": "Javascript news 10",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "userId": "1",
+      "title": "Javascript news 11",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "userId": "1",
+      "title": "Javascript news 12",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "userId": "1",
+      "title": "Javascript news 13",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "userId": "1",
+      "title": "Javascript news 14",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "userId": "1",
+      "title": "Javascript news 15",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "userId": "1",
+      "title": "Javascript news 16",
+      "subtitle": "Hey hey 2023",
+      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "views": 1020,
+      "createdAt": "26.02.2023",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
         }
       ]
     }
