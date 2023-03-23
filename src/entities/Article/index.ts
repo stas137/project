@@ -1,9 +1,6 @@
 export {
-  ArticleDetails,
-} from './ui/ArticleDetails/ArticleDetails';
-
-export {
   Article,
+  ArticleView,
 } from './model/types/article';
 
 export {
@@ -13,3 +10,11 @@ export {
 export {
   getArticleDetailsData,
 } from './model/selectors/articleDetails';
+
+export {
+  ArticleDetails,
+} from './ui/ArticleDetails/ArticleDetails';
+
+export {
+  ArticleList,
+} from './ui/ArticleList/ArticleList';

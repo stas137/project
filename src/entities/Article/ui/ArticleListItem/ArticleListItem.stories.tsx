@@ -1,37 +1,40 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Article, ArticleView } from '../../model/types/article';
 
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { ArticleListItem } from './ArticleListItem';
 
 export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
-const article: Article = {
+const article = {
   id: '1',
   user: {
     id: '1',
     username: 'Ivan',
+    avatar: 'https://cspromogame.ru//storage/upload_images/avatars/3419.jpg',
   },
-  title: 'Javascript news',
+  title: 'Javascript news news news news',
   subtitle: 'Hey hey 2023',
   img: 'https://codeguida.com/media/post_title/g3033.png',
   views: 1020,
   createdAt: '26.02.2023',
-  type: [ArticleType.IT],
+  type: [
+    'IT',
+    'SCIENCE',
+    'POLITICS',
+    'ECONOMICS',
+  ],
   blocks: [
     {
       id: '1',
-      type: ArticleBlockType.TEXT,
+      type: 'TEXT',
       title: 'Block title',
       paragraphs: [
         'lorem1',
@@ -41,12 +44,12 @@ const article: Article = {
     },
     {
       id: '4',
-      type: ArticleBlockType.CODE,
+      type: 'CODE',
       code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>",
     },
     {
       id: '5',
-      type: ArticleBlockType.TEXT,
+      type: 'TEXT',
       title: 'Block title',
       paragraphs: [
         'Современная сфера веб-разработки пестрит всевозможными технологиями и инструментами, среди которых новичок может легко растеряться. Статья посвящена общему обзору принципов фронтенд- и бэкенд-разработки, а также знакомит начинающих с наиболее актуальными инструментами и навыками, которые им потребуются для успешного продвижения по карьерному пути.',
@@ -56,24 +59,31 @@ const article: Article = {
     },
     {
       id: '2',
-      type: ArticleBlockType.IMAGE,
+      type: 'IMAGE',
       src: 'https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png',
       title: 'Picture 1',
     },
     {
       id: '3',
-      type: ArticleBlockType.CODE,
+      type: 'CODE',
       code: "<!DOCTYPE html>\n          <html>\n            <body>\n              <p id='hello'></p>              <script>\n                document.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>",
     },
   ],
+} as Article;
+
+export const PrimaryList = Template.bind({});
+PrimaryList.args = {
+  article,
+  view: ArticleView.LIST,
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const PrimaryTile = Template.bind({});
+PrimaryTile.args = {
+  article,
+  view: ArticleView.TILE,
 };
-Primary.decorators = [StoreDecorator({})];
 
-export const Dark = Template.bind({});
-Dark.args = {
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+// export const Dark = Template.bind({});
+// Dark.args = {
+// };
+// Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

@@ -2,5 +2,7 @@
   "article-not-found": "Article is not found",
   "article-loader-error": "Article loader error",
   "copy": "Copy",
-  "comments": "Comments"
+  "comments": "Comments",
+  "read-more": "Read more...",
+  "back": "Back"
 }

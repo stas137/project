@@ -24,6 +24,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "Javascript news",
       "subtitle": "Hey hey 2023",
       "img": "https://codeguida.com/media/post_title/g3033.png",
