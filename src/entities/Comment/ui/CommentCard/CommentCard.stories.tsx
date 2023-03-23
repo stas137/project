@@ -19,6 +19,7 @@ Primary.args = {
       id: '1',
       text: 'hello world',
       user: { id: '1', username: 'User 1' },
+      articleId: '1',
     },
 };
 

@@ -4,5 +4,5 @@ export interface Comment {
   id: string;
   text: string;
   user: User;
-  // articleId: string;
+  articleId: string;
 }

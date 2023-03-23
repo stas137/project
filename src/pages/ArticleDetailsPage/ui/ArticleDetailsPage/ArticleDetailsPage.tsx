@@ -24,7 +24,7 @@ import {
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading,
-} from '../../model/selectors/comments';
+} from '../../model/selectors/articleDetailsCommentsSelectors';
 import {
   articleDetailsCommentsReducer,
   getArticleComments,

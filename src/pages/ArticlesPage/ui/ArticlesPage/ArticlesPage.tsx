@@ -1,90 +1,71 @@
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import { memo } from 'react';
+import {
+  ArticleList,
+  ArticleView,
+  ArticleViewSelector,
+} from 'entities/Article';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
+import {
+  DynamicModuleLoader,
+  Reducers,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import {
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
+import {
+  articlesPageActions,
+  articlesPageReducer,
+  getArticlesPage,
+} from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;
 }
 
-const article = {
-  id: '1',
-  user: {
-    id: '1',
-    username: 'Ivan',
-    avatar: 'https://cspromogame.ru//storage/upload_images/avatars/3419.jpg',
-  },
-  title: 'Javascript news news news news',
-  subtitle: 'Hey hey 2023',
-  img: 'https://codeguida.com/media/post_title/g3033.png',
-  views: 1020,
-  createdAt: '26.02.2023',
-  type: [
-    'IT',
-    'SCIENCE',
-    'POLITICS',
-    'ECONOMICS',
-  ],
-  blocks: [
-    {
-      id: '1',
-      type: 'TEXT',
-      title: 'Block title',
-      paragraphs: [
-        'lorem1',
-        'lorem2',
-        'lorem3',
-      ],
-    },
-    {
-      id: '4',
-      type: 'CODE',
-      code: "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>",
-    },
-    {
-      id: '5',
-      type: 'TEXT',
-      title: 'Block title',
-      paragraphs: [
-        'Современная сфера веб-разработки пестрит всевозможными технологиями и инструментами, среди которых новичок может легко растеряться. Статья посвящена общему обзору принципов фронтенд- и бэкенд-разработки, а также знакомит начинающих с наиболее актуальными инструментами и навыками, которые им потребуются для успешного продвижения по карьерному пути.',
-        'lorem4',
-        'lorem5',
-      ],
-    },
-    {
-      id: '2',
-      type: 'IMAGE',
-      src: 'https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png',
-      title: 'Picture 1',
-    },
-    {
-      id: '3',
-      type: 'CODE',
-      code: "<!DOCTYPE html>\n          <html>\n            <body>\n              <p id='hello'></p>              <script>\n                document.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>",
-    },
-  ],
-} as Article;
+const initialReducers: Reducers = {
+  articlesPage: articlesPageReducer,
+};
 
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
 
   const { t } = useTranslation('article');
+  const dispatch = useAppDispatch();
+
+  const articles = useSelector(getArticlesPage.selectAll);
+  const isLoading = useSelector(getArticlesPageIsLoading);
+  const error = useSelector(getArticlesPageError);
+  const view = useSelector(getArticlesPageView);
+
+  const onChangeView = useCallback((newView: ArticleView) => {
+    dispatch(articlesPageActions.setView(newView));
+  }, [dispatch]);
+
+  useInitialEffect(() => {
+    dispatch(fetchArticlesList());
+    dispatch(articlesPageActions.initState());
+  });
 
   return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        view={ArticleView.LIST}
-        articles={
-          new Array(16)
-            .fill(0)
-            .map((_, index) => ({
-              ...article,
-              id: String(index),
-            }))
-        }
-      />
-    </div>
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.ArticlesPage, {}, [className])}>
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticleList
+          isLoading={isLoading}
+          view={view}
+          articles={articles}
+        />
+      </div>
+    </DynamicModuleLoader>
+
   );
 };
 

@@ -99,3 +99,10 @@ LoadingTile.args = {
 // Dark.args = {
 // };
 // Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+// new Array(16)
+// .fill(0)
+// .map((_, index) => ({
+//   ...article,
+//   id: String(index),
+// }))
