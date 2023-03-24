@@ -19,12 +19,9 @@ export const Code = memo((props: CodeProps) => {
 
   const { t } = useTranslation('article');
 
-  const onCopy = useCallback(
-    () => {
-      navigator.clipboard.writeText(text);
-    },
-    [text],
-  );
+  const onCopy = useCallback(() => {
+    navigator.clipboard.writeText(text);
+  }, [text]);
 
   return (
     <pre className={classNames(cls.Code, {}, [className])}>

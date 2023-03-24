@@ -34,12 +34,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const [isHover, bindHover] = useHover();
   const navigate = useNavigate();
 
-  const onOpenArticle = useCallback(
-    () => {
-      navigate(`${RoutePath.article_details}${article.id}`);
-    },
-    [navigate, article.id],
-  );
+  const onOpenArticle = useCallback(() => {
+    navigate(`${RoutePath.article_details}${article.id}`);
+  }, [navigate, article.id]);
 
   const types = <Text className={cls.types} text={article.type.join(', ')} />;
   const views = (

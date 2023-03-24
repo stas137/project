@@ -1,7 +1,7 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
-import { FC, useEffect } from 'react';
+import { CSSProperties, FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type Reducers = {
@@ -40,7 +40,13 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     // eslint-disable-next-line
   }, []);
 
+  const styles: CSSProperties = {
+    flex: '1 1 0%',
+  };
+
   return (
-    <div>{children}</div>
+    <div style={styles}>
+      { children }
+    </div>
   );
 };

@@ -42,20 +42,14 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   const dispatch = useAppDispatch();
 
-  const onCommentChange = useCallback(
-    (value: string) => {
-      dispatch(addCommentFormActions.updateAddCommentForm(value));
-    },
-    [dispatch],
-  );
+  const onCommentChange = useCallback((value: string) => {
+    dispatch(addCommentFormActions.updateAddCommentForm(value));
+  }, [dispatch]);
 
-  const onSendCommentHandler = useCallback(
-    () => {
-      onSendComment(text || '');
-      onCommentChange('');
-    },
-    [onCommentChange, onSendComment, text],
-  );
+  const onSendCommentHandler = useCallback(() => {
+    onSendComment(text || '');
+    onCommentChange('');
+  }, [onCommentChange, onSendComment, text]);
 
   return (
     <DynamicModuleLoader reducers={initialReducer}>

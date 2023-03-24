@@ -13,6 +13,10 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
+import {
+  fetchNextArticlesList,
+} from '../../model/services/fetchNextArticlesList/fetchNextArticlesList';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageError,
@@ -46,25 +50,41 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageView);
 
   const onChangeView = useCallback((newView: ArticleView) => {
+    dispatch(articlesPageActions.resetState());
     dispatch(articlesPageActions.setView(newView));
+    dispatch(fetchArticlesList({ page: 1 }));
+  }, [dispatch]);
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesList());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
+
+  if (error) {
+    return (
+      <Page className={classNames(cls.ArticlesPage, {}, [className])}>
+        Error
+      </Page>
+    );
+  }
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.ArticlesPage, {}, [className])}>
-        {__PROJECT__ !== 'storybook'
-         && <ArticleViewSelector view={view} onViewClick={onChangeView} />}
+      <Page
+        className={classNames(cls.ArticlesPage, {}, [className])}
+        onScrollEnd={onLoadNextPart}
+      >
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList
           isLoading={isLoading}
           view={view}
           articles={articles}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
 
   );
