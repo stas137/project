@@ -1,6 +1,7 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article';
+import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
 import { LOCAL_STORAGE_ARTICLES_VIEW_KEY } from 'shared/const/localstorage';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
@@ -23,31 +24,28 @@ const articlesPageSlice = createSlice({
     hasMore: true,
     ids: [],
     entities: {},
+    _inited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;
-      state.limit = action.payload === ArticleView.LIST ? 3 : 9;
+      state.limit = action.payload === ArticleView.LIST
+        ? COUNT_ARTICLES_LIST_VIEW : COUNT_ARTICLES_TILE_VIEW;
 
       localStorage.setItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY, action.payload);
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
-    resetState: (state) => {
-      state.ids = [];
-      state.entities = {};
-      state.page = 1;
-      state.hasMore = true;
-      state.isLoading = false;
-      state.error = '';
-    },
     initState: (state) => {
       const view = localStorage
         .getItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY) as ArticleView || ArticleView.TILE;
 
       state.view = view;
-      state.limit = view === ArticleView.LIST ? 3 : 9;
+      state.limit = view === ArticleView.LIST
+        ? COUNT_ARTICLES_LIST_VIEW : COUNT_ARTICLES_TILE_VIEW;
+
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {

@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -12,13 +13,10 @@ interface ArticleListProps {
   view?: ArticleView;
 }
 
-const COUNT_SKELETON_ARTICLES_LIST_VIEW = 3;
-const COUNT_SKELETON_ARTICLES_TILE_VIEW = 9;
-
 const getSkeletons = (view: ArticleView) => new Array(
   view === ArticleView.LIST
-    ? COUNT_SKELETON_ARTICLES_LIST_VIEW
-    : COUNT_SKELETON_ARTICLES_TILE_VIEW,
+    ? COUNT_ARTICLES_LIST_VIEW
+    : COUNT_ARTICLES_TILE_VIEW,
 ).fill(0).map((_, index) => (
   <ArticleListItemSkeleton className={cls.card} key={`${index}-skeleton`} view={view} />
 ));

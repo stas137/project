@@ -8,9 +8,9 @@ interface FetchArticleListProps {
 }
 
 export const fetchArticlesList = createAsyncThunk<
-Article[],
-FetchArticleListProps,
-ThunkConfig<string>
+  Article[],
+  FetchArticleListProps,
+  ThunkConfig<string>
 >(
   'articlesPage/fetchArticlesList',
   async (props, thunkApi) => {
