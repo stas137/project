@@ -13,7 +13,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
   fetchNextArticlesList,
@@ -50,9 +50,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageView);
 
   const onChangeView = useCallback((newView: ArticleView) => {
-    // dispatch(articlesPageActions.resetState());
     dispatch(articlesPageActions.setView(newView));
-    // dispatch(fetchArticlesList({ page: 1 }));
   }, [dispatch]);
 
   const onLoadNextPart = useCallback(() => {

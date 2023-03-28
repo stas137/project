@@ -15,7 +15,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import {
   addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -60,7 +60,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     navigate(RoutePath.articles);
   }, [navigate]);
 
-  useInitialEffect(() => { dispatch(fetchCommentsByArticleId(id)); });
+  useInitialEffect(() => {
+    dispatch(fetchCommentsByArticleId(id));
+  });
 
   if (!id) {
     return (

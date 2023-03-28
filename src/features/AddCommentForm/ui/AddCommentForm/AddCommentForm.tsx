@@ -47,7 +47,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   }, [dispatch]);
 
   const onSendCommentHandler = useCallback(() => {
-    onSendComment(text || '');
+    onSendComment(text);
     onCommentChange('');
   }, [onCommentChange, onSendComment, text]);
 
@@ -57,7 +57,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <Input
           className={cls.input}
           placeholder={t('input-comment')}
-          value={text || ''}
+          value={text}
           onChange={onCommentChange}
         />
         <Button
