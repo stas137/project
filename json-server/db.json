@@ -60,13 +60,13 @@
     {
       "id": "2",
       "userId": "1",
-      "title": "Javascript news 2",
+      "title": "Python news 2",
       "subtitle": "Hey hey 2023",
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
-      "createdAt": "26.02.2023",
+      "createdAt": "20.01.2023",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -95,13 +95,13 @@
     {
       "id": "3",
       "userId": "1",
-      "title": "Javascript news 3",
+      "title": "JAVA news 3",
       "subtitle": "Hey hey 2023",
       "img": "https://codeguida.com/media/post_title/g3033.png",
-      "views": 1020,
-      "createdAt": "26.02.2023",
+      "views": 133,
+      "createdAt": "16.03.2023",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -133,10 +133,10 @@
       "title": "Javascript news 4",
       "subtitle": "Hey hey 2023",
       "img": "https://codeguida.com/media/post_title/g3033.png",
-      "views": 1020,
+      "views": 567,
       "createdAt": "26.02.2023",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -168,7 +168,7 @@
       "title": "Javascript news 5",
       "subtitle": "Hey hey 2023",
       "img": "https://codeguida.com/media/post_title/g3033.png",
-      "views": 1020,
+      "views": 2024,
       "createdAt": "26.02.2023",
       "type": [
         "IT"

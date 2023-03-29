@@ -1,6 +1,8 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text } from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -29,6 +31,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleView.TILE,
   } = props;
 
+  const { t } = useTranslation('article');
+
   // if (isLoading) {
   //   return (
   //     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -48,9 +52,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
     />
   );
 
+  if (!isLoading && !articles?.length) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <Text title={t('articles-not-found')} />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length
+      {articles?.length
         ? articles.map(renderArticle)
         : null}
 

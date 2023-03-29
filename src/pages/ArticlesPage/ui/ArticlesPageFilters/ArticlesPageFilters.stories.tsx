@@ -3,17 +3,17 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import ArticlesPage from './ArticlesPage';
+import { ArticlesPageFilter } from './ArticlesPageFilters';
 
 export default {
-  title: 'pages/Article/ArticlesPage',
-  component: ArticlesPage,
+  title: 'pages/Article/ArticlesPageFilter',
+  component: ArticlesPageFilter,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticlesPageFilter>;
 
-const Template: ComponentStory<typeof ArticlesPage> = () => <ArticlesPage />;
+const Template: ComponentStory<typeof ArticlesPageFilter> = () => <ArticlesPageFilter />;
 
 export const Primary = Template.bind({});
 Primary.args = {
