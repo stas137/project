@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -12,7 +12,6 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/profile-24x24.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
   ArticleBlock,
   ArticleBlockType,
@@ -86,9 +85,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useInitialEffect(() => {
+  // useInitialEffect(() => {
+  //   dispatch(fetchArticleById(articleId));
+  // });
+
+  useEffect(() => {
     dispatch(fetchArticleById(articleId));
-  });
+  }, [dispatch, articleId]);
 
   if (isLoading) {
     content = (

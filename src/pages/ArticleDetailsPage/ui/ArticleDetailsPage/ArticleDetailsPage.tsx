@@ -1,6 +1,6 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -10,12 +10,15 @@ import {
   Reducers,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
+import {
+  fetchArticleRecommendations,
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import {
   addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -26,18 +29,22 @@ import {
   getArticleCommentsError,
   getArticleCommentsIsLoading,
 } from '../../model/selectors/articleDetailsCommentsSelectors';
-import {
-  articleDetailsCommentsReducer,
-  getArticleComments,
-} from '../../model/slice/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { getArticleRecommendations } from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import {
+  getArticleRecommendationsError,
+  getArticleRecommendationsIsLoading,
+} from '../../model/selectors/articleDetailsRecommendationsSelectors';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
 const initialReducers: Reducers = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  // articleDetailsComments: articleDetailsCommentsReducer,
+  // articleDetailsRecommendations: articleDetailsRecommendationsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -52,6 +59,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const commentsError = useSelector(getArticleCommentsError);
 
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
+  const recommendationsError = useSelector(getArticleRecommendationsError);
+
   const onSendComment = useCallback((value: string) => {
     dispatch(addCommentForArticle(value));
   }, [dispatch]);
@@ -60,9 +71,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     navigate(RoutePath.articles);
   }, [navigate]);
 
-  useInitialEffect(() => {
+  // useInitialEffect(() => {
+  //   dispatch(fetchCommentsByArticleId(id));
+  //   dispatch(fetchArticleRecommendations());
+  // });
+
+  useEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
-  });
+    dispatch(fetchArticleRecommendations());
+  }, [dispatch, id]);
 
   if (!id) {
     return (
@@ -78,8 +95,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <Button onClick={onBackToList}>{t('back')}</Button>
         <ArticleDetails articleId={id} />
 
-        <Text className={cls.commentTitle} title={t('comments')} />
+        <Text className={cls.recommendationTitle} title={t('recommendations')} />
+        <ArticleList
+          className={cls.recommendations}
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          target="_blank"
+        />
 
+        <Text className={cls.commentTitle} title={t('comments')} />
         <AddCommentForm onSendComment={onSendComment} />
 
         <CommentsList

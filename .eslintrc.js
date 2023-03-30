@@ -49,7 +49,7 @@ module.exports = {
       'warn',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'name'],
+        ignoreAttribute: ['data-testid', 'to', 'name', 'target'],
       },
     ],
     'max-len': ['warn', { ignoreComments: true, code: 100 }],
@@ -59,6 +59,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'no-param-reassign': 'warn',
     'react/no-array-index-key': 'warn',
+    'arrow-body-style': 'off',
   },
   globals: {
     __IS_DEV__: true,
