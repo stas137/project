@@ -24,5 +24,6 @@
   "country": "Страна",
   "comments-not-found": "Комментариев нет",
   "input-comment": "Введите комментарий",
-  "send": "Отправить"
+  "send": "Отправить",
+  "create-article": "Создать статью"
 }

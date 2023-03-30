@@ -24,5 +24,6 @@
   "country": "Country",
   "comments-not-found": "Comments not found",
   "input-comment": "Input comment",
-  "send": "Send"
+  "send": "Send",
+  "create-article": "Create article"
 }

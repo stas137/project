@@ -3,7 +3,7 @@ import { CommentsList } from 'entities/Comment';
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -12,8 +12,6 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 import {
@@ -36,6 +34,7 @@ import {
   getArticleRecommendationsError,
   getArticleRecommendationsIsLoading,
 } from '../../model/selectors/articleDetailsRecommendationsSelectors';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -53,7 +52,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{id: string}>();
 
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -66,10 +64,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const onSendComment = useCallback((value: string) => {
     dispatch(addCommentForArticle(value));
   }, [dispatch]);
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   // useInitialEffect(() => {
   //   dispatch(fetchCommentsByArticleId(id));
@@ -92,7 +86,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList}>{t('back')}</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails articleId={id} />
 
         <Text className={cls.recommendationTitle} title={t('recommendations')} />
