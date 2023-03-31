@@ -29,8 +29,11 @@ export const Modal = (props: ModalProps) => {
   const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const timerIsOpeningRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -40,6 +43,7 @@ export const Modal = (props: ModalProps) => {
         () => {
           onClose();
           setIsClosing(false);
+          setIsOpening(false);
         },
         ANIMATION_DELAY,
       );
@@ -59,6 +63,13 @@ export const Modal = (props: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
+
+      timerIsOpeningRef.current = setTimeout(
+        () => {
+          setIsOpening(true);
+        },
+        ANIMATION_DELAY,
+      );
     }
   }, [isOpen]);
 
@@ -75,7 +86,7 @@ export const Modal = (props: ModalProps) => {
   }, [isOpen, onKeyDown]);
 
   const mods: Mods = {
-    [cls.opened]: isOpen,
+    [cls.opened]: isOpening,
     [cls.isClosing]: isClosing,
   };
 

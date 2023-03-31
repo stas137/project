@@ -23,7 +23,7 @@
   border-radius: 7px;
   background: var(--bg-color);
   transition: transform 0.2s ease;
-  transform: scale(0.5);
+  transform: scale(0.05);
   max-width: 60%;
 }
 
@@ -39,6 +39,6 @@
 
 .isClosing {
   .content {
-    transform: scale(0.02);
+    transform: scale(0.05);
   }
 }
