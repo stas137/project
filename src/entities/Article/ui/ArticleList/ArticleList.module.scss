@@ -1,6 +1,6 @@
 .LIST {
   .card {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 }
 
@@ -8,4 +8,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
+  .card {
+    display: inline-flex;
+    margin-bottom: 20px;
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+  }
 }
