@@ -13,7 +13,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Page } from 'widgets/Page/Page';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
+import { articleDetailsPageReducer } from '../../model/slices';
 import {
   fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';

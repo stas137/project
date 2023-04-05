@@ -19,7 +19,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'project-path-checker-plugin',
+  ],
   rules: {
     'linebreak-style': 0,
     indent: ['error', 2],
@@ -60,6 +66,7 @@ module.exports = {
     'no-param-reassign': 'warn',
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off',
+    'project-path-checker-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

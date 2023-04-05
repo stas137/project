@@ -23,12 +23,17 @@ import {
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import cls from './ArticleDetails.module.scss';
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import {
+  ArticleCodeBlockComponent,
+} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {
   ArticleImageBlockComponent,
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import {
+  ArticleTextBlockComponent,
+} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
