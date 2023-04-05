@@ -6,6 +6,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextVariant } from 'shared/ui/Text/Text';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/ProfileSchema';
 import cls from './ProfileCard.module.scss';
 
@@ -46,22 +47,30 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+      <HStack
+        className={classNames(cls.ProfileCard, {}, [className])}
+        justify="center"
+        max
+      >
         <Loader />
-      </div>
+      </HStack>
     );
   }
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack
+        className={classNames(cls.ProfileCard, {}, [className])}
+        justify="center"
+        max
+      >
         <Text
           variant={TextVariant.ERROR}
           title={t('error')}
           text={t('reload-page')}
           align={TextAlign.CENTER}
         />
-      </div>
+      </HStack>
     );
   }
 
@@ -70,15 +79,20 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <div className={classNames(cls.ProfileCard, mods, [className])}>
+    <VStack
+      className={classNames(cls.ProfileCard, mods, [className])}
+      gap="16"
+    >
 
       {data?.avatar && (
-        <div className={cls.avatarWrapper}>
+        <HStack
+          justify="center"
+        >
           <Avatar
             src={data?.avatar}
             alt="avatar"
           />
-        </div>
+        </HStack>
       )}
 
       <Input
@@ -135,6 +149,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly={readonly}
         onChange={onChangeCountry}
       />
-    </div>
+    </VStack>
   );
 };

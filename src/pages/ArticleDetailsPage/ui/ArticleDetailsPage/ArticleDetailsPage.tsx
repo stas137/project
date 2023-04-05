@@ -13,6 +13,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slices';
 import {
   fetchArticleRecommendations,
@@ -86,24 +87,26 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails articleId={id} />
+        <VStack gap="16">
+          <ArticleDetailsPageHeader />
+          <ArticleDetails articleId={id} />
 
-        <Text className={cls.recommendationTitle} title={t('recommendations')} />
-        <ArticleList
-          className={cls.recommendations}
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          target="_blank"
-        />
+          <Text className={cls.recommendationTitle} title={t('recommendations')} />
+          <ArticleList
+            className={cls.recommendations}
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            target="_blank"
+          />
 
-        <Text className={cls.commentTitle} title={t('comments')} />
-        <AddCommentForm onSendComment={onSendComment} />
+          <Text className={cls.commentTitle} title={t('comments')} />
+          <AddCommentForm onSendComment={onSendComment} />
 
-        <CommentsList
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
+          <CommentsList
+            isLoading={commentsIsLoading}
+            comments={comments}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

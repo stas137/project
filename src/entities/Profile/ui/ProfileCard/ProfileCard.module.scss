@@ -3,23 +3,6 @@
   border: 1px solid var(--bg-color-inverted);
 }
 
-.input {
-  margin-top: 10px;
-}
-
-.loading,
-.error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatarWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .editing {
   border: 1px solid var(--primary-color-inverted);
 }

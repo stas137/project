@@ -1,9 +1,10 @@
 import { LanguageSwitcher } from 'features/LanguageSwitcher';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from './SidebarItem/SidebarItem';
@@ -17,6 +18,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
 
   const sidebarItemsList = useSelector(getSidebarItems);
 
+  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
+    <SidebarItem
+      key={item.path}
+      item={item}
+      collapsed={collapsed}
+    />
+  )), [collapsed, sidebarItemsList]);
+
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
@@ -28,15 +37,12 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <div className={cls.items}>
-        {sidebarItemsList.map((item) => (
-          <SidebarItem
-            key={item.path}
-            item={item}
-            collapsed={collapsed}
-          />
-        ))}
-      </div>
+      <VStack
+        className={cls.items}
+        gap="8"
+      >
+        {itemsList}
+      </VStack>
 
       <Button
         data-testid="sidebar-toggle"
