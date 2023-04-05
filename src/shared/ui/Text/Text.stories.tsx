@@ -62,3 +62,17 @@ PrimaryL.args = {
   text: 'Text lorem lorem',
   size: TextSize.L,
 };
+
+export const PrimaryM = Template.bind({});
+PrimaryM.args = {
+  title: 'Title lorem lorem',
+  text: 'Text lorem lorem',
+  size: TextSize.M,
+};
+
+export const PrimaryS = Template.bind({});
+PrimaryS.args = {
+  title: 'Title lorem lorem',
+  text: 'Text lorem lorem',
+  size: TextSize.S,
+};
