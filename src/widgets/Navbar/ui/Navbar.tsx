@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink, AppLinkVariant } from 'shared/ui/AppLink/AppLink';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -52,13 +54,23 @@ export const Navbar = memo((props: NavbarProps) => {
           {t('create-article')}
         </AppLink>
 
-        <Button
-          className={cls.links}
-          variant={ButtonVariant.CLEAR_INVERTED}
-          onClick={onLogout}
-        >
-          {t('logout')}
-        </Button>
+        <Dropdown
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('profile'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('logout'),
+              onClick: onLogout,
+            },
+          ]}
+          trigger={
+            <Avatar size={30} src={authData.avatar} />
+          }
+          direction="bottom left"
+        />
       </header>
     );
   }
