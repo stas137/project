@@ -651,8 +651,8 @@
       "firstname": "Ivan",
       "lastname": "Ivanov",
       "age": 30,
-      "currency": "EUR",
-      "country": "Belarus",
+      "currency": "RUB",
+      "country": "Russia",
       "city": "Minsk",
       "username": "admin",
       "avatar": "https://cspromogame.ru//storage/upload_images/avatars/3419.jpg"
@@ -675,7 +675,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://cspromogame.ru//storage/upload_images/avatars/3419.jpg"
+      "avatar": "https://i.pinimg.com/originals/e3/ef/c0/e3efc0d2bbc51e829c5ff7950b7afa4b.jpg"
     },
     {
       "id": "2",
