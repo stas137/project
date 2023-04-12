@@ -1,4 +1,4 @@
-module.exports = (componentName) => {
+module.exports = (layer, componentName) => {
   return `import { ComponentStory, ComponentMeta } from '@storybook/react';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from 'shared/contexts/ThemeProvider';
@@ -6,7 +6,7 @@ module.exports = (componentName) => {
 import { ${componentName} } from './${componentName}';
 
 export default {
-  title: '${componentName}',
+  title: '${layer}/${componentName}',
   component: ${componentName},
   argTypes: {
     backgroundColor: { control: 'color' },

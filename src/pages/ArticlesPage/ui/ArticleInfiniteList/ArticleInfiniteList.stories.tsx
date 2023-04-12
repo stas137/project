@@ -3,17 +3,17 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { ArticlesPageFilter } from './ArticlesPageFilters';
+import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 export default {
-  title: 'pages/ArticlePage/ArticlesPageFilter',
-  component: ArticlesPageFilter,
+  title: 'pages/ArticlePage/ArticleInfiniteList',
+  component: ArticleInfiniteList,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticlesPageFilter>;
+} as ComponentMeta<typeof ArticleInfiniteList>;
 
-const Template: ComponentStory<typeof ArticlesPageFilter> = () => <ArticlesPageFilter />;
+const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
