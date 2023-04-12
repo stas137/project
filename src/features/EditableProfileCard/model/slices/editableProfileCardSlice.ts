@@ -1,9 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { EditableProfileCardSchema } from '../types/EditableProfileCardSchema';
 
-const initialState: EditableProfileCardSchema = {
-  
-};
+const initialState: EditableProfileCardSchema = {};
 
 export const editableProfileCardSlice = createSlice({
   name: 'editableProfileCard',
