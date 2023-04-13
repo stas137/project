@@ -50,7 +50,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <HStack
         className={classNames(cls.ProfileCard, {}, [className])}
         justify="center"
-        max
       >
         <Loader />
       </HStack>
@@ -101,6 +100,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('firstname')}
         readonly={readonly}
         onChange={onChangeFirstname}
+        data-testid="ProfileCard.Firstname"
       />
       <Input
         className={cls.input}
@@ -108,6 +108,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('lastname')}
         readonly={readonly}
         onChange={onChangeLastname}
+        data-testid="ProfileCard.Lastname"
       />
       <Input
         className={cls.input}
@@ -115,6 +116,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('age')}
         readonly={readonly}
         onChange={onChangeAge}
+        data-testid="ProfileCard.Age"
       />
       <Input
         className={cls.input}

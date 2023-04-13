@@ -46,11 +46,6 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  // const styles: CSSProperties = {
-  //   flex: '1 1 0%',
-  //   overflow: 'auto',
-  // };
-
   return (
     // eslint-disable-next-line
     <>
