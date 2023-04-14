@@ -1,13 +1,16 @@
-export {
+export type {
   Article,
+} from './model/types/article';
+
+export type {
+  ArticleDetailsSchema,
+} from './model/types/ArticleDetailsSchema';
+
+export {
   ArticleView,
   ArticleSortField,
   ArticleType,
-} from './model/types/article';
-
-export {
-  ArticleDetailsSchema,
-} from './model/types/ArticleDetailsSchema';
+} from './model/consts/consts';
 
 export {
   ArticleDetails,

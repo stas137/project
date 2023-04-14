@@ -15,8 +15,10 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { HStack, VStack } from 'shared/ui/Stack';
 import {
   ArticleBlock,
-  ArticleBlockType,
 } from '../../model/types/article';
+import {
+  ArticleBlockType,
+} from '../../model/consts/consts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,

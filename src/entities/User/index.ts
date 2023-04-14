@@ -10,9 +10,12 @@ export {
 }
   from './model/slice/userSlice';
 
-export {
+export type {
   UserSchema,
   User,
-  UserRole,
 }
   from './model/types/userSchema';
+
+export {
+  UserRole,
+} from './model/consts/consts';
