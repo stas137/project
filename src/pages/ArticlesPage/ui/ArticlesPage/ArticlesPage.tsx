@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -31,9 +30,7 @@ const initialReducers: Reducers = {
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
 
-  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
-
   const [searchParams] = useSearchParams();
 
   const isLoading = useSelector(getArticlesPageIsLoading);

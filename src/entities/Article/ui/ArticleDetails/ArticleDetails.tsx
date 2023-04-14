@@ -38,7 +38,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
-  articleId: string;
+  articleId?: string;
 }
 
 const initialReducers: Reducers = {
@@ -91,12 +91,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  // useInitialEffect(() => {
-  //   dispatch(fetchArticleById(articleId));
-  // });
-
   useEffect(() => {
-    dispatch(fetchArticleById(articleId));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(articleId));
+    }
   }, [dispatch, articleId]);
 
   if (isLoading) {

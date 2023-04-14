@@ -17,10 +17,12 @@ const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <Artic
 
 export const Primary = Template.bind({});
 Primary.args = {
+  // id: '1',
 };
 Primary.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {
+  // id: '1',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

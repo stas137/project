@@ -1,5 +1,7 @@
 import {
-  FC, useMemo, useState, createContext,
+  FC,
+  useMemo,
+  useState, createContext, ReactNode,
 } from 'react';
 import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
 
@@ -16,6 +18,7 @@ export interface ThemeContextProps {
 
 interface ThemeProviderProps {
   initialTheme?: Theme;
+  children: ReactNode;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({});

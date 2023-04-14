@@ -1,6 +1,9 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
+import {
+  COUNT_ARTICLES_LIST_VIEW,
+  COUNT_ARTICLES_TILE_VIEW,
+} from 'shared/const/const';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
@@ -8,6 +11,7 @@ import { PAGE_ID } from 'widgets/Page/Page';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {
@@ -92,19 +96,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-
+    // @ts-ignore
     <WindowScroller
       scrollElement={document.getElementById(PAGE_ID) as Element}
     >
       {({
         height, width, registerChild, scrollTop, isScrolling, onChildScroll,
       }) => (
+
         <div
           className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+          // @ts-ignore
           ref={registerChild}
         >
           {
             virtualized ? (
+              // @ts-ignore
               <List
                 autoHeight
                 height={height ?? 609}
@@ -132,8 +139,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
           {isLoading && getSkeletons(view)}
         </div>
       )}
-
     </WindowScroller>
-
   );
 });

@@ -1,9 +1,9 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+// import { StateSchema } from 'app/providers/StoreProvider';
 
-export const getArticleRecommendationsIsLoading = (state:StateSchema) => {
-  return state.articleDetailsPage?.recommendations?.isLoading || false;
-};
+// export const getArticleRecommendationsIsLoading = (state:StateSchema) => {
+//   return state.articleDetailsPage?.recommendations?.isLoading || false;
+// };
 
-export const getArticleRecommendationsError = (state:StateSchema) => {
-  return state.articleDetailsPage?.recommendations?.error || '';
-};
+// export const getArticleRecommendationsError = (state:StateSchema) => {
+//   return state.articleDetailsPage?.recommendations?.error || '';
+// };

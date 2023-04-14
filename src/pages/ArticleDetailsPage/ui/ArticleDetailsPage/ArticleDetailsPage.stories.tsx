@@ -71,7 +71,12 @@ const article: Article = {
 export const Primary = Template.bind({});
 Primary.args = {
 };
-Primary.decorators = [StoreDecorator({})];
+Primary.decorators = [StoreDecorator({
+  articleDetails: {
+    isLoading: false,
+    data: article,
+  },
+})];
 
 export const Dark = Template.bind({});
 Dark.args = {
