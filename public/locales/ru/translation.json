@@ -25,5 +25,6 @@
   "comments-not-found": "Комментариев нет",
   "input-comment": "Введите комментарий",
   "send": "Отправить",
-  "create-article": "Создать статью"
+  "create-article": "Создать статью",
+  "admin-panel": "Админка"
 }

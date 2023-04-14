@@ -667,6 +667,17 @@
       "city": "Moscow",
       "username": "manager",
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Sidr",
+      "lastname": "Sidorov",
+      "age": 45,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Tambov",
+      "username": "user",
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ],
   "users": [
@@ -674,14 +685,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://cspromogame.ru//storage/upload_images/avatars/3419.jpg"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "1234",
-      "role": "MANAGER",
+      "roles": ["MANAGER"],
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+    },
+    {
+      "id": "3",
+      "username": "user",
+      "password": "1234",
+      "roles": ["USER"],
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ]

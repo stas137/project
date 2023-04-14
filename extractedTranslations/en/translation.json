@@ -11,6 +11,8 @@
   "TV Project": "",
   "about": "about",
   "about-page": "about-page",
+  "admin": "admin",
+  "admin-panel": "admin-panel",
   "age": "age",
   "article-loader-error": "article-loader-error",
   "article-not-found": "article-not-found",
@@ -69,5 +71,6 @@
   "title": "",
   "toggle": "toggle",
   "username": "username",
-  "views": ""
+  "views": "",
+  "you-do-not-have-access": "you-do-not-have-access"
 }

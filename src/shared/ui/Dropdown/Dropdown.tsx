@@ -66,6 +66,7 @@ export const Dropdown = (props: DropdownProps) => {
             return (
               <Menu.Item
                 // key={item.content}
+                className={cls.link}
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}

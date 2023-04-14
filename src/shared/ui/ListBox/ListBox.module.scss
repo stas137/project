@@ -11,7 +11,7 @@
   background: var(--listbox-bg);
   border-radius: 10px;
   box-shadow: 0 0 8px var(--listbox-bg);
-  z-index: 1;
+  z-index: var(--list-box-z-index);
 }
 
 .item {
