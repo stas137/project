@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
@@ -23,17 +22,15 @@ export const CommentCard = memo((props: CommentCardProps) => {
     isLoading,
   } = props;
 
-  const { t } = useTranslation();
-
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+      <VStack gap="8" className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton className={cls.username} width={100} height={20} />
         </div>
         <Skeleton className={cls.text} width="100%" height={50} />
-      </div>
+      </VStack>
     );
   }
 
