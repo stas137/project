@@ -16,7 +16,6 @@ import {
 import {
   ArticleBlockType, ArticleView,
 } from '../../model/consts/consts';
-
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';
