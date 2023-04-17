@@ -1,21 +1,22 @@
 .LIST {
   .card {
     /* margin-bottom: 20px; */
+    margin: 20px 20px 0 40px;
   }
 }
 
 .TILE {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  .card {
-    display: inline-flex;
-    margin-bottom: 20px;
+  .skeleton {
+    margin: 20px 20px 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
-  .row {
+  .itemWrapper {
+    margin: 20px 20px 20px 40px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
   }
 }

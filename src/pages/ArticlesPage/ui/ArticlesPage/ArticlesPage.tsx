@@ -1,23 +1,25 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   Reducers,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
+import { ArticleList } from 'entities/Article';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
   fetchNextArticlesList,
 } from '../../model/services/fetchNextArticlesList/fetchNextArticlesList';
-import { getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors';
-import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
+import {
+  getArticlesPageIsLoading,
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
+import { articlesPageReducer, getArticlesPage } from '../../model/slice/articlesPageSlice';
+
 import cls from './ArticlesPage.module.scss';
-import { ArticlesPageFilter } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
   className?: string;
@@ -33,7 +35,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
 
+  const articles = useSelector(getArticlesPage.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
+  const view = useSelector(getArticlesPageView);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesList());
@@ -44,14 +48,25 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   });
 
   return (
-    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
-      <Page
+    <DynamicModuleLoader
+      reducers={initialReducers}
+      removeAfterUnmount={false}
+    >
+      {/* <Page
         className={classNames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={isLoading ? undefined : onLoadNextPart}
       >
         <ArticlesPageFilter />
         <ArticleInfiniteList className={cls.list} />
-      </Page>
+      </Page> */}
+
+      <ArticleList
+        className={classNames(cls.list, {}, [className])}
+        isLoading={isLoading}
+        view={view}
+        articles={articles}
+        onLoadNextPart={onLoadNextPart}
+      />
     </DynamicModuleLoader>
 
   );

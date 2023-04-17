@@ -44,6 +44,7 @@
   width: 230px;
   cursor: pointer;
   transition: all 0.2s;
+  display: block;
 
   .date {
     position: absolute;
@@ -62,7 +63,6 @@
   }
 
   .imageWrapper {
-    width: 200px;
     height: 200px;
     position: relative;
   }
@@ -100,5 +100,9 @@
 
   .title {
     margin-top: 8px;
+  }
+
+  @media (max-width: 320px) {
+    width: 80%;
   }
 }

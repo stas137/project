@@ -1,10 +1,3 @@
-import {
-  ArticleSortSelector,
-  ArticleTypeTabs,
-  ArticleView,
-  ArticleViewSelector,
-  ArticleSortField, ArticleType,
-} from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -15,6 +8,14 @@ import { Input } from 'shared/ui/Input/Input';
 import { SortOrder } from 'shared/types';
 
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import {
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+  ArticleSortSelector,
+  ArticleViewSelector,
+  ArticleTypeTabs,
+} from 'entities/Article';
 import {
   fetchArticlesList,
 } from '../../model/services/fetchArticlesList/fetchArticlesList';

@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button } from 'shared/ui/Button/Button';
+import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from 'shared/const/localstorage';
 import {
   Article, ArticleTextBlock,
 } from '../../model/types/article';
@@ -25,6 +26,7 @@ interface ArticleListItemProps {
   article: Article;
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  index?: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -33,6 +35,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     article,
     view,
     target,
+    index,
   } = props;
 
   const { t } = useTranslation('article');
@@ -49,6 +52,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Icon Svg={EyeIcon} />
     </>
   );
+
+  const handleButtonclick = () => {
+    if (index) {
+      localStorage.setItem(LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX, JSON.stringify(index));
+    }
+  };
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(
@@ -74,7 +83,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
               to={`${RoutePath.article_details}${article.id}`}
               target={target}
             >
-              <Button>
+              <Button onClick={handleButtonclick}>
                 {t('read-more')}
               </Button>
             </AppLink>
@@ -91,6 +100,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       to={`${RoutePath.article_details}${article.id}`}
       target={target}
+      onClick={handleButtonclick}
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
