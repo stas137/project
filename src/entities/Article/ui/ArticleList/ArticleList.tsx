@@ -13,6 +13,7 @@ import {
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from 'shared/const/localstorage';
 import { ArticlesPageFilter } from 'pages/ArticlesPage';
 import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
+import { HStack } from 'shared/ui/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -143,7 +144,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   if (!virtualized) {
     return (
-      <>
+      <HStack
+        gap="16"
+      >
         {articles.map((article) => (
           <ArticleListItem
             key={article.id}
@@ -153,7 +156,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             target={target}
           />
         ))}
-      </>
+      </HStack>
     );
   }
 

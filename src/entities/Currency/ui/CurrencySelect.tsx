@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Currency } from '../model/types/currency';
 
 interface CurrencySelectProps {
@@ -12,7 +12,7 @@ interface CurrencySelectProps {
 }
 
 const options = [
-  { value: Currency.USD, content: Currency.USD },
+  { value: Currency.USD, content: Currency.USD, disabled: true },
   { value: Currency.EUR, content: Currency.EUR },
   { value: Currency.RUB, content: Currency.RUB },
 ];

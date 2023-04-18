@@ -4,7 +4,7 @@ import { Currency } from 'entities/Currency';
 import { ListBox } from './ListBox';
 
 export default {
-  title: 'shared/ListBox',
+  title: 'shared/Popups/ListBox',
   component: ListBox,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />
 
 const items = [
   { value: Currency.USD, content: Currency.USD },
-  { value: Currency.EUR, content: Currency.EUR },
+  { value: Currency.EUR, content: Currency.EUR, disabled: true },
   { value: Currency.RUB, content: Currency.RUB },
 ];
 

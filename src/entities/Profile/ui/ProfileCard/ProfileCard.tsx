@@ -61,7 +61,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <HStack
         className={classNames(cls.ProfileCard, {}, [className])}
         justify="center"
-        max
       >
         <Text
           variant={TextVariant.ERROR}

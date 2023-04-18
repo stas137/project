@@ -2,9 +2,12 @@ import { ReactNode, Fragment } from 'react';
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
+import { Button } from '../../../Button/Button';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectonClass } from '../../styles/consts';
+
 import cls from './Dropdown.module.scss';
-import { Button } from '../Button/Button';
-import { AppLink } from '../AppLink/AppLink';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -20,13 +23,6 @@ interface DropdownProps {
   direction?: DropdownDirection;
 }
 
-const mapDirectonClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-};
-
 export const Dropdown = (props: DropdownProps) => {
   const {
     className,
@@ -40,20 +36,20 @@ export const Dropdown = (props: DropdownProps) => {
   return (
     <Menu
       as="div"
-      className={classNames(cls.Dropdown, {}, [className])}
+      className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
     >
       <Menu.Button
-        className={cls.btn}
+        className={popupCls.trigger}
       >
         {trigger}
       </Menu.Button>
       <Menu.Items
         className={classNames(cls.menu, {}, menuClasses)}
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <Button
-              className={classNames(cls.item, { [cls.active]: active })}
+              className={classNames(popupCls.item, { [popupCls.active]: active })}
               disabled={item.disabled}
               onClick={item.onClick}
               // href="/account-settings"
@@ -65,7 +61,7 @@ export const Dropdown = (props: DropdownProps) => {
           if (item.href) {
             return (
               <Menu.Item
-                // key={item.content}
+                key={`dropdown-item-${index}`}
                 className={cls.link}
                 as={AppLink}
                 to={item.href}
@@ -78,7 +74,7 @@ export const Dropdown = (props: DropdownProps) => {
 
           return (
             <Menu.Item
-              // key={item.content}
+              key={`dropdown-item-${index}`}
               as={Fragment}
               disabled={item.disabled}
             >
