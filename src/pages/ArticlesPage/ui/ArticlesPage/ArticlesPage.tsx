@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   Reducers,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useSearchParams } from 'react-router-dom';
-import { ArticleList } from 'entities/Article';
-import { classNames } from 'shared/lib/classNames/classNames';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ArticleList } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
   fetchNextArticlesList,

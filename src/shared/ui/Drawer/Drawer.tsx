@@ -1,10 +1,10 @@
 import {
   ReactNode, memo, useCallback, useEffect,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { useTheme } from 'app/providers/ThemeProvider';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 
@@ -102,7 +102,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
         <Spring.a.div
           className={cls.sheet}
           style={{
-            display, position: 'relative', bottom: `calc(-100vh + ${HEIGHT - 100}px)`, touchAction: 'none', y,
+            display, bottom: `calc(-100vh + ${HEIGHT - 100}px)`, y,
           }}
           {...bind()}
         >

@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Card, CardVariant } from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui/Text/Text';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Card, CardVariant } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text/Text';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { Notification } from '../../model/types/notification';
 
 import cls from './NotificationItem.module.scss';

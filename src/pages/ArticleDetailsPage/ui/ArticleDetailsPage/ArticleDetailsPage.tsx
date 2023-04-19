@@ -1,16 +1,16 @@
-import { ArticleDetails } from 'entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   Reducers,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-import { Page } from 'widgets/Page/Page';
-import { VStack } from 'shared/ui/Stack';
-import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
+import { Page } from '@/widgets/Page/Page';
+import { VStack } from '@/shared/ui/Stack';
+import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import { articleDetailsPageReducer } from '../../model/slices';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

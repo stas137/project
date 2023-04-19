@@ -2,18 +2,18 @@ import {
   HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
 import {
   Virtuoso,
   VirtuosoGrid,
   VirtuosoGridHandle,
   GridScrollSeekPlaceholderProps,
 } from 'react-virtuoso';
-import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from 'shared/const/localstorage';
-import { ArticlesPageFilter } from 'pages/ArticlesPage';
-import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from 'shared/const/const';
-import { HStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
+import { ArticlesPageFilter } from '@/pages/ArticlesPage';
+import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from '@/shared/const/const';
+import { HStack } from '@/shared/ui/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

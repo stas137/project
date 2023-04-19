@@ -1,16 +1,16 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import EyeIcon from 'shared/assets/icons/profile-24x24.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Card } from 'shared/ui/Card/Card';
-import { useHover } from 'shared/lib/hooks/useHover/useHover';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { Button } from 'shared/ui/Button/Button';
-import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from 'shared/const/localstorage';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import EyeIcon from '@/shared/assets/icons/profile-24x24.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Card } from '@/shared/ui/Card/Card';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { Button } from '@/shared/ui/Button/Button';
+import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
 import {
   Article, ArticleTextBlock,
 } from '../../model/types/article';

@@ -3,7 +3,7 @@ import {
   useMemo,
   useState, createContext, ReactNode,
 } from 'react';
-import { LOCAL_STORAGE_THEME_KEY } from 'shared/const/localstorage';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 
 export enum Theme {
   LIGHT = 'app_light_theme',

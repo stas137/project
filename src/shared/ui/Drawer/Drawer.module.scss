@@ -4,27 +4,20 @@
   bottom: 0;
   right: 0;
   left: 0;
-
-  /* opacity: 0; */
-
-  /* pointer-events: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* justify-content: flex-end; */
-
-  /* z-index: var(--modal-disable-z-index); */
-
   z-index: var(--modal-z-index);
 }
 
 .sheet {
+  position: relative;
   padding: 15px;
   border-radius: 10px;
   background: var(--bg-color);
   width: 96vw;
   height: 100vh;
+  touch-action: none;
 }
 
 .content {

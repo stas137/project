@@ -1,10 +1,10 @@
-import { getUserInited, userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { getUserInited, userActions } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar/ui';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar/ui';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
 
