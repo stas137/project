@@ -39,9 +39,6 @@ export const Modal = (props: ModalProps) => {
     onClose,
   });
 
-  console.log({ isOpening });
-  console.log({ isMounted });
-
   const mods: Mods = {
     [cls.opened]: isOpening,
     [cls.isClosing]: isClosing,
