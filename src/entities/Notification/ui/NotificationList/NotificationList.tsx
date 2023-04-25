@@ -18,7 +18,8 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
   const {
     data: notificationList,
-    isLoading, error,
+    isLoading,
+    error,
   } = useGetNotificationList(null, {
     pollingInterval: 5000,
   });

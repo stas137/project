@@ -39,12 +39,7 @@ export default {
     //   '<rootDir>/__mocks__/fileMock.js',
     '\\.(sc?ss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    '^@/shared(.*)$': '<rootDir>/src/shared$1',
-    '^@/entities(.*)$': '<rootDir>/src/entities$1',
-    '^@/features(.*)$': '<rootDir>/src/features$1',
-    '^@/widgets(.*)$': '<rootDir>/src/widgets$1',
-    '^@/pages(.*)$': '<rootDir>/src/pages$1',
-    '^@/app(.*)$': '<rootDir>/src/app$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   // The root directory that Jest should scan for tests and modules within
