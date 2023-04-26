@@ -78,7 +78,7 @@ module.exports = {
     'no-param-reassign': 'warn',
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off',
-    'project-path-checker-plugin/path-checker': 'error',
+    'project-path-checker-plugin/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
