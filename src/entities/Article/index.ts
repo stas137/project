@@ -10,6 +10,7 @@ export {
   ArticleView,
   ArticleSortField,
   ArticleType,
+  ArticleBlockType,
 } from './model/consts/consts';
 
 export {
@@ -35,3 +36,7 @@ export {
 export {
   getArticleDetailsData,
 } from './model/selectors/articleDetails';
+
+export {
+  articleDetailsReducer,
+} from './model/slice/articleDetailsSlice';

@@ -79,6 +79,7 @@ module.exports = {
     'react/no-array-index-key': 'warn',
     'arrow-body-style': 'off',
     'project-path-checker-plugin/path-checker': ['error', { alias: '@' }],
+    'project-path-checker-plugin/public-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
