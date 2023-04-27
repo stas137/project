@@ -2,7 +2,7 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article';
 import { addCommentFormReducer } from '@/features/AddCommentForm';
-import { loginReducer } from '@/features/AuthByUserName';
+import { loginReducer } from '@/features/AuthByUserName/testing';
 import { profileReducer } from '@/features/EditableProfileCard';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 import { Reducers } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
