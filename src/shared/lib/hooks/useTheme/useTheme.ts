@@ -1,9 +1,8 @@
 import { useContext } from 'react';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
-import {
-  Theme,
-  ThemeContext,
-} from '../ui/ThemeProvider';
+
+import { ThemeContext } from '../../context/ThemeContext';
+import { Theme } from '../../../const/theme';
 
 interface UseThemeReturn {
   theme: Theme;

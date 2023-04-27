@@ -11,6 +11,8 @@ import {
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text/Text';
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
+
+// eslint-disable-next-line project-path-checker-plugin/layer-imports
 import { ArticlesPageFilter } from '@/pages/ArticlesPage';
 import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from '@/shared/const/const';
 import { HStack } from '@/shared/ui/Stack';

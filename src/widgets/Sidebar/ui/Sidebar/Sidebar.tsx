@@ -5,10 +5,10 @@ import { Button, ButtonSize, ButtonVariant } from '@/shared/ui/Button/Button';
 import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from './SidebarItem/SidebarItem';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
-import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
 
 import cls from './Sidebar.module.scss';
+import { LanguageSwitcher } from '@/features/LanguageSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 interface SidebarProps {
   className?: string;

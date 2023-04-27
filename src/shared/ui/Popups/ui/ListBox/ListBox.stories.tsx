@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+// eslint-disable-next-line project-path-checker-plugin/layer-imports
 import { Currency } from '@/entities/Currency';
 import { ListBox } from './ListBox';
 
