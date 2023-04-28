@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from 'shared/contexts/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { Button, ButtonSize, ButtonVariant } from './Button';
 
@@ -18,7 +18,12 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Text',
 };
-// Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+  children: 'Text',
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Clear = Template.bind({});
 Clear.args = {
