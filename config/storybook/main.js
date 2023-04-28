@@ -5,7 +5,13 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
+    // '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        background: false,
+      },
+    },
     '@storybook/addon-interactions',
     'storybook-addon-themes',
     'storybook-addon-mock',

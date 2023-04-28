@@ -4,7 +4,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import {
   SuspenseDecorator,
 } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
 export const parameters = {
@@ -15,11 +15,13 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: 'fullscreen',
   themes: {
     default: 'light',
     list: [
-      { name: 'light', class: ['app', 'light'], color: '#D4E2E6' },
-      { name: 'dark', class: ['app', 'dark'], color: '#4FC3EA' },
+      { name: 'light', class: ['app', Theme.LIGHT], color: '#D4E2E6' },
+      { name: 'dark', class: ['app', Theme.DARK], color: '#4FC3EA' },
+      { name: 'orange', class: ['app', Theme.ORANGE], color: '#bd5012' },
     ],
   },
 };
@@ -27,4 +29,4 @@ export const parameters = {
 addDecorator(StyleDecorator);
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
-addDecorator(ThemeDecorator(Theme.LIGHT));
+// addDecorator(ThemeDecorator(Theme.LIGHT));

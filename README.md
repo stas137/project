@@ -37,9 +37,9 @@ npm run start:vite:dev - Start server (json-server) and frontend project in dev 
 
 ## Project architecture
 
-The project is written in accordance with the Feature sliced design methodology
+The project is written in accordance with the Feature sliced design methodology.
 
-Link to documentation - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+Link to documentation - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial).
 
 ---
 
@@ -48,9 +48,9 @@ Link to documentation - [feature sliced design](https://feature-sliced.design/do
 The project uses the i18next library to work with translations.
 Files with translations are stored in public/locales.
 
-For comfortable work, it is recommended to install the plugin for webstorm/vscode
+For comfortable work, we recommended installing the plugin for webstorm/vscode.
 
-Documentation i18next - [https://react.i18next.com/](https://react.i18next.com/)
+Documentation i18next - [https://react.i18next.com/](https://react.i18next.com/).
 
 ---
 
@@ -169,7 +169,7 @@ In ci, all kinds of tests are run, project and storybook assembly, linting.
 Interaction with the data is carried out using the redux toolkit.
 If possible, reused entities should be normalized using EntityAdapter.
 
-Server request are sent using [RTK query](/src/shared/api/rtkApi.ts)
+Server request are sent using [RTK query](/src/shared/api/rtkApi.ts).
 
 To asynchronously connect of reducers (so as not to pull them into a common bundle), use
-[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+[DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx).
