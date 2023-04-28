@@ -7,11 +7,11 @@ import {
   Reducers,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { Text, TextAlign, TextSize } from '@/shared/ui/Text/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/profile-24x24.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import {
   ArticleBlock,

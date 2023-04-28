@@ -9,7 +9,7 @@ import {
   GridScrollSeekPlaceholderProps,
 } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
 
 // eslint-disable-next-line project-path-checker-plugin/layer-imports

@@ -1,14 +1,14 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/profile-24x24.svg';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Card } from '@/shared/ui/Card/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { Button } from '@/shared/ui/Button/Button';
+import { Avatar } from '@/shared/ui/Avatar';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Button } from '@/shared/ui/Button';
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
 import {
   Article, ArticleTextBlock,
@@ -18,8 +18,8 @@ import {
 } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
-import cls from './ArticleListItem.module.scss';
 import { RoutePath } from '@/shared/const/router';
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
   className?: string;
