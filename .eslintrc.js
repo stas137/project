@@ -25,6 +25,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'project-path-checker-plugin',
+    'unused-imports',
   ],
   rules: {
     'linebreak-style': 0,
@@ -93,6 +94,7 @@ module.exports = {
         ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
       },
     ],
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
