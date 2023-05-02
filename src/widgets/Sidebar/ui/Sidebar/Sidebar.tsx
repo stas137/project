@@ -6,9 +6,10 @@ import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from './SidebarItem/SidebarItem';
 
-import cls from './Sidebar.module.scss';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;

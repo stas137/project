@@ -52,14 +52,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       reducers={initialReducers}
       removeAfterUnmount={false}
     >
-      {/* <Page
-        className={classNames(cls.ArticlesPage, {}, [className])}
-        onScrollEnd={isLoading ? undefined : onLoadNextPart}
-      >
-        <ArticlesPageFilter />
-        <ArticleInfiniteList className={cls.list} />
-      </Page> */}
-
       <ArticleList
         className={classNames(cls.list, {}, [className])}
         isLoading={isLoading}

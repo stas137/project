@@ -14,7 +14,7 @@ import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -47,7 +47,7 @@ export const Navbar = memo((props: NavbarProps) => {
 
         <AppLink
           className={cls.createBtn}
-          to={RoutePath.article_create}
+          to={getRouteArticleCreate()}
           variant={AppLinkVariant.SECONDARY}
         >
           {t('create-article')}

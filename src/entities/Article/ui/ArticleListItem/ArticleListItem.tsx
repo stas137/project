@@ -5,7 +5,6 @@ import { Text } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/profile-24x24.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { Card } from '@/shared/ui/Card';
-import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
@@ -18,7 +17,7 @@ import {
 } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
@@ -39,11 +38,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   } = props;
 
   const { t } = useTranslation('article');
-  const [isHover, bindHover] = useHover();
-
-  // const onOpenArticle = useCallback(() => {
-  //   navigate(`${RoutePath.article_details}${article.id}`);
-  // }, [navigate, article.id]);
+  // const [isHover, bindHover] = useHover();
 
   const types = <Text className={cls.types} text={article.type.join(', ')} />;
   const views = (
@@ -80,7 +75,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           )}
           <div className={cls.footer}>
             <AppLink
-              to={`${RoutePath.article_details}${article.id}`}
+              to={getRouteArticleDetails(article.id)}
               target={target}
             >
               <Button onClick={handleButtonclick}>
@@ -98,7 +93,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     <AppLink
       // {...bindHover}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-      to={`${RoutePath.article_details}${article.id}`}
+      to={getRouteArticleDetails(article.id)}
       target={target}
       onClick={handleButtonclick}
     >
