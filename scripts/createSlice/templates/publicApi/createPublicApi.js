@@ -6,7 +6,7 @@ module.exports = async (layer, sliceName) => {
   const name = firstCharUpperCase(sliceName);
 
   try {
-    await fs.writeFile(resolveRoot('src', layer, sliceName, 'index.ts'), `export {
+    await fs.writeFile(resolveRoot('src', layer, sliceName, 'index.ts'), `export type {
   ${name}Schema,
 } from './model/types/${name}Schema';
 

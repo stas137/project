@@ -12,9 +12,6 @@ import {
   ArticleSortField,
   ArticleType,
   ArticleView,
-  ArticleSortSelector,
-  ArticleViewSelector,
-  ArticleTypeTabs,
 } from '@/entities/Article';
 import {
   fetchArticlesList,
@@ -27,6 +24,11 @@ import {
   getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+
 import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFilterProps {
