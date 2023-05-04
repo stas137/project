@@ -30,9 +30,9 @@ export const NotificationList = memo((props: NotificationListProps) => {
         className={classNames('', {}, [className])}
         gap="16"
       >
-        <Skeleton width="100%" border="10px" height="80px" />
-        <Skeleton width="100%" border="10px" height="80px" />
-        <Skeleton width="100%" border="10px" height="80px" />
+        <Skeleton width="100%" borderRadius="10px" height="80px" />
+        <Skeleton width="100%" borderRadius="10px" height="80px" />
+        <Skeleton width="100%" borderRadius="10px" height="80px" />
       </VStack>
     );
   }
