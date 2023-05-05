@@ -19,7 +19,7 @@ const article = {
   user: {
     id: '1',
     username: 'Ivan',
-    avatar: 'https://cspromogame.ru//storage/upload_images/avatars/3419.jpg',
+    avatar: 'https://cspromogame.ru/storage/upload_images/avatars/3419.jpg',
   },
   title: 'Javascript news news news news',
   subtitle: 'Hey hey 2023',
