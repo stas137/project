@@ -11,7 +11,6 @@ const MainPage = () => {
       <Counter />
       {/* <BugButton /> */}
       {t('main-page')}
-
     </Page>
   );
 };

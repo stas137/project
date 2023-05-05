@@ -18,9 +18,10 @@ import {
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import { getRouteArticleDetails } from '@/shared/const/router';
-import cls from './ArticleListItem.module.scss';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
+
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
   className?: string;

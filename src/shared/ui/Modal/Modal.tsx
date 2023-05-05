@@ -30,7 +30,7 @@ export const Modal = (props: ModalProps) => {
 
   const {
     isMounted,
-    isOpening,
+    // isOpening,
     isClosing,
     close,
   } = useModal({
@@ -40,17 +40,16 @@ export const Modal = (props: ModalProps) => {
   });
 
   const mods: Mods = {
-    [cls.opened]: isOpening,
+    [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
 
   if (lazy && !isMounted) {
-    return null;
+    return <div />;
   }
 
   return (
-    // <Portal element={document.getElementById('app') ?? document.body}>
-    <Portal>
+    <Portal element={document.getElementById('root') ?? document.body}>
       <div className={classNames(cls.Modal, mods, [className, 'app_modal', theme])}>
         <Overlay onClick={close} />
         <div className={cls.content}>

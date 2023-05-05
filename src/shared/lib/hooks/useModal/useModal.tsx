@@ -12,7 +12,7 @@ export function useModal({
   isOpen, animationDelay, onClose,
 }: UseModalProps) {
   const [isClosing, setIsClosing] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
+  // const [isOpening, setIsOpening] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
@@ -28,7 +28,7 @@ export function useModal({
         () => {
           onClose?.();
           setIsClosing(false);
-          setIsOpening(false);
+          // setIsOpening(false);
           setIsMounted(false);
         },
         animationDelay,
@@ -48,25 +48,25 @@ export function useModal({
     if (isOpen) {
       setIsMounted(true);
 
-      timerIsOpeningRef.current = setTimeout(
-        () => {
-          setIsOpening(true);
-        },
-        animationDelay,
-      );
-    } else if (isMounted) {
-      setIsClosing(true);
+      // timerIsOpeningRef.current = setTimeout(
+      //   () => {
+      //     setIsOpening(true);
+      //   },
+      //   animationDelay,
+      // );
+      // } else if (isMounted) {
+      //   setIsClosing(true);
 
-      timerIsOpeningRef.current = setTimeout(
-        () => {
-          setIsClosing(false);
-          setIsOpening(false);
-          setIsMounted(false);
-        },
-        animationDelay,
-      );
+    //   timerIsOpeningRef.current = setTimeout(
+    //     () => {
+    //       setIsClosing(false);
+    //       // setIsOpening(false);
+    //       setIsMounted(false);
+    //     },
+    //     animationDelay,
+    //   );
     }
-  }, [animationDelay, isMounted, isOpen]);
+  }, [animationDelay, isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -82,7 +82,7 @@ export function useModal({
 
   return {
     isMounted,
-    isOpening,
+    // isOpening,
     isClosing,
     close,
   };

@@ -84,6 +84,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   } = props;
 
   const { t } = useTranslation('article');
+
   const [selectedArticleId, setSelectedArticleId] = useState(1);
   const virtuosoGridRef = useRef<VirtuosoGridHandle>(null);
 

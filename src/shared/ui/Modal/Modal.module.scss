@@ -17,7 +17,8 @@
   border-radius: 7px;
   background: var(--bg-color);
   transition: transform 0.2s ease;
-  transform: scale(0.05);
+
+  /* transform: scale(0.05); */
   max-width: 60%;
   z-index: var(--modal-z-index);
 }
@@ -27,9 +28,9 @@
   pointer-events: auto;
   z-index: var(--modal-z-index);
 
-  .content {
+  /* .content {
     transform: scale(1);
-  }
+  } */
 }
 
 .isClosing {

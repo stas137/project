@@ -37,7 +37,8 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   }, [dispatch]);
 
   if (!authData) {
-    return null;
+    return <Avatar size={30} src="" inverted />;
+    // return null;
   }
 
   return (

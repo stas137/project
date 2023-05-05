@@ -3,6 +3,7 @@ import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 
 import { ArticleList } from './ArticleList';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'entities/Article/ArticleList',
@@ -133,27 +134,31 @@ const articles = [
 
 export const PrimaryList = Template.bind({});
 PrimaryList.args = {
+  isLoading: false,
   articles,
   view: ArticleView.LIST,
+  virtualized: false,
 };
 
-export const PrimaryTile = Template.bind({});
-PrimaryTile.args = {
-  articles,
-  view: ArticleView.TILE,
-};
+PrimaryList.decorators = [StoreDecorator({})];
 
-export const LoadingList = Template.bind({});
-LoadingList.args = {
-  isLoading: true,
-  view: ArticleView.LIST,
-};
+// export const PrimaryTile = Template.bind({});
+// PrimaryTile.args = {
+//   articles,
+//   view: ArticleView.TILE,
+// };
 
-export const LoadingTile = Template.bind({});
-LoadingTile.args = {
-  isLoading: true,
-  view: ArticleView.TILE,
-};
+// export const LoadingList = Template.bind({});
+// LoadingList.args = {
+//   isLoading: true,
+//   view: ArticleView.LIST,
+// };
+
+// export const LoadingTile = Template.bind({});
+// LoadingTile.args = {
+//   isLoading: true,
+//   view: ArticleView.TILE,
+// };
 
 // export const Dark = Template.bind({});
 // Dark.args = {
