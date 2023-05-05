@@ -7,9 +7,7 @@ const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
-    <Page
-      data-testid="MainPage"
-    >
+    <Page data-testid="MainPage">
       <Counter />
       {/* <BugButton /> */}
       {t('main-page')}
