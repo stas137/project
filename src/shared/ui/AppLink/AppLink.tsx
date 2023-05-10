@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 }
 
-export const AppLink = (props: AppLinkProps) => {
+export const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>((props, ref) => {
   const {
     to,
     className,
@@ -28,9 +28,10 @@ export const AppLink = (props: AppLinkProps) => {
     <Link
       className={classNames(cls.AppLink, {}, [className, cls[variant]])}
       to={to}
+      ref={ref}
       {...otherProps}
     >
       {children}
     </Link>
   );
-};
+});

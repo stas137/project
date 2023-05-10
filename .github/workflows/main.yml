@@ -57,7 +57,7 @@ jobs:
     concurrency: ci-${{ github.ref }}
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page-url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
         node-version: [17.x]
@@ -91,8 +91,8 @@ jobs:
           path: '.loki'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
         if: always()
+        uses: actions/deploy-pages@v1
 
   checks:
     runs-on: ubuntu-latest

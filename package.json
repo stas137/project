@@ -1,6 +1,7 @@
 {
   "name": "production-project",
   "version": "1.0.0",
+  "homepage":"https://stas137.github.io/production-project",
   "description": "",
   "main": "index.js",
   "scripts": {

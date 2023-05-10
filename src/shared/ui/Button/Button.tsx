@@ -1,4 +1,6 @@
-import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
+import {
+  ButtonHTMLAttributes, forwardRef,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -24,10 +26,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   disabled?: boolean;
   fullWidth?: boolean;
-  children?: ReactNode;
+  type?: 'button' | 'submit' | 'reset',
+  // children?: ReactNode;
 }
 
-export const Button = memo((props: ButtonProps) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     className,
     children,
@@ -36,6 +39,7 @@ export const Button = memo((props: ButtonProps) => {
     size = ButtonSize.M,
     disabled,
     fullWidth = false,
+    type = 'button',
     ...otherProps
   } = props;
 
@@ -48,8 +52,10 @@ export const Button = memo((props: ButtonProps) => {
 
   return (
     <button
-      type="button"
       className={classNames(cls.Button, mods, [className, cls[variant]])}
+      ref={ref}
+      // eslint-disable-next-line react/button-has-type
+      type={type}
       disabled={disabled}
       {...otherProps}
     >
