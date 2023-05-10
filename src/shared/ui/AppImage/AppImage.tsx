@@ -44,6 +44,10 @@ export const AppImage = memo((props: AppImageProps) => {
     return fallback;
   }
 
+  if (isLoading && !fallback) {
+    return null;
+  }
+
   if (hasError && errorFallback) {
     return errorFallback;
   }

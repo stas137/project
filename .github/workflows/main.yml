@@ -78,7 +78,7 @@ jobs:
       - name: Screenshot testing
         run: npm run test:ui:ci
         if: always()
-      - name: unit testing
+      - name: Unit testing
         run: npm run test:unit
         if: always()
       - name: Generate HTML report
@@ -113,9 +113,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install modules
         run: npm ci    
-      - name: linting typescript
+      - name: Linting typescript
         run: npm run lint:ts
         if: always()
-      - name: linting css
+      - name: Linting css
         run: npm run lint:scss
         if: always()

@@ -5,7 +5,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-// import AvatarImg from 'shared/assets/tests/avatar.jpg';
+import AvatarImg from '@/shared/assets/tests/avatar.jpg';
 import ProfilePage from './ProfilePage';
 
 export default {
@@ -29,7 +29,7 @@ Primary.decorators = [StoreDecorator({
       age: 32,
       city: 'Moscow',
       username: 'admin',
-      avatar: '',
+      avatar: AvatarImg,
       currency: Currency.EUR,
       country: Country.Russia,
     },

@@ -21,7 +21,7 @@ const articles = [
     user: {
       id: '1',
       username: 'Ivan',
-      avatar: 'https://cspromogame.ru/storage/upload_images/avatars/3419.jpg',
+      avatar: 'https://codeguida.com/media/post_title/g3033.png',
     },
     title: 'Javascript news news news news',
     subtitle: 'Hey hey 2023',
@@ -78,7 +78,7 @@ const articles = [
     user: {
       id: '1',
       username: 'Ivan',
-      avatar: 'https://cspromogame.ru/storage/upload_images/avatars/3419.jpg',
+      avatar: 'https://codeguida.com/media/post_title/g3033.png',
     },
     title: 'Javascript news news news news',
     subtitle: 'Hey hey 2023',
