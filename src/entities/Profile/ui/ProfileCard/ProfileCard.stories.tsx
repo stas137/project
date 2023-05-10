@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import AvatarImg from 'shared/assets/tests/avatar.jpg';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
-// import AvatarImg from 'shared/assets/tests/avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -25,7 +25,7 @@ Primary.args = {
     age: 32,
     city: 'Moscow',
     username: 'admin',
-    avatar: '',
+    avatar: AvatarImg,
     currency: Currency.EUR,
     country: Country.Russia,
   },
