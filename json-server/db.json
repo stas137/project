@@ -741,6 +741,15 @@
         "USER"
       ],
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+    },
+    {
+      "id": "4",
+      "username": "test",
+      "password": "test",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ],
   "article-ratings": [
