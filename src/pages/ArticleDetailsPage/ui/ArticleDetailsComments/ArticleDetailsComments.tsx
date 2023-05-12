@@ -21,6 +21,8 @@ import {
 import {
   fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { getArticleDetailsIsLoading } from '@/entities/Article';
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -36,6 +38,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
+  const isLoadingArticle = useSelector(getArticleDetailsIsLoading);
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const commentsError = useSelector(getArticleCommentsError);
@@ -53,6 +56,10 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     dispatch(fetchCommentsByArticleId(id));
     // dispatch(fetchArticleRecommendations());
   }, [dispatch, id]);
+
+  if (isLoadingArticle) {
+    return <Skeleton width="100%" height={200} />;
+  }
 
   return (
     <VStack

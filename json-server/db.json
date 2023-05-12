@@ -659,24 +659,6 @@
       "userId": "2",
       "articleId": "2",
       "id": "MWGLPmn"
-    },
-    {
-      "text": "kotlin",
-      "userId": "2",
-      "articleId": "3",
-      "id": "RTyQA3R"
-    },
-    {
-      "text": "JAVA economics",
-      "userId": "2",
-      "articleId": "3",
-      "id": "hCer64o"
-    },
-    {
-      "text": "user123",
-      "userId": "3",
-      "articleId": "3",
-      "id": "1WnS9YS"
     }
   ],
   "profile": [
@@ -711,6 +693,17 @@
       "country": "Russia",
       "city": "Tambov",
       "username": "user",
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "Test",
+      "lastname": "Testov",
+      "age": 35,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "New York",
+      "username": "test",
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ],

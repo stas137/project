@@ -32,7 +32,6 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
   }, [onChange]);
 
   return (
-
     <ListBox
       className={classNames('', {}, [className])}
       value={value}

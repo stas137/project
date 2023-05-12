@@ -36,6 +36,7 @@ export const CommentsList = memo((props: CommentListProps) => {
 
   return (
     <VStack
+      data-testid="CommentsList.Content"
       className={classNames('', {}, [className])}
       gap="16"
     >

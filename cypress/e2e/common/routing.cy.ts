@@ -1,4 +1,4 @@
-import { selectByTestId } from './helpers/selectByTestId';
+import { selectByTestId } from '../../helpers/selectByTestId';
 
 describe('template spec', () => {
   describe('User is not authorized', () => {
@@ -30,7 +30,8 @@ describe('template spec', () => {
 
     it('Articles page open', () => {
       cy.visit('/articles');
-      cy.get('[data-test-id=virtuoso-scroller]').should('exist');
+      // cy.get('[data-test-id="virtuoso-scroller"]').should('exist');
+      cy.get(selectByTestId('ArticleListItem')).should('exist');
     });
   });
 });

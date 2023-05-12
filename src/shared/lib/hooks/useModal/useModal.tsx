@@ -20,7 +20,6 @@ export function useModal({
 
   const close = useCallback(
     () => {
-      console.log('close');
       // if (onClose) {
       setIsClosing(true);
 

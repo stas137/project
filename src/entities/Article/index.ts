@@ -23,4 +23,5 @@ export {
 
 export {
   getArticleDetailsData,
+  getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';
