@@ -14,6 +14,9 @@ describe('Auth user open ArticleDetails Page', () => {
     cy.removeArticle(currentArticleId);
   });
 
+  // describe('Work with API')
+  // describe('Work with fixtures')
+
   it('ArticleDetails page is open', () => {
     cy.getByTestId('ArticleDetailsPage').should('exist');
   });
@@ -30,7 +33,8 @@ describe('Auth user open ArticleDetails Page', () => {
     cy.getByTestId('CommentCard.Content').should('have.length', 1);
   });
 
-  it('Rating for article is send', () => {
+  it('Rating for article is send (stub (fixtures))', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetailsPage').should('exist');
     cy.getByTestId('RatingCard').scrollIntoView();
     cy.setRating(5, 'feedback');

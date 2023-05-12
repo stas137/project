@@ -1,0 +1,44 @@
+{
+  "id": "3",
+  "userId": "2",
+  "title": "JAVA news 3",
+  "subtitle": "Hey hey 2023",
+  "img": "https://codeguida.com/media/post_title/g3033.png",
+  "views": 133,
+  "createdAt": "16.03.2023",
+  "type": [
+      "ECONOMICS"
+  ],
+  "blocks": [
+      {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Block title",
+          "paragraphs": [
+              "lorem1",
+              "lorem2",
+              "lorem3"
+          ]
+      },
+      {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
+      },
+      {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
+          "title": "Picture 1"
+      }
+  ],
+  "user": {
+      "id": "2",
+      "username": "manager",
+      "password": "1234",
+      "roles": [
+          "MANAGER"
+      ],
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+  }
+}
