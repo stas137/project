@@ -6,7 +6,10 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
@@ -18,9 +21,7 @@ interface AvatarDropdownProps {
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-  const {
-    className,
-  } = props;
+  const { className } = props;
 
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -37,7 +38,13 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   }, [dispatch]);
 
   if (!authData) {
-    return <Avatar size={30} src="" inverted />;
+    return (
+      <Avatar
+        size={30}
+        src=""
+        inverted
+      />
+    );
     // return null;
   }
 
@@ -45,10 +52,14 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     <Dropdown
       className={classNames('', {}, [className])}
       items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t('admin-panel'),
-          href: getRouteAdminPanel(),
-        }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t('admin-panel'),
+                href: getRouteAdminPanel(),
+              },
+            ]
+          : []),
         {
           content: t('profile'),
           href: getRouteProfile(authData.id),
@@ -59,7 +70,11 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         },
       ]}
       trigger={
-        <Avatar size={30} src={authData.avatar} inverted />
+        <Avatar
+          size={30}
+          src={authData.avatar}
+          inverted
+        />
       }
       direction="bottom left"
     />

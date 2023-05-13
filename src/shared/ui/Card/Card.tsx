@@ -5,7 +5,7 @@ import cls from './Card.module.scss';
 
 export enum CardVariant {
   NORMAL = 'normal',
-  OUTLINE = 'outline'
+  OUTLINE = 'outline',
 }
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

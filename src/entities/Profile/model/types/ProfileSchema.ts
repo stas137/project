@@ -10,5 +10,5 @@ export interface Profile {
   country?: Country;
   city?: string;
   username?: string;
-  avatar?: string
+  avatar?: string;
 }

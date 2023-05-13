@@ -1,10 +1,20 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
-  Article, ArticleView, ArticleSortField, ArticleType,
+  Article,
+  ArticleView,
+  ArticleSortField,
+  ArticleType,
 } from '@/entities/Article';
 
-import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from '@/shared/const/const';
+import {
+  COUNT_ARTICLES_LIST_VIEW,
+  COUNT_ARTICLES_TILE_VIEW,
+} from '@/shared/const/const';
 import { LOCAL_STORAGE_ARTICLES_VIEW_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types/sort';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
@@ -38,8 +48,10 @@ const articlesPageSlice = createSlice({
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;
-      state.limit = action.payload === ArticleView.LIST
-        ? COUNT_ARTICLES_LIST_VIEW : COUNT_ARTICLES_TILE_VIEW;
+      state.limit =
+        action.payload === ArticleView.LIST
+          ? COUNT_ARTICLES_LIST_VIEW
+          : COUNT_ARTICLES_TILE_VIEW;
 
       localStorage.setItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY, action.payload);
     },
@@ -59,12 +71,16 @@ const articlesPageSlice = createSlice({
       state.type = action.payload;
     },
     initState: (state) => {
-      const view = localStorage
-        .getItem(LOCAL_STORAGE_ARTICLES_VIEW_KEY) as ArticleView || ArticleView.TILE;
+      const view =
+        (localStorage.getItem(
+          LOCAL_STORAGE_ARTICLES_VIEW_KEY,
+        ) as ArticleView) || ArticleView.TILE;
 
       state.view = view;
-      state.limit = view === ArticleView.LIST
-        ? COUNT_ARTICLES_LIST_VIEW : COUNT_ARTICLES_TILE_VIEW;
+      state.limit =
+        view === ArticleView.LIST
+          ? COUNT_ARTICLES_LIST_VIEW
+          : COUNT_ARTICLES_TILE_VIEW;
 
       state._inited = true;
     },

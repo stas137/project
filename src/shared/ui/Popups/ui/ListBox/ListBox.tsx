@@ -1,6 +1,4 @@
-import {
-  memo, ReactNode, Fragment,
-} from 'react';
+import { memo, ReactNode, Fragment } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
@@ -43,14 +41,11 @@ export const ListBox = memo((props: ListBoxProps) => {
 
   return (
     <HStack>
-      {
-        label
-        && (
-          <span className={classNames('', { [cls.readonly]: readonly })}>
-            {`${label}>`}
-          </span>
-        )
-      }
+      {label && (
+        <span
+          className={classNames('', { [cls.readonly]: readonly })}
+        >{`${label}>`}</span>
+      )}
 
       <HListBox
         className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
@@ -59,10 +54,7 @@ export const ListBox = memo((props: ListBoxProps) => {
         disabled={readonly}
         onChange={onChange}
       >
-
-        <HListBox.Button
-          className={cls.trigger}
-        >
+        <HListBox.Button className={cls.trigger}>
           {value || defaultValue}
         </HListBox.Button>
         <HListBox.Options
@@ -77,12 +69,10 @@ export const ListBox = memo((props: ListBoxProps) => {
             >
               {({ active, selected, disabled }) => (
                 <li
-                  className={
-                    classNames(popupCls.item, {
-                      [popupCls.active]: active,
-                      [popupCls.disabled]: disabled,
-                    })
-                  }
+                  className={classNames(popupCls.item, {
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: disabled,
+                  })}
                 >
                   {selected && '!!'}
                   {item.content}

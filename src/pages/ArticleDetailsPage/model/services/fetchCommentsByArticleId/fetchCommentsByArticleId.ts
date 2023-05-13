@@ -16,15 +16,12 @@ export const fetchCommentsByArticleId = createAsyncThunk<
     }
 
     try {
-      const response = await extra.api.get<Comment[]>(
-        '/comments',
-        {
-          params: {
-            articleId,
-            _expand: 'user',
-          },
+      const response = await extra.api.get<Comment[]>('/comments', {
+        params: {
+          articleId,
+          _expand: 'user',
         },
-      );
+      });
 
       if (!response.data) {
         throw new Error();

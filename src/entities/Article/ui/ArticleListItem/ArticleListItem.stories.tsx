@@ -12,7 +12,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+  <ArticleListItem {...args} />
+);
 
 const article = {
   id: '1',
@@ -26,22 +28,13 @@ const article = {
   img: 'https://codeguida.com/media/post_title/g3033.png',
   views: 1020,
   createdAt: '26.02.2023',
-  type: [
-    'IT',
-    'SCIENCE',
-    'POLITICS',
-    'ECONOMICS',
-  ],
+  type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
   blocks: [
     {
       id: '1',
       type: 'TEXT',
       title: 'Block title',
-      paragraphs: [
-        'lorem1',
-        'lorem2',
-        'lorem3',
-      ],
+      paragraphs: ['lorem1', 'lorem2', 'lorem3'],
     },
     {
       id: '4',

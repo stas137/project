@@ -16,7 +16,9 @@ interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-export const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = ({
+  className,
+}: EditableProfileCardHeaderProps) => {
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
@@ -48,34 +50,32 @@ export const EditableProfileCardHeader = ({ className }: EditableProfileCardHead
 
       {canEdit && (
         <div>
-          {
-            readonly ? (
+          {readonly ? (
+            <Button
+              variant={ButtonVariant.OUTLINE}
+              onClick={onEdit}
+              data-testid="EditableProfileCardHeader.EditButton"
+            >
+              {t('edit')}
+            </Button>
+          ) : (
+            <HStack gap="8">
               <Button
                 variant={ButtonVariant.OUTLINE}
-                onClick={onEdit}
-                data-testid="EditableProfileCardHeader.EditButton"
+                onClick={onSaveEdit}
+                data-testid="EditableProfileCardHeader.SaveButton"
               >
-                {t('edit')}
+                {t('save')}
               </Button>
-            ) : (
-              <HStack gap="8">
-                <Button
-                  variant={ButtonVariant.OUTLINE}
-                  onClick={onSaveEdit}
-                  data-testid="EditableProfileCardHeader.SaveButton"
-                >
-                  {t('save')}
-                </Button>
-                <Button
-                  variant={ButtonVariant.OUTLINE_RED}
-                  onClick={onCancelEdit}
-                  data-testid="EditableProfileCardHeader.CancelButton"
-                >
-                  {t('cancel')}
-                </Button>
-              </HStack>
-            )
-          }
+              <Button
+                variant={ButtonVariant.OUTLINE_RED}
+                onClick={onCancelEdit}
+                data-testid="EditableProfileCardHeader.CancelButton"
+              >
+                {t('cancel')}
+              </Button>
+            </HStack>
+          )}
         </div>
       )}
     </HStack>

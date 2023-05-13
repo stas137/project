@@ -8,11 +8,7 @@ export const Counter = () => {
 
   const counterValue = useCounterValue();
 
-  const {
-    increment,
-    decrement,
-    add,
-  } = useCounterActions();
+  const { increment, decrement, add } = useCounterActions();
 
   // const increment = () => { dispatch(counterActions.increment()); };
   // const decrement = () => { dispatch(counterActions.decrement()); };

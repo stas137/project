@@ -13,14 +13,14 @@ export default {
   },
 } as ComponentMeta<typeof ArticlesPageFilter>;
 
-const Template: ComponentStory<typeof ArticlesPageFilter> = () => <ArticlesPageFilter />;
+const Template: ComponentStory<typeof ArticlesPageFilter> = () => (
+  <ArticlesPageFilter />
+);
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
 Primary.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
-Dark.args = {
-};
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

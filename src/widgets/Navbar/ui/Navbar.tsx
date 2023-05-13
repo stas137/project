@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import {
-  memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonVariant } from '@/shared/ui/Button';
@@ -74,7 +72,12 @@ export const Navbar = memo((props: NavbarProps) => {
       >
         {t('login')}
       </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+      {isAuthModal && (
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={onCloseModal}
+        />
+      )}
     </header>
   );
 });

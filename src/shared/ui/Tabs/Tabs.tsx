@@ -16,12 +16,7 @@ interface TabsProps<T extends string> {
 }
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
-  const {
-    className,
-    tabs,
-    value,
-    onTabClick,
-  } = props;
+  const { className, tabs, value, onTabClick } = props;
 
   const clickHandle = useCallback(
     (tab: TabItem<T>) => () => onTabClick(tab),
@@ -34,7 +29,9 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
         <Card
           className={cls.tab}
           key={tab.value}
-          variant={value === tab.value ? CardVariant.NORMAL : CardVariant.OUTLINE}
+          variant={
+            value === tab.value ? CardVariant.NORMAL : CardVariant.OUTLINE
+          }
           onClick={clickHandle(tab)}
         >
           {tab.content}

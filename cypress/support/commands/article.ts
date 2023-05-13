@@ -7,19 +7,13 @@ const defaultArticle = {
   img: 'https://codeguida.com/media/post_title/g3033.png',
   views: 1020,
   createdAt: '10.10.2023',
-  type: [
-    'IT',
-  ],
+  type: ['IT'],
   blocks: [
     {
       id: '1',
       type: 'TEXT',
       title: 'Block title',
-      paragraphs: [
-        'lorem1',
-        'lorem2',
-        'lorem3',
-      ],
+      paragraphs: ['lorem1', 'lorem2', 'lorem3'],
     },
     {
       id: '4',
@@ -36,14 +30,16 @@ const defaultArticle = {
 };
 
 export const createArticle = (article?: Article) => {
-  return cy.request({
-    method: 'POST',
-    url: 'http://localhost:8000/articles',
-    headers: {
-      Authorization: 'ok',
-    },
-    body: article ?? defaultArticle,
-  }).then((response) => response.body);
+  return cy
+    .request({
+      method: 'POST',
+      url: 'http://localhost:8000/articles',
+      headers: {
+        Authorization: 'ok',
+      },
+      body: article ?? defaultArticle,
+    })
+    .then((response) => response.body);
 };
 
 export const removeArticle = (articleId: string) => {

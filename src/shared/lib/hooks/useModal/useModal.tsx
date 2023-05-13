@@ -1,5 +1,9 @@
 import {
-  MutableRefObject, useCallback, useEffect, useRef, useState,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 
 interface UseModalProps {
@@ -8,40 +12,40 @@ interface UseModalProps {
   onClose?: () => void;
 }
 
-export function useModal({
-  isOpen, animationDelay, onClose,
-}: UseModalProps) {
+export function useModal({ isOpen, animationDelay, onClose }: UseModalProps) {
   const [isClosing, setIsClosing] = useState(false);
   // const [isOpening, setIsOpening] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-  const timerIsOpeningRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const timerIsOpeningRef = useRef() as MutableRefObject<
+    ReturnType<typeof setTimeout>
+  >;
 
   const close = useCallback(
     () => {
       // if (onClose) {
       setIsClosing(true);
 
-      timerRef.current = setTimeout(
-        () => {
-          onClose?.();
-          setIsClosing(false);
-          // setIsOpening(false);
-          setIsMounted(false);
-        },
-        animationDelay,
-      );
+      timerRef.current = setTimeout(() => {
+        onClose?.();
+        setIsClosing(false);
+        // setIsOpening(false);
+        setIsMounted(false);
+      }, animationDelay);
     },
     // }
     [animationDelay, onClose],
   );
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      close();
-    }
-  }, [close]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        close();
+      }
+    },
+    [close],
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -56,14 +60,14 @@ export function useModal({
       // } else if (isMounted) {
       //   setIsClosing(true);
 
-    //   timerIsOpeningRef.current = setTimeout(
-    //     () => {
-    //       setIsClosing(false);
-    //       // setIsOpening(false);
-    //       setIsMounted(false);
-    //     },
-    //     animationDelay,
-    //   );
+      //   timerIsOpeningRef.current = setTimeout(
+      //     () => {
+      //       setIsClosing(false);
+      //       // setIsOpening(false);
+      //       setIsMounted(false);
+      //     },
+      //     animationDelay,
+      //   );
     }
   }, [animationDelay, isOpen]);
 

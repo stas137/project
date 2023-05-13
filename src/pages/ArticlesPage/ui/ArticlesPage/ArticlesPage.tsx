@@ -10,14 +10,15 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
-import {
-  fetchNextArticlesList,
-} from '../../model/services/fetchNextArticlesList/fetchNextArticlesList';
+import { fetchNextArticlesList } from '../../model/services/fetchNextArticlesList/fetchNextArticlesList';
 import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { articlesPageReducer, getArticlesPage } from '../../model/slice/articlesPageSlice';
+import {
+  articlesPageReducer,
+  getArticlesPage,
+} from '../../model/slice/articlesPageSlice';
 
 import cls from './ArticlesPage.module.scss';
 
@@ -60,7 +61,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         onLoadNextPart={onLoadNextPart}
       />
     </DynamicModuleLoader>
-
   );
 };
 

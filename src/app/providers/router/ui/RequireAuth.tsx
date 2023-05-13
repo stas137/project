@@ -10,10 +10,7 @@ interface RequireAuthProps {
 }
 
 export function RequireAuth(props: RequireAuthProps) {
-  const {
-    children,
-    roles,
-  } = props;
+  const { children, roles } = props;
 
   const auth = useSelector(getUserAuthData);
   const userRoles = useSelector(getUserRoles);
@@ -32,11 +29,23 @@ export function RequireAuth(props: RequireAuthProps) {
     // trying to go to when they were redirected. This allows us to send them
     // along to that page after they login, which is a nicer user experience
     // than dropping them off on the home page.
-    return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
+    return (
+      <Navigate
+        to={getRouteMain()}
+        state={{ from: location }}
+        replace
+      />
+    );
   }
 
   if (!hasRequireRoles) {
-    return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+    return (
+      <Navigate
+        to={getRouteForbidden()}
+        state={{ from: location }}
+        replace
+      />
+    );
   }
 
   return children;

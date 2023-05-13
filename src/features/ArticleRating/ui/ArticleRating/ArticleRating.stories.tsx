@@ -13,20 +13,24 @@ export default {
   decorators: [withMock],
 } as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
+const Template: ComponentStory<typeof ArticleRating> = (args) => (
+  <ArticleRating {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
   articleId: '1',
 };
-Primary.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: 'admin',
+Primary.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin',
+      },
     },
-  },
-})];
+  }),
+];
 Primary.parameters = {
   mockData: [
     {
@@ -46,14 +50,16 @@ export const WithoutRate = Template.bind({});
 WithoutRate.args = {
   articleId: '1',
 };
-WithoutRate.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: 'admin',
+WithoutRate.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin',
+      },
     },
-  },
-})];
+  }),
+];
 WithoutRate.parameters = {
   mockData: [
     {

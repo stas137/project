@@ -6,13 +6,13 @@ describe('getProfileValidateErrors.test', () => {
   it('should return profile validateErrors', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
-        validateErrors: [
-          ValidateProfileError.SERVER_ERROR,
-        ],
+        validateErrors: [ValidateProfileError.SERVER_ERROR],
       },
     };
 
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual([ValidateProfileError.SERVER_ERROR]);
+    expect(getProfileValidateErrors(state as StateSchema)).toEqual([
+      ValidateProfileError.SERVER_ERROR,
+    ]);
   });
 
   it('should work with empty state', () => {

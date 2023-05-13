@@ -11,13 +11,7 @@ interface ModalWithoutPortalProps {
 const ANIMATION_DELAY = 100;
 
 export const ModalWithoutPortal = (props: ModalWithoutPortalProps) => {
-  const {
-    className,
-    children,
-    isOpen,
-    lazy = false,
-    onClose,
-  } = props;
+  const { className, children, isOpen, lazy = false, onClose } = props;
 
   // const { theme } = useTheme();
 

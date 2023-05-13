@@ -10,40 +10,40 @@ interface ArticleRecommendationListProps {
   className?: string;
 }
 
-export const ArticleRecommendationList = memo((props: ArticleRecommendationListProps) => {
-  const {
-    className,
-  } = props;
+export const ArticleRecommendationList = memo(
+  (props: ArticleRecommendationListProps) => {
+    const { className } = props;
 
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  const {
-    data: recommendations,
-    isLoading: recommendationsIsLoading,
-    error: recommendationsError,
-  } = useArticleRecommendationList(3);
+    const {
+      data: recommendations,
+      isLoading: recommendationsIsLoading,
+      error: recommendationsError,
+    } = useArticleRecommendationList(3);
 
-  if (recommendationsIsLoading || recommendationsError || !recommendations) {
-    return null;
-  }
+    if (recommendationsIsLoading || recommendationsError || !recommendations) {
+      return null;
+    }
 
-  return (
-    <VStack
-      data-testid="ArticleRecommendationList"
-      className={classNames('', {}, [className])}
-      gap="8"
-    >
-      <Text
-        // className={cls.recommendationTitle}
-        title={t('recommendations')}
-      />
-      <ArticleList
-        // className={cls.recommendations}
-        articles={recommendations}
-        isLoading={recommendationsIsLoading}
-        target="_blank"
-        virtualized={false}
-      />
-    </VStack>
-  );
-});
+    return (
+      <VStack
+        data-testid="ArticleRecommendationList"
+        className={classNames('', {}, [className])}
+        gap="8"
+      >
+        <Text
+          // className={cls.recommendationTitle}
+          title={t('recommendations')}
+        />
+        <ArticleList
+          // className={cls.recommendations}
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          target="_blank"
+          virtualized={false}
+        />
+      </VStack>
+    );
+  },
+);

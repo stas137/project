@@ -1,9 +1,15 @@
 import {
-  ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState,
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
 } from 'react';
 
-type SpringType = typeof import('@react-spring/web')
-type GestureType = typeof import('@use-gesture/react')
+type SpringType = typeof import('@react-spring/web');
+type GestureType = typeof import('@use-gesture/react');
 
 interface AnimationContextPayload {
   Spring?: SpringType;
@@ -24,7 +30,7 @@ const getAsyncAnimationModules = () => {
   ]);
 };
 
-export const AnimationProvider = ({ children }: {children: ReactNode}) => {
+export const AnimationProvider = ({ children }: { children: ReactNode }) => {
   const SpringRef = useRef<SpringType>();
   const GestureRef = useRef<GestureType>();
 
@@ -39,11 +45,14 @@ export const AnimationProvider = ({ children }: {children: ReactNode}) => {
     });
   }, []);
 
-  const value = useMemo(() => ({
-    Spring: SpringRef.current,
-    Gesture: GestureRef.current,
-    isLoaded,
-  }), [isLoaded]);
+  const value = useMemo(
+    () => ({
+      Spring: SpringRef.current,
+      Gesture: GestureRef.current,
+      isLoaded,
+    }),
+    [isLoaded],
+  );
 
   return (
     <AnimationContext.Provider value={value}>

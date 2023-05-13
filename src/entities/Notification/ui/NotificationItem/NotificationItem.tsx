@@ -14,10 +14,7 @@ interface NotificationItemProps {
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-  const {
-    className,
-    item,
-  } = props;
+  const { className, item } = props;
 
   const { t } = useTranslation();
 
@@ -26,7 +23,10 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
       className={classNames(cls.NotificationItem, {}, [className])}
       variant={CardVariant.OUTLINE}
     >
-      <Text title={item.title} text={item.description} />
+      <Text
+        title={item.title}
+        text={item.description}
+      />
     </Card>
   );
 

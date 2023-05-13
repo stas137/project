@@ -10,7 +10,9 @@ export default {
   },
 } as ComponentMeta<typeof CommentsList>;
 
-const Template: ComponentStory<typeof CommentsList> = (args) => <CommentsList {...args} />;
+const Template: ComponentStory<typeof CommentsList> = (args) => (
+  <CommentsList {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

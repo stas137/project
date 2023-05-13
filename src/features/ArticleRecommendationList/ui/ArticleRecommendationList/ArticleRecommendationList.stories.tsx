@@ -31,7 +31,9 @@ export default {
   decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecommendationList>;
 
-const Template: ComponentStory<typeof ArticleRecommendationList> = (args) => <ArticleRecommendationList {...args} />;
+const Template: ComponentStory<typeof ArticleRecommendationList> = (args) => (
+  <ArticleRecommendationList {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

@@ -24,22 +24,27 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const PrimaryAuth = Template.bind({});
 PrimaryAuth.args = {};
-PrimaryAuth.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: '',
+PrimaryAuth.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: '',
+      },
     },
-  },
-})];
+  }),
+];
 
 export const DarkAuth = Template.bind({});
 DarkAuth.args = {};
-DarkAuth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: '',
+DarkAuth.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: '',
+      },
     },
-  },
-})];
+  }),
+];

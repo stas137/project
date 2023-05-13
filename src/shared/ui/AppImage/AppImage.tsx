@@ -1,5 +1,9 @@
 import {
-  ImgHTMLAttributes, ReactElement, memo, useLayoutEffect, useState,
+  ImgHTMLAttributes,
+  ReactElement,
+  memo,
+  useLayoutEffect,
+  useState,
 } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -53,6 +57,11 @@ export const AppImage = memo((props: AppImageProps) => {
   }
 
   return (
-    <img className={classNames('', {}, [className])} src={src} alt={alt} {...otherProps} />
+    <img
+      className={classNames('', {}, [className])}
+      src={src}
+      alt={alt}
+      {...otherProps}
+    />
   );
 });

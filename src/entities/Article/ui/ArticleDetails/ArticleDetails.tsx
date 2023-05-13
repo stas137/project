@@ -13,12 +13,8 @@ import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/profile-24x24.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import {
-  ArticleBlock,
-} from '../../model/types/article';
-import {
-  ArticleBlockType,
-} from '../../model/consts/consts';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/consts/consts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -26,15 +22,9 @@ import {
 } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import {
-  ArticleCodeBlockComponent,
-} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import {
-  ArticleImageBlockComponent,
-} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import {
-  ArticleTextBlockComponent,
-} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 import cls from './ArticleDetails.module.scss';
 
@@ -48,10 +38,7 @@ const initialReducers: Reducers = {
 };
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-  const {
-    className,
-    articleId,
-  } = props;
+  const { className, articleId } = props;
 
   let content;
 
@@ -64,32 +51,32 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.CODE:
-      return (
-        <ArticleCodeBlockComponent
-          key={block.id}
-          className={cls.block}
-          block={block}
-        />
-      );
-    case ArticleBlockType.IMAGE:
-      return (
-        <ArticleImageBlockComponent
-          key={block.id}
-          className={cls.block}
-          block={block}
-        />
-      );
-    case ArticleBlockType.TEXT:
-      return (
-        <ArticleTextBlockComponent
-          key={block.id}
-          className={cls.block}
-          block={block}
-        />
-      );
-    default:
-      return null;
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            className={cls.block}
+            block={block}
+          />
+        );
+      default:
+        return null;
     }
   }, []);
 
@@ -102,11 +89,28 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={125} height={125} borderRadius="50%" />
-        <Skeleton width={300} height={32} />
-        <Skeleton width={600} height={24} />
-        <Skeleton width="100%" height={200} />
-        <Skeleton width="100%" height={200} />
+        <Skeleton
+          className={cls.avatar}
+          width={125}
+          height={125}
+          borderRadius="50%"
+        />
+        <Skeleton
+          width={300}
+          height={32}
+        />
+        <Skeleton
+          width={600}
+          height={24}
+        />
+        <Skeleton
+          width="100%"
+          height={200}
+        />
+        <Skeleton
+          width="100%"
+          height={200}
+        />
       </>
     );
   } else if (error) {
@@ -119,9 +123,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <HStack
-          justify="center"
-        >
+        <HStack justify="center">
           <Avatar
             size={125}
             src={article?.img}
@@ -129,9 +131,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           />
         </HStack>
 
-        <VStack
-          gap="4"
-        >
+        <VStack gap="4">
           <Text
             title={article?.title}
             text={article?.subtitle}
@@ -147,7 +147,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             <Icon Svg={EyeIcon} />
             <Text text={article?.createdAt} />
           </HStack>
-
         </VStack>
 
         {article?.blocks.map(renderBlock)}

@@ -9,7 +9,7 @@ import {
 
 export type Reducers = {
   [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
-}
+};
 
 interface DynamicModuleLoaderProps {
   reducers: Reducers;
@@ -18,11 +18,7 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-  const {
-    reducers,
-    removeAfterUnmount = true,
-    children,
-  } = props;
+  const { reducers, removeAfterUnmount = true, children } = props;
 
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useDispatch();
@@ -52,8 +48,6 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
   return (
     // eslint-disable-next-line
-    <>
-      { children }
-    </>
+    <>{children}</>
   );
 };

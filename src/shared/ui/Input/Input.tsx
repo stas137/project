@@ -1,5 +1,9 @@
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes,
+  memo,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
@@ -72,13 +76,10 @@ export const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && (
-        <div className={cls.placeholder}>
-          {`${placeholder}>`}
-        </div>
+        <div className={cls.placeholder}>{`${placeholder}>`}</div>
       )}
 
       <div className={cls.caretWrapper}>
-
         <input
           ref={inputRef}
           type={type}
@@ -98,7 +99,6 @@ export const Input = memo((props: InputProps) => {
             style={{ left: caretPosition * CARET_OFFSET }}
           />
         )}
-
       </div>
     </div>
   );

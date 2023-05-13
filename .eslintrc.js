@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
+    'prettier',
     // 'standard-with-typescript'
   ],
   parser: '@typescript-eslint/parser',
@@ -29,12 +30,6 @@ module.exports = {
   ],
   rules: {
     'linebreak-style': 0,
-    indent: ['error', 2],
-    'react/jsx-indent': [
-      'error',
-      2,
-      { checkAttributes: true, indentLogicalExpressions: true },
-    ],
     'react/jsx-indent-props': ['error', 2],
     'react/jsx-filename-extension': [
       'error',
@@ -71,7 +66,6 @@ module.exports = {
         ],
       },
     ],
-    'max-len': ['warn', { ignoreComments: true, code: 100 }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -84,7 +78,11 @@ module.exports = {
       'error',
       {
         alias: '@',
-        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.stories.*',
+          '**/StoreDecorator.tsx',
+        ],
       },
     ],
     'project-path-checker-plugin/layer-imports': [

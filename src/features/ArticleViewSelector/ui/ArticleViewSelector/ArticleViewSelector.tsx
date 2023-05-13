@@ -28,11 +28,7 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const {
-    className,
-    view,
-    onViewClick,
-  } = props;
+  const { className, view, onViewClick } = props;
 
   const { t } = useTranslation();
 

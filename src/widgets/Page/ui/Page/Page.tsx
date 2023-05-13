@@ -1,6 +1,4 @@
-import {
-  memo, MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getScrollSaveByPath, scrollSaveActions } from '@/features/ScrollSave';
@@ -22,11 +20,7 @@ interface PageProps extends TestProps {
 export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
-  const {
-    className,
-    children,
-    onScrollEnd,
-  } = props;
+  const { className, children, onScrollEnd } = props;
 
   const dispatch = useAppDispatch();
   const location = useLocation();
@@ -34,8 +28,8 @@ export const Page = memo((props: PageProps) => {
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-  const scrollPosition = useSelector(
-    (state: StateSchema) => getScrollSaveByPath(state, location.pathname),
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getScrollSaveByPath(state, location.pathname),
   );
 
   useInfiniteScroll({
@@ -49,12 +43,12 @@ export const Page = memo((props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition(
-      {
+    dispatch(
+      scrollSaveActions.setScrollPosition({
         path: location.pathname,
         position: e.currentTarget.scrollTop,
-      },
-    ));
+      }),
+    );
   }, 500);
 
   return (
@@ -67,13 +61,12 @@ export const Page = memo((props: PageProps) => {
     >
       {children}
 
-      { onScrollEnd && (
+      {onScrollEnd && (
         <div
           className={cls.trigger}
           ref={triggerRef}
         />
       )}
-
     </main>
   );
 });

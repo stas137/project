@@ -1,5 +1,9 @@
 import {
-  HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState,
+  HTMLAttributeAnchorTarget,
+  memo,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -14,7 +18,10 @@ import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorag
 
 // eslint-disable-next-line project-path-checker-plugin/layer-imports
 import { ArticlesPageFilter } from '@/pages/ArticlesPage';
-import { COUNT_ARTICLES_LIST_VIEW, COUNT_ARTICLES_TILE_VIEW } from '@/shared/const/const';
+import {
+  COUNT_ARTICLES_LIST_VIEW,
+  COUNT_ARTICLES_TILE_VIEW,
+} from '@/shared/const/const';
 import { HStack } from '@/shared/ui/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
@@ -33,34 +40,31 @@ interface ArticleListProps {
   onLoadNextPart?: () => void;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(
-  view === ArticleView.LIST
-    ? COUNT_ARTICLES_LIST_VIEW
-    : COUNT_ARTICLES_TILE_VIEW,
-)
-  .fill(0)
-  .map((_, index) => (
-    <ArticleListItemSkeleton
-      className={cls.card}
-      key={`${index}-skeleton`}
-      view={view}
-    />
-  ));
+const getSkeletons = (view: ArticleView) =>
+  new Array(
+    view === ArticleView.LIST
+      ? COUNT_ARTICLES_LIST_VIEW
+      : COUNT_ARTICLES_TILE_VIEW,
+  )
+    .fill(0)
+    .map((_, index) => (
+      <ArticleListItemSkeleton
+        className={cls.card}
+        key={`${index}-skeleton`}
+        view={view}
+      />
+    ));
 
 const Header = () => <ArticlesPageFilter />;
 const Footer = (isLoading: boolean | undefined, view: ArticleView) => () => {
   if (isLoading) {
-    return (
-      <div className={cls.skeleton}>
-        {getSkeletons(view)}
-      </div>
-    );
+    return <div className={cls.skeleton}>{getSkeletons(view)}</div>;
   }
 
   return null;
 };
 
-const ItemContainerComp = (props : GridScrollSeekPlaceholderProps) => {
+const ItemContainerComp = (props: GridScrollSeekPlaceholderProps) => {
   const { index } = props;
 
   return (
@@ -90,10 +94,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   const isList = view === ArticleView.LIST;
   const itemsPerRow = isList ? 1 : 3;
-  const rowCount = isList ? articles.length : Math.ceil(articles.length / itemsPerRow);
+  const rowCount = isList
+    ? articles.length
+    : Math.ceil(articles.length / itemsPerRow);
 
   useEffect(() => {
-    const currentArticleId = localStorage.getItem(LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX) || 0;
+    const currentArticleId =
+      localStorage.getItem(LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX) || 0;
 
     setSelectedArticleId(+currentArticleId);
 
@@ -147,9 +154,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   if (!virtualized) {
     return (
-      <HStack
-        gap="16"
-      >
+      <HStack gap="16">
         {articles.map((article) => (
           <ArticleListItem
             key={article.id}
@@ -165,7 +170,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      { view === ArticleView.LIST ? (
+      {view === ArticleView.LIST ? (
         <Virtuoso
           style={{ height: '100%' }}
           data={articles}

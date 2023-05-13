@@ -36,13 +36,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginIsLoading);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -57,10 +63,12 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('form-auth')} />
 
-        {
-          error
-          && (<Text text={`${error}: ${t('incorrect-credentials')}`} variant={TextVariant.ERROR} />)
-        }
+        {error && (
+          <Text
+            text={`${error}: ${t('incorrect-credentials')}`}
+            variant={TextVariant.ERROR}
+          />
+        )}
 
         <Input
           placeholder={t('username')}
@@ -87,7 +95,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         </Button>
       </div>
     </DynamicModuleLoader>
-
   );
 });
 

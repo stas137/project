@@ -16,12 +16,10 @@ export default {
 const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
 Primary.decorators = [StoreDecorator({})];
 // Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark = Template.bind({});
-Dark.args = {
-};
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

@@ -15,7 +15,12 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: <Text title="Title" text="text text" />,
+  children: (
+    <Text
+      title="Title"
+      text="text text"
+    />
+  ),
 };
 // Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
 

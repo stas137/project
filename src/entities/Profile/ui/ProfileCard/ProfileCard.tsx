@@ -81,11 +81,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
       className={classNames(cls.ProfileCard, mods, [className])}
       gap="16"
     >
-
       {data?.avatar && (
-        <HStack
-          justify="center"
-        >
+        <HStack justify="center">
           <Avatar
             src={data?.avatar}
             alt="avatar"

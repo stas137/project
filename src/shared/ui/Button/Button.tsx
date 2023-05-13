@@ -1,6 +1,4 @@
-import {
-  ButtonHTMLAttributes, forwardRef,
-} from 'react';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -26,40 +24,42 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   disabled?: boolean;
   fullWidth?: boolean;
-  type?: 'button' | 'submit' | 'reset',
+  type?: 'button' | 'submit' | 'reset';
   // children?: ReactNode;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const {
-    className,
-    children,
-    variant = ButtonVariant.OUTLINE,
-    square,
-    size = ButtonSize.M,
-    disabled,
-    fullWidth = false,
-    type = 'button',
-    ...otherProps
-  } = props;
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    const {
+      className,
+      children,
+      variant = ButtonVariant.OUTLINE,
+      square,
+      size = ButtonSize.M,
+      disabled,
+      fullWidth = false,
+      type = 'button',
+      ...otherProps
+    } = props;
 
-  const mods: Mods = {
-    [cls.square]: square,
-    [cls[size]]: true,
-    [cls.disabled]: disabled,
-    [cls.fullWidth]: fullWidth,
-  };
+    const mods: Mods = {
+      [cls.square]: square,
+      [cls[size]]: true,
+      [cls.disabled]: disabled,
+      [cls.fullWidth]: fullWidth,
+    };
 
-  return (
-    <button
-      className={classNames(cls.Button, mods, [className, cls[variant]])}
-      ref={ref}
-      // eslint-disable-next-line react/button-has-type
-      type={type}
-      disabled={disabled}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  );
-});
+    return (
+      <button
+        className={classNames(cls.Button, mods, [className, cls[variant]])}
+        ref={ref}
+        // eslint-disable-next-line react/button-has-type
+        type={type}
+        disabled={disabled}
+        {...otherProps}
+      >
+        {children}
+      </button>
+    );
+  },
+);

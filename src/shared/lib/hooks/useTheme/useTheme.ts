@@ -16,18 +16,18 @@ export function useTheme(): UseThemeReturn {
     let newTheme: Theme;
 
     switch (theme) {
-    case Theme.DARK:
-      newTheme = Theme.LIGHT;
-      break;
-    case Theme.LIGHT:
-      newTheme = Theme.ORANGE;
-      break;
-    case Theme.ORANGE:
-      newTheme = Theme.DARK;
-      break;
-    default:
-      newTheme = Theme.LIGHT;
-      break;
+      case Theme.DARK:
+        newTheme = Theme.LIGHT;
+        break;
+      case Theme.LIGHT:
+        newTheme = Theme.ORANGE;
+        break;
+      case Theme.ORANGE:
+        newTheme = Theme.DARK;
+        break;
+      default:
+        newTheme = Theme.LIGHT;
+        break;
     }
 
     // document.body.className = newTheme;

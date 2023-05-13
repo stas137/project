@@ -12,7 +12,9 @@ export default {
   },
 } as ComponentMeta<typeof ModalWithoutPortal>;
 
-const Template: ComponentStory<typeof ModalWithoutPortal> = (args) => <ModalWithoutPortal {...args} />;
+const Template: ComponentStory<typeof ModalWithoutPortal> = (args) => (
+  <ModalWithoutPortal {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

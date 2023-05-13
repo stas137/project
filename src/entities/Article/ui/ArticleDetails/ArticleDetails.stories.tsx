@@ -13,7 +13,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+  <ArticleDetails {...args} />
+);
 
 const article: Article = {
   id: '1',
@@ -32,11 +34,7 @@ const article: Article = {
       id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Block title',
-      paragraphs: [
-        'lorem1',
-        'lorem2',
-        'lorem3',
-      ],
+      paragraphs: ['lorem1', 'lorem2', 'lorem3'],
     },
     {
       id: '4',
@@ -70,30 +68,36 @@ const article: Article = {
 export const Primary = Template.bind({});
 Primary.args = {};
 
-Primary.decorators = [StoreDecorator({
-  articleDetails: {
-    isLoading: false,
-    data: article,
-  },
-})];
+Primary.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      isLoading: false,
+      data: article,
+    },
+  }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
 
-Loading.decorators = [StoreDecorator({
-  articleDetails: {
-    isLoading: true,
-  },
-})];
+Loading.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      isLoading: true,
+    },
+  }),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
 
-Error.decorators = [StoreDecorator({
-  articleDetails: {
-    error: 'Error',
-  },
-})];
+Error.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      error: 'Error',
+    },
+  }),
+];
 
 // export const PrimaryDark = Template.bind({});
 // PrimaryDark.args = {

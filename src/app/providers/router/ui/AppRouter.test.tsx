@@ -2,7 +2,10 @@ import { screen } from '@testing-library/react';
 import { ComponentRender } from '@/shared/config/tests/ComponentRender/ComponentRender';
 import { AppRouter } from './AppRouter';
 import {
-  getRouteAbout, getRouteAdminPanel, getRouteArticles, getRouteProfile,
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteArticles,
+  getRouteProfile,
 } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
 

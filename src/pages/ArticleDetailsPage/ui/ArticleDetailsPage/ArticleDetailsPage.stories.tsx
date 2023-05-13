@@ -14,7 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = () => (
+  <ArticleDetailsPage />
+);
 
 const article: Article = {
   id: '1',
@@ -33,11 +35,7 @@ const article: Article = {
       id: '1',
       type: ArticleBlockType.TEXT,
       title: 'Block title',
-      paragraphs: [
-        'lorem1',
-        'lorem2',
-        'lorem3',
-      ],
+      paragraphs: ['lorem1', 'lorem2', 'lorem3'],
     },
     {
       id: '4',
@@ -69,16 +67,16 @@ const article: Article = {
 };
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
-Primary.decorators = [StoreDecorator({
-  articleDetails: {
-    isLoading: false,
-    data: article,
-  },
-})];
+Primary.args = {};
+Primary.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      isLoading: false,
+      data: article,
+    },
+  }),
+];
 
 export const Dark = Template.bind({});
-Dark.args = {
-};
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

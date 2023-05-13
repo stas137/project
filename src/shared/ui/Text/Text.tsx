@@ -5,13 +5,13 @@ import cls from './Text.module.scss';
 export enum TextVariant {
   PRIMARY = 'primary',
   INVERTED = 'inverted',
-  ERROR = 'error'
+  ERROR = 'error',
 }
 
 export enum TextAlign {
   LEFT = 'left',
   RIGHT = 'right',
-  CENTER = 'center'
+  CENTER = 'center',
 }
 
 export enum TextSize {

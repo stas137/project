@@ -13,7 +13,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
 
 const articles = [
   {
@@ -28,22 +30,13 @@ const articles = [
     img: 'https://codeguida.com/media/post_title/g3033.png',
     views: 1020,
     createdAt: '26.02.2023',
-    type: [
-      'IT',
-      'SCIENCE',
-      'POLITICS',
-      'ECONOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
       {
         id: '1',
         type: 'TEXT',
         title: 'Block title',
-        paragraphs: [
-          'lorem1',
-          'lorem2',
-          'lorem3',
-        ],
+        paragraphs: ['lorem1', 'lorem2', 'lorem3'],
       },
       {
         id: '4',
@@ -85,22 +78,13 @@ const articles = [
     img: 'https://codeguida.com/media/post_title/g3033.png',
     views: 1020,
     createdAt: '26.02.2023',
-    type: [
-      'IT',
-      'SCIENCE',
-      'POLITICS',
-      'ECONOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
       {
         id: '1',
         type: 'TEXT',
         title: 'Block title',
-        paragraphs: [
-          'lorem1',
-          'lorem2',
-          'lorem3',
-        ],
+        paragraphs: ['lorem1', 'lorem2', 'lorem3'],
       },
       {
         id: '4',

@@ -16,12 +16,7 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-  const {
-    className,
-    size = 30,
-    selectedStars = 0,
-    onSelect,
-  } = props;
+  const { className, size = 30, selectedStars = 0, onSelect } = props;
 
   const { t } = useTranslation();
 

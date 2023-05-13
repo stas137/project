@@ -12,9 +12,7 @@ interface NotificationListProps {
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-  const {
-    className,
-  } = props;
+  const { className } = props;
 
   const {
     data: notificationList,
@@ -30,9 +28,21 @@ export const NotificationList = memo((props: NotificationListProps) => {
         className={classNames('', {}, [className])}
         gap="16"
       >
-        <Skeleton width="100%" borderRadius="10px" height="80px" />
-        <Skeleton width="100%" borderRadius="10px" height="80px" />
-        <Skeleton width="100%" borderRadius="10px" height="80px" />
+        <Skeleton
+          width="100%"
+          borderRadius="10px"
+          height="80px"
+        />
+        <Skeleton
+          width="100%"
+          borderRadius="10px"
+          height="80px"
+        />
+        <Skeleton
+          width="100%"
+          borderRadius="10px"
+          height="80px"
+        />
       </VStack>
     );
   }

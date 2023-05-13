@@ -49,30 +49,37 @@ export default {
 
       if (config.module?.rules) {
         // eslint-disable-next-line no-param-reassign
-        config.module.rules = config.module.rules.map((rule: RuleSetRule | '...') => {
-          // if (/svg/.test(rule?.test as string)) {
+        config.module.rules = config.module.rules.map(
+          (rule: RuleSetRule | '...') => {
+            // if (/svg/.test(rule?.test as string)) {
 
-          if (rule !== '...') {
-            if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
-              return {
-                ...rule,
-                exclude: /\.svg$/i,
-              };
+            if (rule !== '...') {
+              if (
+                rule.test instanceof RegExp &&
+                rule.test.toString().includes('svg')
+              ) {
+                return {
+                  ...rule,
+                  exclude: /\.svg$/i,
+                };
+              }
             }
-          }
-          return rule;
-        });
+            return rule;
+          },
+        );
 
         config.module.rules.push({
           test: /\.svg$/,
           use: ['@svgr/webpack'],
         });
 
-        config.plugins?.push(new DefinePlugin({
-          __IS_DEV__: JSON.stringify(true),
-          __API__: JSON.stringify('http://test-storybook.com'),
-          __PROJECT__: JSON.stringify('storybook'),
-        }));
+        config.plugins?.push(
+          new DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify('http://test-storybook.com'),
+            __PROJECT__: JSON.stringify('storybook'),
+          }),
+        );
       }
     }
 

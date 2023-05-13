@@ -11,11 +11,17 @@ export default {
     backgroundColor: { control: 'color' },
   },
   decorators: [
-    (Story) => <div style={{ padding: '150px' }}><Story /></div>,
+    (Story) => (
+      <div style={{ padding: '150px' }}>
+        <Story />
+      </div>
+    ),
   ],
 } as ComponentMeta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: ComponentStory<typeof ListBox> = (args) => (
+  <ListBox {...args} />
+);
 
 const items = [
   { value: Currency.USD, content: Currency.USD },

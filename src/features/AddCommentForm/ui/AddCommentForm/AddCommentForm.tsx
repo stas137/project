@@ -31,10 +31,7 @@ const initialReducer: Reducers = {
 };
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-  const {
-    className,
-    onSendComment,
-  } = props;
+  const { className, onSendComment } = props;
 
   const { t } = useTranslation();
 
@@ -43,9 +40,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   const dispatch = useAppDispatch();
 
-  const onCommentChange = useCallback((value: string) => {
-    dispatch(addCommentFormActions.updateAddCommentForm(value));
-  }, [dispatch]);
+  const onCommentChange = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.updateAddCommentForm(value));
+    },
+    [dispatch],
+  );
 
   const onSendCommentHandler = useCallback(() => {
     onSendComment(text);

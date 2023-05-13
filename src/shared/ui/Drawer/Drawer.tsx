@@ -1,9 +1,10 @@
-import {
-  ReactNode, memo, useCallback, useEffect,
-} from 'react';
+import { ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 
@@ -21,13 +22,7 @@ interface DrawerProps {
 const HEIGHT = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
-  const {
-    className,
-    isOpen,
-    lazy = false,
-    children,
-    onClose,
-  } = props;
+  const { className, isOpen, lazy = false, children, onClose } = props;
 
   const { theme } = useTheme();
   const { Spring, Gesture } = useAnimationLibs();
@@ -58,7 +53,11 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
   const bind = Gesture.useDrag(
     ({
-      last, velocity: [, vy], direction: [, dy], movement: [, my], cancel,
+      last,
+      velocity: [, vy],
+      direction: [, dy],
+      movement: [, my],
+      cancel,
     }) => {
       // if the user drags up passed a threshold, then we cancel
       // the drag so that the sheet resets to its open position
@@ -82,7 +81,10 @@ export const DrawerContent = memo((props: DrawerProps) => {
       // the cursor position
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -96,13 +98,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
+      <div
+        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
+      >
         <Overlay onClick={close} />
 
         <Spring.a.div
           className={cls.sheet}
           style={{
-            display, bottom: `calc(-100vh + ${HEIGHT - 100}px)`, y,
+            display,
+            bottom: `calc(-100vh + ${HEIGHT - 100}px)`,
+            y,
           }}
           {...bind()}
         >

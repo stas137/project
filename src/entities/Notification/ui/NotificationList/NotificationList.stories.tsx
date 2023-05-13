@@ -13,7 +13,9 @@ export default {
   decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
-const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
+const Template: ComponentStory<typeof NotificationList> = (args) => (
+  <NotificationList {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

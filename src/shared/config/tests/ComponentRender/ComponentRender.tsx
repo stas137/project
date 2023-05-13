@@ -20,7 +20,7 @@ export interface componentRenderOptions {
 }
 
 interface TestProviderProps {
-  options?: componentRenderOptions,
+  options?: componentRenderOptions;
   children: ReactNode;
 }
 
@@ -42,9 +42,7 @@ export function TestProvider(props: TestProviderProps) {
       >
         <I18nextProvider i18n={i18nForTests}>
           <ThemeProvider initialTheme={theme}>
-            <div className={`app ${theme}`}>
-              {children}
-            </div>
+            <div className={`app ${theme}`}>{children}</div>
           </ThemeProvider>
         </I18nextProvider>
       </StoreProvider>
@@ -56,9 +54,5 @@ export function ComponentRender(
   component: ReactNode,
   options: componentRenderOptions = {},
 ) {
-  return render(
-    <TestProvider options={options}>
-      {component}
-    </TestProvider>,
-  );
+  return render(<TestProvider options={options}>{component}</TestProvider>);
 }

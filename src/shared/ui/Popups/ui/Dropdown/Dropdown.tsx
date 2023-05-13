@@ -24,12 +24,7 @@ interface DropdownProps {
 }
 
 export const Dropdown = (props: DropdownProps) => {
-  const {
-    className,
-    items,
-    trigger,
-    direction = 'bottom right',
-  } = props;
+  const { className, items, trigger, direction = 'bottom right' } = props;
 
   const menuClasses = [mapDirectonClass[direction]];
 
@@ -44,13 +39,13 @@ export const Dropdown = (props: DropdownProps) => {
       >
         {trigger}
       </Menu.Button>
-      <Menu.Items
-        className={classNames(cls.menu, {}, menuClasses)}
-      >
+      <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <Button
-              className={classNames(popupCls.item, { [popupCls.active]: active })}
+              className={classNames(popupCls.item, {
+                [popupCls.active]: active,
+              })}
               disabled={item.disabled}
               onClick={item.onClick}
               // href="/account-settings"

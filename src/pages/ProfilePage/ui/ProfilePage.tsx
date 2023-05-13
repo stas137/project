@@ -9,7 +9,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   // if (!id) {
   //   return <Text text={t('profile-not-found')} />;
@@ -20,7 +20,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
       className={classNames('', {}, [className])}
       data-testid="ProfilePage"
     >
-      <VStack gap="16" max>
+      <VStack
+        gap="16"
+        max
+      >
         <EditableProfileCard id={id} />
       </VStack>
     </Page>

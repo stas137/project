@@ -10,17 +10,18 @@ export default {
   },
 } as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => (
+  <CommentCard {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  comment:
-    {
-      id: '1',
-      text: 'hello world',
-      user: { id: '1', username: 'User 1' },
-      articleId: '1',
-    },
+  comment: {
+    id: '1',
+    text: 'hello world',
+    user: { id: '1', username: 'User 1' },
+    articleId: '1',
+  },
 };
 
 export const Loading = Template.bind({});

@@ -16,41 +16,41 @@ interface ArticleSortSelectorProps {
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
-  const {
-    className,
-    sort,
-    order,
-    onChangeSort,
-    onChangeOrder,
-  } = props;
+  const { className, sort, order, onChangeSort, onChangeOrder } = props;
 
   const { t } = useTranslation();
 
-  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-    {
-      value: 'asc',
-      content: t('asc'),
-    },
-    {
-      value: 'desc',
-      content: t('desc'),
-    },
-  ], [t]);
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+    () => [
+      {
+        value: 'asc',
+        content: t('asc'),
+      },
+      {
+        value: 'desc',
+        content: t('desc'),
+      },
+    ],
+    [t],
+  );
 
-  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
-    {
-      value: ArticleSortField.CREATED,
-      content: t('created'),
-    },
-    {
-      value: ArticleSortField.TITLE,
-      content: t('title'),
-    },
-    {
-      value: ArticleSortField.VIEWS,
-      content: t('views'),
-    },
-  ], [t]);
+  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+    () => [
+      {
+        value: ArticleSortField.CREATED,
+        content: t('created'),
+      },
+      {
+        value: ArticleSortField.TITLE,
+        content: t('title'),
+      },
+      {
+        value: ArticleSortField.VIEWS,
+        content: t('views'),
+      },
+    ],
+    [t],
+  );
 
   // const changeSortHandle = useCallback((newSort: string) => {
   //   onChangeSort(newSort as ArticleSortField);

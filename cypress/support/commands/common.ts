@@ -3,17 +3,19 @@ import { LOCAL_STORAGE_USER_KEY } from '../../../src/shared/const/localstorage';
 import { User } from '../../../src/entities/User';
 
 export const login = (username: string = 'test', password: string = 'test') => {
-  return cy.request({
-    method: 'POST',
-    url: 'http://localhost:8000/login',
-    body: {
-      username,
-      password,
-    },
-  }).then(({ body }) => {
-    window.localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(body));
-    return body;
-  });
+  return cy
+    .request({
+      method: 'POST',
+      url: 'http://localhost:8000/login',
+      body: {
+        username,
+        password,
+      },
+    })
+    .then(({ body }) => {
+      window.localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(body));
+      return body;
+    });
 };
 
 export const getByTestId = (testId: string) => {

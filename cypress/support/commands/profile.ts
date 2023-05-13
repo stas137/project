@@ -23,7 +23,8 @@ export const resetProfile = (profileId: string) => {
       country: 'Russia',
       city: 'New York',
       username: 'test',
-      avatar: 'https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg',
+      avatar:
+        'https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg',
     },
   });
 };

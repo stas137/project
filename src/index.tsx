@@ -18,7 +18,7 @@ if (!container) {
 
 const root = createRoot(container);
 
-root.render((
+root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBoundary>
@@ -27,4 +27,5 @@ root.render((
         </ThemeProvider>
       </ErrorBoundary>
     </StoreProvider>
-  </BrowserRouter>));
+  </BrowserRouter>,
+);
