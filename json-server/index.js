@@ -1,9 +1,15 @@
 const fs = require('fs');
+const https = require('https');
 const jsonServer = require('json-server');
 const path = require('path');
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
+
+const options = {
+  key: fs.readFile(path.resolve(__dirname, 'key.pem')),
+  cert: fs.readFile(path.resolve(__dirname, 'cert.pem')),
+}
 
 // custom delay 1000ms
 server.use(async (req, res, next) => {
@@ -61,7 +67,9 @@ server.use((req, res, next) => {
 
 server.use(router);
 
+const httpsServer = https.createServer(options, server);
+
 // server is running
-server.listen(8000, () => {
-  console.log('server is running on 8000 port');
+httpsServer.listen(443, () => {
+  console.log('server is running on 443 port');
 });
