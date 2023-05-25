@@ -9,6 +9,7 @@ const MainPage = () => {
   return (
     <Page data-testid="MainPage">
       <Counter />
+      12345
       {/* <BugButton /> */}
       {t('main-page')}
     </Page>
