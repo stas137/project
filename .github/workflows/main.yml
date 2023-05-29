@@ -39,10 +39,10 @@
 #         if: always()
 
 # name: linting, testing, building
-# on: 
-#   push: 
+# on:
+#   push:
 #     branches: [master]
-#   pull_request: 
+#   pull_request:
 #     branches: [master]
 # permissions:
 #   contents: write
@@ -90,7 +90,7 @@
 #       - name: Setup Pages
 #         uses: actions/configure-pages@v2
 #         if: always()
-#       - name: Upload artefact  
+#       - name: Upload artefact
 #         uses: actions/upload-pages-artifact@v1
 #         if: always()
 #         with:
@@ -112,7 +112,7 @@
 #         with:
 #           node-version: ${{ matrix.node-version }}
 #       - name: Install modules
-#         run: npm ci    
+#         run: npm ci
 #       - name: Linting typescript
 #         run: npm run lint:ts
 #         if: always()
