@@ -617,14 +617,22 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
-      "avatar": "https://cspromogame.ru/storage/upload_images/avatars/3419.jpg"
+      "avatar": "https://cspromogame.ru/storage/upload_images/avatars/3419.jpg",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "2",
       "username": "manager",
       "password": "1234",
       "roles": ["MANAGER"],
-      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "3",

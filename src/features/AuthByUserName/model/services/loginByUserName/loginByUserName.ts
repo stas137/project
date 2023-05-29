@@ -16,11 +16,7 @@ export const loginByUsername = createAsyncThunk<
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
   try {
-    // const response = await axios.post<User>('http://localhost:8000/login', authData);
-
     const response = await extra.api.post<User>('/login', authData);
-
-    // extra.navigate('/about');
 
     if (!response.data) {
       throw new Error();
