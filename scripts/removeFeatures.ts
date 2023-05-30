@@ -52,12 +52,6 @@ files.forEach((sourceFile) => {
       const onFunctionProperty = objectOptions.getProperty('on');
       const offFunctionProperty = objectOptions.getProperty('off');
 
-      console.log(featureNameProperty?.getText());
-
-      console.log(onFunctionProperty?.getText());
-
-      console.log(offFunctionProperty?.getText());
-
       const onFunction = onFunctionProperty?.getFirstDescendantByKind(
         SyntaxKind.ArrowFunction,
       );
@@ -70,12 +64,6 @@ files.forEach((sourceFile) => {
         ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
         ?.getText()
         .slice(1, -1);
-
-      console.log(featureName);
-
-      console.log(onFunction?.getText());
-
-      console.log(offFunction?.getText());
 
       if (featureName !== removedFeatureName) {
         return;

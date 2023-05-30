@@ -58,13 +58,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -87,13 +93,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "20.01.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -116,13 +128,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 133,
       "createdAt": "16.03.2023",
-      "type": ["ECONOMICS"],
+      "type": [
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -145,13 +163,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 567,
       "createdAt": "26.02.2023",
-      "type": ["ECONOMICS"],
+      "type": [
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -174,13 +198,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 2024,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -203,13 +233,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -232,13 +268,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -261,13 +303,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -290,13 +338,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -319,13 +373,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -348,13 +408,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -377,13 +443,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -406,13 +478,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -435,13 +513,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -464,13 +548,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -493,13 +583,19 @@
       "img": "https://codeguida.com/media/post_title/g3033.png",
       "views": 1020,
       "createdAt": "26.02.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Block title",
-          "paragraphs": ["lorem1", "lorem2", "lorem3"]
+          "paragraphs": [
+            "lorem1",
+            "lorem2",
+            "lorem3"
+          ]
         },
         {
           "id": "4",
@@ -616,36 +712,52 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cspromogame.ru/storage/upload_images/avatars/3419.jpg",
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_orange_theme",
+        "isFirstVisit": true
       }
     },
     {
       "id": "2",
       "username": "manager",
       "password": "1234",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg",
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true
       }
     },
     {
       "id": "3",
       "username": "user",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     },
     {
       "id": "4",
       "username": "test",
       "password": "test",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
     }
   ],
