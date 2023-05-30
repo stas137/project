@@ -173,3 +173,24 @@ Server request are sent using [RTK query](/src/shared/api/rtkApi.ts).
 
 To asynchronously connect of reducers (so as not to pull them into a common bundle), use
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx).
+
+---
+
+### Working with feature flags
+
+You can use feature flags with toggleFeatures function.
+This function takes options (object):
+
+{
+name: name feature flag,
+on: callback which will be called if the flag on
+off: callback which will be called if the flag off
+}
+
+Use the removeFeatures function to automatically remove a feature.
+This function takes two arguments:
+
+1. The name of the feature
+2. State (on/off)
+
+---

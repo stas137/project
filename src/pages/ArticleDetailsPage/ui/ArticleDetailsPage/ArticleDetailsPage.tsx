@@ -15,7 +15,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/ArticleRating';
-import { getFeatureFlags } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
+import { toggleFeatures } from '@/shared/lib/features';
 
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -34,8 +35,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article');
   const { id } = useParams<{ id: string }>();
 
-  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
-
   if (!id) {
     return (
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -43,6 +42,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       </Page>
     );
   }
+
+  const isArticleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Assessment will appear soon')}</Card>,
+  });
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
@@ -54,8 +59,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           <ArticleDetailsPageHeader />
           <ArticleDetails articleId={id} />
 
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
-
+          {isArticleRatingCard}
           <ArticleRecommendationList />
           <ArticleDetailsComments id={id} />
         </VStack>

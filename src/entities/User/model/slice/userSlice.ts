@@ -13,7 +13,10 @@ export const userSlice = createSlice({
   reducers: {
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload;
-      setFeatureFlags(action.payload.features);
+
+      if (action.payload.features) {
+        setFeatureFlags(action.payload.features);
+      }
     },
     initAuthData: (state) => {
       const user = localStorage.getItem(LOCAL_STORAGE_USER_KEY);
@@ -21,7 +24,10 @@ export const userSlice = createSlice({
       if (user) {
         const json = JSON.parse(user) as User;
         state.authData = json;
-        setFeatureFlags(json.features);
+
+        if (json.features) {
+          setFeatureFlags(json.features);
+        }
       }
 
       state._inited = true;
