@@ -1,13 +1,21 @@
 .app_dark_theme {
   --bg-color: rgb(24 104 131);
   --bg-color-inverted: rgb(212 226 230);
-
-  /* --bg-color: #ecedf0;
-  --bg-color-inverted: rgb(255 255 255); */
   --primary-color: rgb(41 217 41);
   --secondary-color: rgb(95 193 95);
   --primary-color-inverted: rgb(21 21 21);
   --secondary-color-inverted: rgb(80 84 80);
+
+  /* redesigned */
+  --dark-bg-redesigned: #090f11;
+  --bg-redesigned: #0c1214;
+  --light-bg-redesigned: #151c1f;
+  --text-redesigned: #dbdbdb;
+  --hint-redesigned: #555;
+  --cancel-redesigned: #095757;
+  --save-redesigned: #6cd98b;
+  --icon-redesigned: #74a2b2;
+  --accent-redesigned: #5ed3f3;
 
   /* skeleton */
   --skeleton-color: #3333c3;

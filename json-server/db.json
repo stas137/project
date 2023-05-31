@@ -718,10 +718,11 @@
       "avatar": "https://cspromogame.ru/storage/upload_images/avatars/3419.jpg",
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "isArticlePageWasOpened": true
       }
