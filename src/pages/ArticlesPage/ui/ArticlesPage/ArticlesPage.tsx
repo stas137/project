@@ -21,6 +21,7 @@ import {
 } from '../../model/slice/articlesPageSlice';
 
 import cls from './ArticlesPage.module.scss';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 
 interface ArticlesPageProps {
   className?: string;
@@ -60,6 +61,8 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         articles={articles}
         onLoadNextPart={onLoadNextPart}
       />
+
+      <ArticlePageGreeting />
     </DynamicModuleLoader>
   );
 };
