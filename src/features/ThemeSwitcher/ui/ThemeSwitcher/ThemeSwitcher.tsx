@@ -1,10 +1,10 @@
 import { memo, useCallback } from 'react';
 import { saveJsonSettings } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonVariant } from '@/shared/ui/Button';
+import { Button, ButtonVariant } from '@/shared/ui/deprecated/Button';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 
 import ThemeIcon from '@/shared/assets/icons/light-mode-24x24.svg';
 

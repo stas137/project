@@ -13,7 +13,7 @@ import {
   GridScrollSeekPlaceholderProps,
 } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
 
 // eslint-disable-next-line project-path-checker-plugin/layer-imports
@@ -22,7 +22,7 @@ import {
   COUNT_ARTICLES_LIST_VIEW,
   COUNT_ARTICLES_TILE_VIEW,
 } from '@/shared/const/const';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

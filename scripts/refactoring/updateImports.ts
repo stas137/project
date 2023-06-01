@@ -17,6 +17,13 @@ function isAbsolute(value: string) {
   return false;
 }
 
+function isAbsoluteSharedUi(value: string) {
+  // import { Icon } from '@/shared/ui/Icon';
+  const layerSharedUi = '@/shared/ui';
+
+  return value.startsWith(layerSharedUi);
+}
+
 files.forEach((sourceFile) => {
   const importDeclarations = sourceFile.getImportDeclarations();
 
@@ -25,6 +32,13 @@ files.forEach((sourceFile) => {
 
     if (isAbsolute(value)) {
       importDeclaration.setModuleSpecifier(`@/${value}`);
+    } else if (isAbsoluteSharedUi(value)) {
+      // in: import { Icon } from '@/shared/ui/Icon';
+      // out: import { Icon } from '@/shared/ui/deprecated/Icon';
+      const newValue = value.split('@/shared/ui/');
+      importDeclaration.setModuleSpecifier(
+        `@/shared/ui/deprecated/${newValue[1]}`,
+      );
     }
   });
 });

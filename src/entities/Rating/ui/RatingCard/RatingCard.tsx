@@ -3,16 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Card } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Text } from '@/shared/ui/deprecated/Text';
 
-import { StarRating } from '@/shared/ui/StarRating';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
 
-import { Modal } from '@/shared/ui/Modal';
-import { Input } from '@/shared/ui/Input';
-import { Button, ButtonVariant } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Button, ButtonVariant } from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
 
 // import cls from './RatingCard.module.scss';
 

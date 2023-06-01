@@ -8,7 +8,7 @@ import {
   useGetArticleRating,
   useSetArticleRating,
 } from '../../api/articleRatingApi';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 // import cls from './ArticleRating.module.scss';
 
