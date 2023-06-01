@@ -2,11 +2,11 @@ import { CSSProperties, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '../AppImage';
 import { Icon } from '../Icon';
+import { Skeleton } from '../Skeleton';
 
-import AvatarIcon from '../../assets/icons/avatar-default.svg';
+import AvatarIcon from '../../assets/icons/profile.svg';
 
 import cls from './Avatar.module.scss';
-import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
   className?: string;

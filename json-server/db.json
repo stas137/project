@@ -125,7 +125,7 @@
       "userId": "2",
       "title": "JAVA news 3",
       "subtitle": "Hey hey 2023",
-      "img": "https://codeguida.com/media/post_title/g3033.png",
+      "img": "https://codeguida.com/media/post_title/g3033.pn",
       "views": 133,
       "createdAt": "16.03.2023",
       "type": [
@@ -751,7 +751,11 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg"
+      "avatar": "https://pixelbox.ru/wp-content/uploads/2021/11/avatar-whatsapp-pixelbox.ru-36.jpg",
+      "jsonSettings": {
+        "isArticlePageWasOpened": true,
+        "theme": "app_dark_theme"
+      }
     },
     {
       "id": "4",
