@@ -22,7 +22,7 @@ import {
   COUNT_ARTICLES_LIST_VIEW,
   COUNT_ARTICLES_TILE_VIEW,
 } from '@/shared/const/const';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

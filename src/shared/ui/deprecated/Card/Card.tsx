@@ -1,5 +1,4 @@
 import { HTMLAttributes, memo, ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
@@ -25,8 +24,6 @@ export const Card = memo((props: CardProps) => {
     children,
     ...otherProps
   } = props;
-
-  const { t } = useTranslation();
 
   const mods: Mods = {
     [cls.fullWidth]: fullWidth,

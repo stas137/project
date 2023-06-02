@@ -47,9 +47,6 @@ export interface FlexProps extends DivProps {
   children: ReactNode;
 }
 
-/**
- * @deprecated
- */
 export const Flex = (props: FlexProps) => {
   const {
     className,

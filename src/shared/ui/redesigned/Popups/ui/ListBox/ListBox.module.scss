@@ -1,0 +1,19 @@
+/* .ListBox {
+  position: relative;
+} */
+
+.trigger {
+  padding: 8px 10px;
+}
+
+.options {
+  position: absolute;
+  background: var(--dark-bg-redesigned);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--dark-bg-redesigned);
+  z-index: var(--list-box-z-index);
+}
+
+.readonly {
+  opacity: 0.6;
+}

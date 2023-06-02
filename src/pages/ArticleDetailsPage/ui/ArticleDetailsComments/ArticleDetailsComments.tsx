@@ -6,7 +6,7 @@ import { CommentsList } from '@/entities/Comment';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import {

@@ -6,7 +6,7 @@ import {
   ButtonSize,
   ButtonVariant,
 } from '@/shared/ui/deprecated/Button';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from './SidebarItem/SidebarItem';
 

@@ -1,0 +1,8 @@
+.panel {
+  position: absolute;
+  background: var(--dark-bg-redesigned);
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--dark-bg-redesigned);
+  z-index: var(--popover-panel-z-index);
+  padding: 10px;
+}
