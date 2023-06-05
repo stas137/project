@@ -5,12 +5,14 @@ import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outline' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24';
+export type CardBorder = 'round' | 'rounded' | 'square';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   variant?: CardVariant;
   fullWidth?: boolean;
   padding?: CardPadding;
+  border?: CardBorder;
   children: ReactNode;
 }
 
@@ -27,6 +29,7 @@ export const Card = memo((props: CardProps) => {
     variant = 'normal',
     fullWidth = false,
     padding = '8',
+    border = 'rounded',
     children,
     ...otherProps
   } = props;
@@ -43,6 +46,7 @@ export const Card = memo((props: CardProps) => {
         className,
         cls[variant],
         cls[paddings],
+        cls[border],
       ])}
       {...otherProps}
     >

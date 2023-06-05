@@ -18,6 +18,6 @@ export enum ArticleType {
 }
 
 export enum ArticleView {
-  LIST = 'LIST',
   TILE = 'TILE',
+  LIST = 'LIST',
 }

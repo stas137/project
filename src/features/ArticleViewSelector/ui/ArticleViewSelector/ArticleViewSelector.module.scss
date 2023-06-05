@@ -1,7 +1,19 @@
-.selected {
-  fill: var(--primary-color);
+.ArticleViewSelector {
+  .selected {
+    fill: var(--primary-color);
+  }
+
+  .notSelected {
+    fill: var(--secondary-color);
+  }
 }
 
-.notSelected {
-  fill: var(--secondary-color);
+.ArticleViewSelectorRedesigned {
+  .selected {
+    fill: var(--hint-redesigned);
+  }
+
+  .notSelected {
+    fill: var(--light-bg-redesigned);
+  }
 }

@@ -17,7 +17,6 @@ import { Text } from '@/shared/ui/deprecated/Text';
 import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
 
 // eslint-disable-next-line project-path-checker-plugin/layer-imports
-import { ArticlesPageFilter } from '@/pages/ArticlesPage';
 import {
   COUNT_ARTICLES_LIST_VIEW,
   COUNT_ARTICLES_TILE_VIEW,
@@ -55,7 +54,7 @@ const getSkeletons = (view: ArticleView) =>
       />
     ));
 
-const Header = () => <ArticlesPageFilter />;
+// const Header = () => <ArticlesPageFilters />;
 const Footer = (isLoading: boolean | undefined, view: ArticleView) => () => {
   if (isLoading) {
     return <div className={cls.skeleton}>{getSkeletons(view)}</div>;
@@ -179,7 +178,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           endReached={onLoadNextPart}
           initialTopMostItemIndex={selectedArticleId}
           components={{
-            Header,
+            // Header,
             Footer: Footer(isLoading, view),
           }}
         />
@@ -189,7 +188,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           ref={virtuosoGridRef}
           totalCount={articles.length}
           components={{
-            Header,
+            // Header,
             Footer: Footer(isLoading, view),
             ScrollSeekPlaceholder: ItemContainerComp,
           }}

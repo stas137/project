@@ -3,14 +3,16 @@
 } */
 
 .trigger {
-  padding: 8px 10px;
+  padding: 8px 14px;
 }
 
 .options {
   position: absolute;
   background: var(--dark-bg-redesigned);
   border-radius: 10px;
-  box-shadow: 0 0 8px var(--dark-bg-redesigned);
+  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+  border: 1px solid var(--accent-redesigned);
+  overflow: hidden;
   z-index: var(--list-box-z-index);
 }
 

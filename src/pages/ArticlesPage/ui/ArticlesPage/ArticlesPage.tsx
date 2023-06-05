@@ -21,7 +21,10 @@ import {
 } from '../../model/slice/articlesPageSlice';
 
 import cls from './ArticlesPage.module.scss';
-import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { StickyComponentLayout } from '@/shared/layouts/StickyComponentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -49,20 +52,42 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     dispatch(initArticlesPage(searchParams));
   });
 
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <StickyComponentLayout
+          left={<ViewSelectorContainer />}
+          content={
+            <ArticleList
+              className={classNames(cls.listRedesigned, {}, [className])}
+              isLoading={isLoading}
+              view={view}
+              articles={articles}
+              onLoadNextPart={onLoadNextPart}
+            />
+          }
+          right={<FiltersContainer />}
+        />
+      }
+      off={
+        <ArticleList
+          className={classNames(cls.list, {}, [className])}
+          isLoading={isLoading}
+          view={view}
+          articles={articles}
+          onLoadNextPart={onLoadNextPart}
+        />
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader
       reducers={initialReducers}
       removeAfterUnmount={false}
     >
-      <ArticleList
-        className={classNames(cls.list, {}, [className])}
-        isLoading={isLoading}
-        view={view}
-        articles={articles}
-        onLoadNextPart={onLoadNextPart}
-      />
-
-      <ArticlePageGreeting />
+      {content}
     </DynamicModuleLoader>
   );
 };

@@ -27,5 +27,8 @@
   "send": "Send",
   "cancel": "Cancel",
   "create-article": "Create article",
-  "admin-panel": "Admin"
+  "admin-panel": "Admin",
+  "sort": "Sort:",
+  "views": "Views",
+  "created": "Created"
 }

@@ -1,7 +1,3 @@
-.Card {
-  border-radius: 10px;
-}
-
 .normal {
   background: var(--dark-bg-redesigned);
 }
@@ -36,4 +32,16 @@
 
 .gap_24 {
   padding: 24px;
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.round {
+  border-radius: 40px;
+}
+
+.square {
+  border-radius: 0;
 }

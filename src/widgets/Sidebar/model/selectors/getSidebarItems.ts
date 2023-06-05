@@ -1,6 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { toggleFeatures } from '@/shared/lib/features';
 
 import { SidebarItemType } from '../types/sidebar';
 import {
@@ -9,11 +8,6 @@ import {
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/router';
-
-import MainIconDeprecated from '@/shared/assets/icons/main-20-20.svg';
-import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
-import ProfileIconDeprecated from '@/shared/assets/icons/profile-24x24.svg';
-import ArticleIconDeprecated from '@/shared/assets/icons/article-20-20.svg';
 
 import MainIcon from '@/shared/assets/icons/home.svg';
 import AboutIcon from '@/shared/assets/icons/article.svg';
@@ -25,20 +19,12 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     {
       path: getRouteMain(),
       text: 'main',
-      Icon: toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => MainIcon,
-        off: () => MainIconDeprecated,
-      }),
+      Icon: MainIcon,
     },
     {
       path: getRouteAbout(),
       text: 'about',
-      Icon: toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => AboutIcon,
-        off: () => AboutIconDeprecated,
-      }),
+      Icon: AboutIcon,
     },
   ];
 
@@ -47,21 +33,13 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         path: getRouteProfile(userData.id),
         text: 'profile',
-        Icon: toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => ProfileIcon,
-          off: () => ProfileIconDeprecated,
-        }),
+        Icon: ProfileIcon,
         authOnly: true,
       },
       {
         path: getRouteArticles(),
         text: 'articles',
-        Icon: toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => ArticleIcon,
-          off: () => ArticleIconDeprecated,
-        }),
+        Icon: ArticleIcon,
         authOnly: true,
       },
     );

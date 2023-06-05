@@ -1,57 +1,38 @@
 .Button {
-  color: var(--primary-color);
-  cursor: pointer;
+  color: var(--text-redesigned);
   padding: 8px 10px;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.7;
     fill-opacity: 0.7;
     stroke-opacity: 0.7;
+    color: var(--accent-redesigned);
   }
 }
 
-.clear,
-.clearInverted {
+.clear {
   padding: 0;
   background: none;
   border: none;
   outline: none;
 }
 
-.clearInverted {
-  color: var(--primary-color-inverted);
-}
-
 .outline {
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--accent-redesigned);
   background: none;
   outline: none;
 }
 
-.outlineRed {
-  color: var(--red-light);
-  border: 1px solid var(--red-light);
-  background: none;
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
   outline: none;
+  border-radius: 10px;
 }
 
 .Button svg {
   display: flex;
-}
-
-.background {
-  background: var(--bg-color);
-  color: var(--primary-color);
-  border: none;
-  outline: none;
-}
-
-.backgroundInverted {
-  background: var(--bg-color-inverted);
-  color: var(--primary-color-inverted);
-  border: none;
-  outline: none;
 }
 
 .square {
@@ -77,15 +58,15 @@
 }
 
 .m {
-  font: var(--font-m-redesign);
+  font: var(--font-m-redesigned);
 }
 
 .l {
-  font: var(--font-l-redesign);
+  font: var(--font-l-redesigned);
 }
 
 .xl {
-  font: var(--font-xl-redesign);
+  font: var(--font-xl-redesigned);
 }
 
 .disabled {
