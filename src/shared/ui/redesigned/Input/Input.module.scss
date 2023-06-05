@@ -2,55 +2,47 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  border-radius: 14px;
+  padding: 8px 16px;
+  border: 2px solid var(--icon-redesigned);
+  height: 40px;
   width: 100%;
 }
 
 .input {
-  background: transparent;
+  background: none;
   border: none;
   outline: none;
   width: 100%;
-  color: transparent;
-  text-shadow: 0 0 0 var(--primary-color);
+  color: var(--text-redesigned);
 
-  &:focus {
-    outline: none;
+  &::placeholder {
+    color: var(--hint-redesigned);
   }
-}
-
-.placeholder {
-  margin-right: 4px;
-}
-
-.caretWrapper {
-  flex-grow: 1;
-  position: relative;
-}
-
-.caret {
-  height: 3px;
-  width: 9px;
-  background: var(--primary-color);
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  animation: blink 0.7s forwards infinite;
 }
 
 .readonly {
   opacity: 0.6;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
+.focused {
+  border: 2px solid var(--accent-redesigned);
 
-  50% {
-    opacity: 0.01;
+  .addonLeft svg,
+  .addonRight svg {
+    color: var(--accent-redesigned);
   }
+}
 
-  100% {
-    opacity: 1;
-  }
+.withAddonLeft {
+  padding-left: 10px;
+}
+
+.withAddonRight {
+  padding-right: 10px;
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
 }

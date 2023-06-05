@@ -13,7 +13,10 @@ import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Input } from '@/shared/ui/redesigned/Input';
 
+import SearchIcon from '@/shared/assets/icons/search.svg';
+
 import cls from './ArticlesFilters.module.scss';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -51,6 +54,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
         <Input
           placeholder={t('search')}
           value={search}
+          addonLeft={<Icon Svg={SearchIcon} />}
           onChange={onChangeSearch}
         />
 
