@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.appLogo {
+  position: relative;
+  z-index: 1;
+}
+
 .gradientBig {
   position: absolute;
   width: 300px;
