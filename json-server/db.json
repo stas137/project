@@ -641,37 +641,19 @@
       "userId": "2",
       "articleId": "1",
       "id": "fc_4dD4"
-    },
-    {
-      "text": "11",
-      "userId": "2",
-      "articleId": "1",
-      "id": "AESOBel"
-    },
-    {
-      "text": "yo yo",
-      "userId": "2",
-      "articleId": "1",
-      "id": "SxazY_y"
-    },
-    {
-      "text": "python",
-      "userId": "2",
-      "articleId": "2",
-      "id": "MWGLPmn"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "firstname": "Ivan",
+      "firstname": "IvanIvan",
       "lastname": "Ivanov",
       "age": 30,
-      "currency": "EUR",
+      "currency": "RUB",
       "country": "Russia",
       "city": "Minsk",
       "username": "admin",
-      "avatar": "https://cspromogame.ru/storage/upload_images/avatars/3419.jpg"
+      "avatar": "https://2d-cdr.ru/image/data/photo/26208_cat_footwear_logo.jpg"
     },
     {
       "id": "2",

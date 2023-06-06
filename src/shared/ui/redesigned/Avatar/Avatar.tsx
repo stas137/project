@@ -33,6 +33,7 @@ export const Avatar = (props: AvatarProps) => {
       borderRadius="50%"
     />
   );
+
   const errorFallback = (
     <Icon
       width={size}

@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { CSSProperties, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Text.module.scss';
@@ -14,6 +14,7 @@ interface TextProps {
   variant?: TextVariant;
   align?: TextAlign;
   size?: TextSize;
+  width?: string;
   'data-testid'?: string;
 }
 
@@ -39,16 +40,24 @@ export const Text = memo((props: TextProps) => {
     variant = 'primary',
     align = 'left',
     size = 'm',
+    width,
     'data-testid': dataTestId = 'Text',
   } = props;
 
   const HeaderTag = mapSizeToHeaderTag[size];
-
   const sizeClass = mapSizeToClass[size];
+
   const additionalClasses = [className, cls[variant], cls[align], sizeClass];
 
+  const styles: CSSProperties = {
+    minWidth: width,
+  };
+
   return (
-    <div className={classNames(cls.Text, {}, additionalClasses)}>
+    <div
+      className={classNames(cls.Text, {}, additionalClasses)}
+      style={styles}
+    >
       {title && (
         <HeaderTag
           className={cls.title}

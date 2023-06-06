@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 8px 16px;
   border: 2px solid var(--icon-redesigned);
   height: 40px;
@@ -45,4 +45,16 @@
 .addonLeft,
 .addonRight {
   display: flex;
+}
+
+.s {
+  height: 32px;
+}
+
+.m {
+  height: 38px;
+}
+
+.l {
+  height: 44px;
 }

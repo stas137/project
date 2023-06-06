@@ -47,6 +47,18 @@
   border-radius: 10px;
 }
 
+.rounded {
+  border-radius: 12px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.norounded {
+  border-radius: 0;
+}
+
 .square {
   padding: 0;
   display: flex;

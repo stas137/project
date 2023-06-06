@@ -5,11 +5,12 @@ import { SortOrder } from '@/shared/types/sort';
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
 import { ArticleSortField } from '@/entities/Article';
 
-import cls from './ArticleSortSelector.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+
+import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -65,15 +66,12 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
           gap="8"
         >
           <Text text={t('sort')} />
-          <ListBox
-            // label={t('sort')}
+          <ListBox<ArticleSortField>
             items={sortFieldOptions}
             value={sort}
             onChange={onChangeSort}
           />
-          <ListBox
-            // className={cls.order}
-            // label={t('order')}
+          <ListBox<SortOrder>
             items={orderOptions}
             value={order}
             onChange={onChangeOrder}
