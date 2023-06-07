@@ -1,9 +1,10 @@
 .LIST {
+  width: 100%;
+
   .img {
     width: 100%;
     max-height: 220px;
     object-fit: cover;
-    margin: 16px 0;
   }
 
   .textBlock {
@@ -13,65 +14,51 @@
 }
 
 .TILE {
-  width: 230px;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: block;
-
-  .date {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: none;
-  }
-
-  &:hover {
-    opacity: 0.9;
-    transform: scale(1.01);
-
-    .date {
-      display: block;
-    }
-  }
-
-  .imageWrapper {
-    height: 200px;
-    position: relative;
+  .card {
+    width: 230px;
+    height: 350px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
   }
 
   .img {
     width: 100%;
     object-fit: cover;
+    min-height: 140px;
+    max-height: 140px;
   }
 
-  .infoWrapper {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
+  .info {
+    padding: 8px 8px 16px 8px;
+    height: 100%;
+  }
+
+  .footer {
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
   }
 
   .types p {
-    width: 115px;
+    width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .views {
-    margin-left: auto;
-    margin-right: 8px;
+    text-align: right;
   }
 
   .title p {
-    margin-top: 8px;
-    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .title {
-    margin-top: 8px;
   }
 
   @media (max-width: 320px) {

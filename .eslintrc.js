@@ -69,6 +69,7 @@ module.exports = {
           'borderRadius',
           'alt',
           'size',
+          'wrap',
         ],
       },
     ],

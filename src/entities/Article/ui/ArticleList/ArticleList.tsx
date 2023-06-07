@@ -26,6 +26,7 @@ import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 
 import cls from './ArticleList.module.scss';
 
@@ -168,40 +169,70 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {view === ArticleView.LIST ? (
-        <Virtuoso
-          style={{ height: '100%' }}
-          data={articles}
-          totalCount={rowCount}
-          itemContent={renderArticle}
-          endReached={onLoadNextPart}
-          initialTopMostItemIndex={selectedArticleId}
-          components={{
-            // Header,
-            Footer: Footer(isLoading, view),
-          }}
-        />
-      ) : (
-        <VirtuosoGrid
-          style={{ width: '100%' }}
-          ref={virtuosoGridRef}
-          totalCount={articles.length}
-          components={{
-            // Header,
-            Footer: Footer(isLoading, view),
-            ScrollSeekPlaceholder: ItemContainerComp,
-          }}
-          endReached={onLoadNextPart}
-          data={articles}
-          itemContent={renderArticle}
-          listClassName={cls.itemWrapper}
-          scrollSeekConfiguration={{
-            enter: (velocity) => Math.abs(velocity) > 350,
-            exit: (velocity) => Math.abs(velocity) < 50,
-          }}
-        />
-      )}
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack
+          className={classNames(cls.ArticleListRedesigned, {}, [
+            className,
+            cls[view],
+          ])}
+          wrap="wrap"
+          gap="16"
+          data-testid="ArticleList"
+        >
+          {articles.map((article) => (
+            <ArticleListItem
+              key={article.id}
+              className={cls.card}
+              article={article}
+              view={view}
+              target={target}
+            />
+          ))}
+          {isLoading && getSkeletons(view)}
+          {getSkeletons(view)}
+        </HStack>
+      }
+      off={
+        <div
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
+          {view === ArticleView.LIST ? (
+            <Virtuoso
+              style={{ height: '100%' }}
+              data={articles}
+              totalCount={rowCount}
+              itemContent={renderArticle}
+              endReached={onLoadNextPart}
+              initialTopMostItemIndex={selectedArticleId}
+              components={{
+                // Header,
+                Footer: Footer(isLoading, view),
+              }}
+            />
+          ) : (
+            <VirtuosoGrid
+              style={{ width: '100%' }}
+              ref={virtuosoGridRef}
+              totalCount={articles.length}
+              components={{
+                // Header,
+                Footer: Footer(isLoading, view),
+                ScrollSeekPlaceholder: ItemContainerComp,
+              }}
+              endReached={onLoadNextPart}
+              data={articles}
+              itemContent={renderArticle}
+              listClassName={cls.itemWrapper}
+              scrollSeekConfiguration={{
+                enter: (velocity) => Math.abs(velocity) > 350,
+                exit: (velocity) => Math.abs(velocity) < 50,
+              }}
+            />
+          )}
+        </div>
+      }
+    />
   );
 });

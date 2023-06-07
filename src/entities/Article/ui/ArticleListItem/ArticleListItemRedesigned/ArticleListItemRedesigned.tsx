@@ -17,8 +17,9 @@ import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { ArticleListItemProps } from '../ArticleListItem';
 
-import cls from './ArticleListItemRedesigned.module.scss';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+
+import cls from './ArticleListItemRedesigned.module.scss';
 
 export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   const { className, article, view, target, index } = props;
@@ -26,7 +27,12 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   const { t } = useTranslation('article');
   // const [isHover, bindHover] = useHover();
 
-  const types = <Text text={article.type.join(', ')} />;
+  const types = (
+    <Text
+      className={cls.types}
+      text={article.type.join(', ')}
+    />
+  );
 
   const views = (
     <HStack
@@ -36,6 +42,19 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       <Icon Svg={EyeIcon} />
       <Text text={String(article.views)} />
     </HStack>
+  );
+
+  const userInfo = (
+    <>
+      <Avatar
+        size={32}
+        src={article.user.avatar}
+      />
+      <Text
+        bold
+        text={article.user.username}
+      />
+    </>
   );
 
   const handleButtonclick = () => {
@@ -75,13 +94,11 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
           </HStack>
 
           <Text
-            // className={cls.title}
             title={article.title}
             bold
           />
 
           <Text
-            // className={cls.title}
             title={article.subtitle}
             size="s"
           />
@@ -101,10 +118,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
           />
 
           {textBlock?.paragraphs && (
-            // <ArticleTextBlockComponent
-            //   className={cls.textBlock}
-            //   block={textBlock}
-            // />
             <Text
               className={cls.textBlock}
               text={textBlock.paragraphs.slice(0, 2).join(' ')}
@@ -133,41 +146,48 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   return (
     <AppLink
       // {...bindHover}
-      data-testid="ArticleListItem"
       className={classNames(cls.ArticleListItemRedesigned, {}, [
         className,
         cls[view],
       ])}
       to={getRouteArticleDetails(article.id)}
       target={target}
+      data-testid="ArticleListItem"
       onClick={handleButtonclick}
     >
       <Card className={cls.card}>
-        <div className={cls.imageWrapper}>
-          <AppImage
-            className={cls.img}
-            src={article.img}
-            alt={article.title}
-            fallback={
-              <Skeleton
-                width="200px"
-                height="200px"
-              />
-            }
-          />
-          <Text
-            className={cls.date}
-            text={article.createdAt}
-          />
-        </div>
-        <div className={cls.infoWrapper}>
-          {types}
-          {views}
-        </div>
-        <Text
-          className={cls.title}
-          text={article.title}
+        <AppImage
+          className={cls.img}
+          src={article.img}
+          alt={article.title}
+          fallback={
+            <Skeleton
+              width={200}
+              height={200}
+            />
+          }
         />
+
+        <VStack className={cls.info}>
+          <Text
+            className={cls.title}
+            text={article.title}
+          />
+
+          <VStack className={cls.footer}>
+            <HStack justify="between">
+              <Text
+                className={cls.date}
+                text={article.createdAt}
+              />
+              {views}
+            </HStack>
+            <HStack>
+              {userInfo}
+              {types}
+            </HStack>
+          </VStack>
+        </VStack>
       </Card>
     </AppLink>
   );

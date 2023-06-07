@@ -20,11 +20,12 @@ import {
   getArticlesPage,
 } from '../../model/slice/articlesPageSlice';
 
-import cls from './ArticlesPage.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 import { StickyComponentLayout } from '@/shared/layouts/StickyComponentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+
+import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;

@@ -106,3 +106,16 @@
     width: 80%;
   }
 }
+
+.ArticleListItemRedesigned {
+  &.LIST {
+    width: 100%;
+  }
+
+  &.TILE {
+    .card {
+      width: 230px;
+      height: 350px;
+    }
+  }
+}
