@@ -35,9 +35,14 @@
 }
 
 .outline {
-  border: 1px solid var(--accent-redesigned);
+  border: 1px solid var(--icon-redesigned);
   background: none;
   outline: none;
+  border-radius: 10px;
+
+  &:hover {
+    border: 1px solid var(--accent-redesigned);
+  }
 }
 
 .filled {

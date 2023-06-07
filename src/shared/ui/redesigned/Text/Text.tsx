@@ -15,6 +15,7 @@ interface TextProps {
   align?: TextAlign;
   size?: TextSize;
   width?: string;
+  bold?: boolean;
   'data-testid'?: string;
 }
 
@@ -27,9 +28,9 @@ const mapSizeToClass: Record<TextSize, string> = {
 };
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
-  s: 'h1',
+  s: 'h3',
   m: 'h2',
-  l: 'h3',
+  l: 'h1',
 };
 
 export const Text = memo((props: TextProps) => {
@@ -41,6 +42,7 @@ export const Text = memo((props: TextProps) => {
     align = 'left',
     size = 'm',
     width,
+    bold,
     'data-testid': dataTestId = 'Text',
   } = props;
 
@@ -55,7 +57,7 @@ export const Text = memo((props: TextProps) => {
 
   return (
     <div
-      className={classNames(cls.Text, {}, additionalClasses)}
+      className={classNames(cls.Text, { [cls.bold]: bold }, additionalClasses)}
       style={styles}
     >
       {title && (
