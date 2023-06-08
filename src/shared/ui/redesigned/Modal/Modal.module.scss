@@ -15,7 +15,6 @@
 .content {
   padding: 15px;
   border-radius: 7px;
-  background: var(--bg-color);
   transition: transform 0.2s ease;
 
   /* transform: scale(0.05); */
@@ -36,5 +35,17 @@
 .isClosing {
   .content {
     transform: scale(0.05);
+  }
+}
+
+.modalNew {
+  .content {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.modalOld {
+  .content {
+    background: var(--bg-color);
   }
 }

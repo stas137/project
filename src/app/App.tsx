@@ -14,6 +14,7 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 
 import './styles/index.scss';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 export const App = () => {
   const { theme } = useTheme();
@@ -30,15 +31,37 @@ export const App = () => {
   }
 
   return (
-    <div className={classNames('app_redesign', {}, [theme])}>
-      <Suspense fallback="...">
-        <MainLayout
-          header={<Navbar />}
-          content={<AppRouter />}
-          sidebar={<Sidebar />}
-          toolbar={<div>toolbar</div>}
-        />
-      </Suspense>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <div
+          id="app"
+          className={classNames('app_redesign', {}, [theme])}
+        >
+          <Suspense fallback="...">
+            <MainLayout
+              header={<Navbar />}
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+              toolbar={<div>toolbar</div>}
+            />
+          </Suspense>
+        </div>
+      }
+      off={
+        <div
+          id="app"
+          className={classNames('app', {}, [theme])}
+        >
+          <Suspense fallback="...">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              <AppRouter />
+            </div>
+          </Suspense>
+        </div>
+      }
+    />
   );
 };

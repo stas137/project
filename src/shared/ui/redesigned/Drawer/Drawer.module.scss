@@ -14,16 +14,16 @@
   position: relative;
   padding: 15px;
   border-radius: 10px;
-  background: var(--bg-color);
+
+  /* background: var(--bg-color); */
   width: 96vw;
   height: 100vh;
   touch-action: none;
   z-index: var(--modal-z-index);
 }
 
-.content {
+/* .content {
   height: 55%;
-  background: var(--bg-color);
   position: relative;
   bottom: 0;
   border-top-left-radius: 10px;
@@ -44,12 +44,12 @@
   width: 100px;
   height: 10px;
 
-  /* background: var(--bg-color); */
+  background: var(--bg-color);
   margin: 0 auto;
   bottom: 10px;
   border-radius: 10px;
   border: 1px solid var(--bg-color-inverted);
-}
+} */
 
 .opened {
   pointer-events: auto;
@@ -64,5 +64,17 @@
 .isClosing {
   .content {
     transform: translateY(100%);
+  }
+}
+
+.drawerNew {
+  .sheet {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.drawerOld {
+  .sheet {
+    background: var(--bg-color);
   }
 }
