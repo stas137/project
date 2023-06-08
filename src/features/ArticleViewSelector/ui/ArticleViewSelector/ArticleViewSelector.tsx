@@ -15,7 +15,7 @@ import ListIcon from '@/shared/assets/icons/burger.svg';
 import TileIcon from '@/shared/assets/icons/tile.svg';
 
 import { toggleFeatures } from '@/shared/lib/features';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import cls from './ArticleViewSelector.module.scss';
