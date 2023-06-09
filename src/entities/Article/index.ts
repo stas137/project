@@ -16,4 +16,5 @@ export { ArticleList } from './ui/ArticleList/ArticleList';
 export {
   getArticleDetailsData,
   getArticleDetailsIsLoading,
+  getArticleCanEditUser,
 } from './model/selectors/articleDetails';

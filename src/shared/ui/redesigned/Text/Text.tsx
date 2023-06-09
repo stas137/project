@@ -1,4 +1,5 @@
 import { CSSProperties, memo } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './Text.module.scss';
@@ -49,7 +50,12 @@ export const Text = memo((props: TextProps) => {
   const HeaderTag = mapSizeToHeaderTag[size];
   const sizeClass = mapSizeToClass[size];
 
-  const additionalClasses = [className, cls[variant], cls[align], sizeClass];
+  const additionalClasses = [
+    className,
+    cls[variant],
+    cls[align],
+    cls[sizeClass],
+  ];
 
   const styles: CSSProperties = {
     minWidth: width,

@@ -2,10 +2,13 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin: 0 auto;
 }
 
 .img {
-  /* max-width: 100%; */
+  max-width: 100%;
+  width: 100%;
 }

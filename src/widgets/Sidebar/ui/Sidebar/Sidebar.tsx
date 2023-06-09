@@ -1,18 +1,19 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { SidebarItem } from './SidebarItem/SidebarItem';
 
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { SidebarItem } from './SidebarItem/SidebarItem';
 
 import cls from './Sidebar.module.scss';
 

@@ -32,5 +32,7 @@
   "sort": "Sort:",
   "views": "Views",
   "created": "Created",
-  "settings": "Settings"
+  "settings": "Settings",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

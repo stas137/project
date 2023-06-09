@@ -7,5 +7,22 @@
   "bracketSameLine": false,
   "arrowParens": "always",
   "singleAttributePerLine": true,
-  "printWidth": 80
+  "printWidth": 80,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@/app/(.*)$",
+    "^@/pages/(.*)$",
+    "^@/widgets/(.*)$",
+    "^@/features/(.*)$",
+    "^@/entities/(.*)$",
+    "^@/shared/ui/(.*)$",
+    "^@/shared/layouts/(.*)$",
+    "^@/shared/lib/(.*)$",
+    "^@/shared/const/(.*)$",
+    "^@/shared/assets/(.*)$",
+    "^[./]((?!scss).)*$",
+    "^[./].*(scss)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

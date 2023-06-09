@@ -5,6 +5,7 @@ import {
   useLayoutEffect,
   useState,
 } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {

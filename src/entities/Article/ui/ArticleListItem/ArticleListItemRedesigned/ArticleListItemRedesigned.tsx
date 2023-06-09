@@ -1,23 +1,27 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/redesigned/Text';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { Icon } from '@/shared/ui/redesigned/Icon';
-import { Card } from '@/shared/ui/redesigned/Card';
-import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { Button } from '@/shared/ui/redesigned/Button';
-import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
-import { ArticleTextBlock } from '../../../model/types/article';
-import { ArticleBlockType, ArticleView } from '../../../model/consts/consts';
 
-import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
-import { ArticleListItemProps } from '../ArticleListItem';
-
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
+import { getRouteArticleDetails } from '@/shared/const/router';
+
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import ErrorIcon from '@/shared/assets/icons/user.svg';
+
+import { ArticleBlockType, ArticleView } from '../../../model/consts/consts';
+import { ArticleTextBlock } from '../../../model/types/article';
+import { ArticleListItemProps } from '../ArticleListItem';
 
 import cls from './ArticleListItemRedesigned.module.scss';
 
@@ -47,6 +51,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   const userInfo = (
     <>
       <Avatar
+        className={cls.avatar}
         size={32}
         src={article.user.avatar}
       />
@@ -155,15 +160,25 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
       data-testid="ArticleListItem"
       onClick={handleButtonclick}
     >
-      <Card className={cls.card}>
+      <Card
+        className={cls.card}
+        padding="0"
+      >
         <AppImage
           className={cls.img}
           src={article.img}
           alt={article.title}
           fallback={
             <Skeleton
-              width={200}
-              height={200}
+              width="100%"
+              height="140px"
+            />
+          }
+          errorFallback={
+            <Icon
+              Svg={ErrorIcon}
+              width="100%"
+              height="140px"
             />
           }
         />

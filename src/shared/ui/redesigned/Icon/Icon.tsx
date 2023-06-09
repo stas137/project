@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './Icon.module.scss';
 
 type SvgProps = Omit<React.SVGAttributes<SVGElement>, 'onClick'>;
@@ -32,7 +34,7 @@ export const Icon = memo((props: IconProps) => {
 
   const icon = (
     <Svg
-      className={classNames(cls.Icon, {}, [className])}
+      className={classNames(cls.Icon, {}, [clickable ? '' : className])}
       width={width}
       height={height}
       {...otherProps}
@@ -43,7 +45,7 @@ export const Icon = memo((props: IconProps) => {
   if (clickable) {
     return (
       <button
-        className={cls.button}
+        className={classNames(cls.button, {}, [className])}
         type="button"
         style={{ width, height }}
         onClick={props.onClick}
