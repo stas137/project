@@ -63,7 +63,7 @@
       ],
       "blocks": [
         {
-          "id": "1",
+          "id": "block1",
           "type": "TEXT",
           "title": "Block title",
           "paragraphs": [
@@ -73,12 +73,12 @@
           ]
         },
         {
-          "id": "4",
+          "id": "block4",
           "type": "CODE",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id='hello'></p>script>\ndocument.getElementById('hello').innerHTML = 'Hello, world!';\n              </script>\n            </body>\n          </html>"
         },
         {
-          "id": "2",
+          "id": "block2",
           "type": "IMAGE",
           "src": "https://habrastorage.org/r/w1560/webt/4u/wm/uq/4uwmuqhslkvvnsgt-kr_ggu7skg.png",
           "title": "Picture 1"
@@ -613,19 +613,19 @@
   ],
   "comments": [
     {
-      "id": "1",
+      "id": "eee",
       "text": "some comment",
       "articleId": "1",
       "userId": "1"
     },
     {
-      "id": "2",
+      "id": "erer",
       "text": "some comment 2",
       "articleId": "2",
       "userId": "1"
     },
     {
-      "id": "3",
+      "id": "qwer",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
@@ -751,39 +751,52 @@
   ],
   "article-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good article",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
-      "id": "2",
-      "rate": 5,
-      "feedback": "Very good article",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
       "articleId": "3",
       "userId": "1",
-      "rate": 1,
-      "feedback": "Yo Yo",
-      "id": "wZ4c_ft"
+      "rate": 3,
+      "feedback": "",
+      "id": 1
     },
     {
       "articleId": "4",
       "userId": "1",
-      "rate": 4,
-      "feedback": "Very very",
-      "id": "JWt0wtO"
+      "rate": 3,
+      "feedback": "123",
+      "id": 2
     },
     {
-      "articleId": "6",
+      "articleId": "2",
+      "userId": "1",
+      "rate": 1,
+      "feedback": "Yo yo",
+      "id": 3
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "Nice nice",
+      "id": 4
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "Hey hey",
+      "id": 5
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "rate": 1,
+      "id": 6
+    },
+    {
+      "articleId": "9",
       "userId": "1",
       "rate": 2,
-      "feedback": "Great",
-      "id": "3SHyK3i"
+      "feedback": "Hey 123",
+      "id": 7
     }
   ],
   "profile-ratings": [

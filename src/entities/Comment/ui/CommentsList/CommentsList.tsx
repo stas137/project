@@ -1,8 +1,13 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
@@ -45,7 +50,11 @@ export const CommentsList = memo((props: CommentListProps) => {
           />
         ))
       ) : (
-        <Text text={t('comments-not-found')} />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<Text text={t('comments-not-found')} />}
+          off={<TextDeprecated text={t('comments-not-found')} />}
+        />
       )}
     </VStack>
   );

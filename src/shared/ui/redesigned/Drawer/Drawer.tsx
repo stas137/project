@@ -140,9 +140,6 @@ const DrawerAsync = memo((props: DrawerProps) => {
   return <DrawerContent {...props} />;
 });
 
-/**
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => {
   return (
     <AnimationProvider>

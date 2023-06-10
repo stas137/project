@@ -1,22 +1,29 @@
 import { Suspense, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { CommentsList } from '@/entities/Comment';
-import { Text } from '@/shared/ui/deprecated/Text';
+
 import { AddCommentForm } from '@/features/AddCommentForm';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+
+import { getArticleDetailsIsLoading } from '@/entities/Article';
+import { CommentsList } from '@/entities/Comment';
+
 import { Loader } from '@/shared/ui/deprecated/Loader';
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading,
 } from '../../model/selectors/articleDetailsCommentsSelectors';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { getArticleDetailsIsLoading } from '@/entities/Article';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 
 interface ArticleDetailsCommentsProps {
   className?: string;
@@ -66,9 +73,10 @@ export const ArticleDetailsComments = memo(
         className={classNames('', {}, [className])}
         gap="16"
       >
-        <Text
-          // className={cls.commentTitle}
-          title={t('comments')}
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<Text title={t('comments')} />}
+          off={<TextDeprecated title={t('comments')} />}
         />
 
         <Suspense fallback={<Loader />}>
