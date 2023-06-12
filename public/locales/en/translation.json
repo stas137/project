@@ -16,7 +16,7 @@
   "increment": "Increment",
   "decrement": "Decrement",
   "username": "User name",
-  "password": "password",
+  "password": "Password",
   "form-auth": "Form authorization",
   "logout": "Logout",
   "incorrect-credentials": "Incorrect username or password",

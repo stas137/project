@@ -1,9 +1,9 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
-import { Profile } from '../../model/types/ProfileSchema';
 import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
+import { Profile } from '../../model/types/ProfileSchema';
 import {
   ProfileCardDeprecated,
   ProfileCardDeprecatedError,

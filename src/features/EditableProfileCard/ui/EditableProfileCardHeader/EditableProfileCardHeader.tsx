@@ -1,16 +1,27 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { getUserAuthData } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonVariant } from '@/shared/ui/deprecated/Button';
-import { Text } from '@/shared/ui/deprecated/Text';
+
+import {
+  Button as ButtonDeprecated,
+  ButtonVariant,
+} from '@/shared/ui/deprecated/Button';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Card } from '@/shared/ui/redesigned/Card';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { Text } from '@/shared/ui/redesigned/Text';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { profileActions } from '../../model/slices/profileSlice';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileActions } from '../../model/slices/profileSlice';
 
 interface EditableProfileCardHeaderProps {
   className?: string;
@@ -41,43 +52,94 @@ export const EditableProfileCardHeader = ({
   }, [dispatch]);
 
   return (
-    <HStack
-      className={classNames('', {}, [className])}
-      justify="between"
-      max
-    >
-      <Text title={t('profile')} />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Card
+          padding="16"
+          fullWidth
+        >
+          <HStack
+            className={classNames('', {}, [className])}
+            justify="between"
+          >
+            <Text title={t('profile')} />
 
-      {canEdit && (
-        <div>
-          {readonly ? (
-            <Button
-              variant={ButtonVariant.OUTLINE}
-              onClick={onEdit}
-              data-testid="EditableProfileCardHeader.EditButton"
-            >
-              {t('edit')}
-            </Button>
-          ) : (
-            <HStack gap="8">
-              <Button
-                variant={ButtonVariant.OUTLINE}
-                onClick={onSaveEdit}
-                data-testid="EditableProfileCardHeader.SaveButton"
-              >
-                {t('save')}
-              </Button>
-              <Button
-                variant={ButtonVariant.OUTLINE_RED}
-                onClick={onCancelEdit}
-                data-testid="EditableProfileCardHeader.CancelButton"
-              >
-                {t('cancel')}
-              </Button>
-            </HStack>
+            {canEdit && (
+              <div>
+                {readonly ? (
+                  <Button
+                    variant="outline"
+                    onClick={onEdit}
+                    data-testid="EditableProfileCardHeader.EditButton"
+                  >
+                    {t('edit')}
+                  </Button>
+                ) : (
+                  <HStack gap="8">
+                    <Button
+                      variant="outline"
+                      color="success"
+                      onClick={onSaveEdit}
+                      data-testid="EditableProfileCardHeader.SaveButton"
+                    >
+                      {t('save')}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      color="error"
+                      onClick={onCancelEdit}
+                      data-testid="EditableProfileCardHeader.CancelButton"
+                    >
+                      {t('cancel')}
+                    </Button>
+                  </HStack>
+                )}
+              </div>
+            )}
+          </HStack>
+        </Card>
+      }
+      off={
+        <HStack
+          className={classNames('', {}, [className])}
+          justify="between"
+          max
+        >
+          <TextDeprecated title={t('profile')} />
+
+          {canEdit && (
+            <div>
+              {readonly ? (
+                <ButtonDeprecated
+                  variant={ButtonVariant.OUTLINE}
+                  onClick={onEdit}
+                  data-testid="EditableProfileCardHeader.EditButton"
+                >
+                  {t('edit')}
+                </ButtonDeprecated>
+              ) : (
+                <HStack gap="8">
+                  <ButtonDeprecated
+                    variant={ButtonVariant.OUTLINE}
+                    onClick={onSaveEdit}
+                    data-testid="EditableProfileCardHeader.SaveButton"
+                  >
+                    {t('save')}
+                  </ButtonDeprecated>
+                  <ButtonDeprecated
+                    variant={ButtonVariant.OUTLINE_RED}
+                    onClick={onCancelEdit}
+                    data-testid="EditableProfileCardHeader.CancelButton"
+                  >
+                    {t('cancel')}
+                  </ButtonDeprecated>
+                </HStack>
+              )}
+            </div>
           )}
-        </div>
-      )}
-    </HStack>
+        </HStack>
+      }
+    />
   );
 };

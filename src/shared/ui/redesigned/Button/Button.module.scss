@@ -36,13 +36,32 @@
 }
 
 .outline {
-  border: 1px solid var(--icon-redesigned);
   background: none;
   outline: none;
   border-radius: 10px;
 
-  &:hover {
-    border: 1px solid var(--accent-redesigned);
+  &.normal {
+    border: 1px solid var(--icon-redesigned);
+
+    &:hover {
+      border: 1px solid var(--accent-redesigned);
+    }
+  }
+
+  &.success {
+    border: 1px solid var(--save-redesigned);
+
+    /* &:hover {
+      opacity: 0.75;
+    } */
+  }
+
+  &.error {
+    border: 1px solid var(--cancel-redesigned);
+
+    /* &:hover {
+      opacity: 0.75;
+    } */
   }
 }
 

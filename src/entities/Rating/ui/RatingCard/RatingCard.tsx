@@ -15,7 +15,7 @@ import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { StarRating as StarRatingDeprecated } from '@/shared/ui/redesigned/StarRating';
+import { StarRating } from '@/shared/ui/redesigned/StarRating';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -113,7 +113,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
           off={<TextDeprecated title={starsCount ? t('thanks') : title} />}
         />
 
-        <StarRatingDeprecated
+        <StarRating
           size={35}
           selectedStars={starsCount}
           onSelect={onSelectStars}

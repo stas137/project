@@ -1,21 +1,36 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import {
+  Button as ButtonDeprecated,
+  ButtonVariant,
+} from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import {
+  Text as TextDeprecated,
+  TextVariant,
+} from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonVariant } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Text, TextVariant } from '@/shared/ui/deprecated/Text';
 import {
   DynamicModuleLoader,
   Reducers,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
@@ -60,40 +75,84 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.LoginForm, {}, [className])}>
-        <Text title={t('form-auth')} />
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <VStack
+            className={classNames(cls.LoginForm, {}, [className])}
+            gap="8"
+          >
+            <Text title={t('form-auth')} />
 
-        {error && (
-          <Text
-            text={`${error}: ${t('incorrect-credentials')}`}
-            variant={TextVariant.ERROR}
-          />
-        )}
+            {error && (
+              <Text
+                text={`${error}: ${t('incorrect-credentials')}`}
+                variant="error"
+              />
+            )}
 
-        <Input
-          placeholder={t('username')}
-          type="text"
-          className={cls.input}
-          autoFocus
-          value={username}
-          onChange={onChangeUsername}
-        />
-        <Input
-          placeholder={t('password')}
-          type="text"
-          className={cls.input}
-          value={password}
-          onChange={onChangePassword}
-        />
-        <Button
-          className={cls.loginBtn}
-          variant={ButtonVariant.OUTLINE}
-          onClick={onLoginClick}
-          disabled={isLoading}
-        >
-          {t('login')}
-        </Button>
-      </div>
+            <Input
+              placeholder={t('username')}
+              type="text"
+              className={cls.input}
+              autoFocus
+              value={username}
+              onChange={onChangeUsername}
+            />
+            <Input
+              placeholder={t('password')}
+              type="text"
+              className={cls.input}
+              value={password}
+              onChange={onChangePassword}
+            />
+            <Button
+              className={cls.loginBtn}
+              variant="outline"
+              onClick={onLoginClick}
+              disabled={isLoading}
+            >
+              {t('login')}
+            </Button>
+          </VStack>
+        }
+        off={
+          <div className={classNames(cls.LoginForm, {}, [className])}>
+            <TextDeprecated title={t('form-auth')} />
+
+            {error && (
+              <TextDeprecated
+                text={`${error}: ${t('incorrect-credentials')}`}
+                variant={TextVariant.ERROR}
+              />
+            )}
+
+            <InputDeprecated
+              placeholder={t('username')}
+              type="text"
+              className={cls.input}
+              autoFocus
+              value={username}
+              onChange={onChangeUsername}
+            />
+            <InputDeprecated
+              placeholder={t('password')}
+              type="text"
+              className={cls.input}
+              value={password}
+              onChange={onChangePassword}
+            />
+            <ButtonDeprecated
+              className={cls.loginBtn}
+              variant={ButtonVariant.OUTLINE}
+              onClick={onLoginClick}
+              disabled={isLoading}
+            >
+              {t('login')}
+            </ButtonDeprecated>
+          </div>
+        }
+      />
     </DynamicModuleLoader>
   );
 });
