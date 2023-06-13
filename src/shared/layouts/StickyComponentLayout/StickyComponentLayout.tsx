@@ -1,4 +1,5 @@
 import { ReactElement, memo } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import cls from './StickyComponentLayout.module.scss';

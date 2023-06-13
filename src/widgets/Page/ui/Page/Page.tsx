@@ -47,7 +47,11 @@ export const Page = memo((props: PageProps) => {
   useInfiniteScroll({
     callback: onScrollEnd,
     triggerRef,
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef,
+    }),
   });
 
   useInitialEffect(() => {
@@ -55,6 +59,8 @@ export const Page = memo((props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    console.log({ position: e.currentTarget.scrollTop });
+
     dispatch(
       scrollSaveActions.setScrollPosition({
         path: location.pathname,

@@ -7,26 +7,29 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+  GridScrollSeekPlaceholderProps,
   Virtuoso,
   VirtuosoGrid,
   VirtuosoGridHandle,
-  GridScrollSeekPlaceholderProps,
 } from 'react-virtuoso';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { Text } from '@/shared/ui/deprecated/Text';
-import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
+import { HStack } from '@/shared/ui/redesigned/Stack';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 // eslint-disable-next-line project-path-checker-plugin/layer-imports
 import {
   COUNT_ARTICLES_LIST_VIEW,
   COUNT_ARTICLES_TILE_VIEW,
 } from '@/shared/const/const';
-import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Article } from '../../model/types/article';
+import { LOCAL_STORAGE_ARTICLES_LIST_ITEM_IDX } from '@/shared/const/localstorage';
+
 import { ArticleView } from '../../model/consts/consts';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 import cls from './ArticleList.module.scss';
 
@@ -191,7 +194,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             />
           ))}
           {isLoading && getSkeletons(view)}
-          {getSkeletons(view)}
+          {/* {getSkeletons(view)} */}
         </HStack>
       }
       off={

@@ -1,7 +1,10 @@
-import { FC, useMemo, useState, ReactNode, useEffect } from 'react';
-import { Theme } from '@/shared/const/theme';
-import { ThemeContext } from '@/shared/lib/context/ThemeContext';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
+
 import { useJsonSettings } from '@/entities/User';
+
+import { ThemeContext } from '@/shared/lib/context/ThemeContext';
+
+import { Theme } from '@/shared/const/theme';
 
 interface ThemeProviderProps {
   initialTheme?: Theme;
@@ -27,6 +30,10 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
       setIsThemeInited(true);
     }
   }, [defaultTheme, isThemeInited]);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const defaultValue = useMemo(() => ({ theme, setTheme }), [theme]);
 

@@ -16,7 +16,7 @@ export const updateFeatureFlags = createAsyncThunk<
   void,
   UpdateFeatureFlagOptions,
   ThunkConfig<string>
->('user/updateFeatureFlags', async ({ userId, newFeatures }, thunkApi) => {
+>('features/updateFeatureFlags', async ({ userId, newFeatures }, thunkApi) => {
   const { rejectWithValue, dispatch } = thunkApi;
 
   const allFeatures = {

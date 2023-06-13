@@ -34,11 +34,26 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);        /* цвет дорожки */
+  background: var(--light-bg-redesigned);        /* цвет дорожки */
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 2px solid var(--accent-redesigned);
+}
+
+.app *::-webkit-scrollbar {
+  width: 12px;               /* width scrollbar */
+  height: 12px;               /* height scrollbar */
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg);        /* цвет дорожки */
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--primary-color-inverted);    /* цвет плашки */
   border-radius: 20px;       /* закругления плашки */
-  border: 2px solid var(--primary-color);  /* padding вокруг плашки */
+  border: 2px solid var(--primary-color);
 }
