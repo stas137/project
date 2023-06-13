@@ -1,14 +1,20 @@
-import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
+import { MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { getScrollSaveByPath, scrollSaveActions } from '@/features/ScrollSave';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
+
+import { getScrollSaveByPath, scrollSaveActions } from '@/features/ScrollSave';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { toggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+
 import { TestProps } from '@/shared/types/tests';
+
 import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {
@@ -32,6 +38,12 @@ export const Page = memo((props: PageProps) => {
     getScrollSaveByPath(state, location.pathname),
   );
 
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.PageRedesigned,
+    off: () => cls.Page,
+  });
+
   useInfiniteScroll({
     callback: onScrollEnd,
     triggerRef,
@@ -53,7 +65,7 @@ export const Page = memo((props: PageProps) => {
 
   return (
     <main
-      className={classNames(cls.PageRedesigned, {}, [className])}
+      className={classNames(mainClass, {}, [className])}
       ref={wrapperRef}
       onScroll={onScroll}
       id={PAGE_ID}

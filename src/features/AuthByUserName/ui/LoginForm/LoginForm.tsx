@@ -2,6 +2,8 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
+import { useForceUpdate } from '@/shared/render/forceUpdate';
+
 import {
   Button as ButtonDeprecated,
   ButtonVariant,
@@ -51,6 +53,8 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginIsLoading);
 
+  const forceUpdate = useForceUpdate();
+
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
@@ -70,8 +74,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate();
     }
-  }, [dispatch, username, password, onSuccess]);
+  }, [dispatch, username, password, onSuccess, forceUpdate]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

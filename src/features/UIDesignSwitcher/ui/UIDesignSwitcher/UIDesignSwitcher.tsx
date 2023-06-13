@@ -1,20 +1,23 @@
 import { memo, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
 
-import { ListBox as ListBoxRedesigned } from '@/shared/ui/redesigned/Popups';
-import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { getUserAuthData } from '@/entities/User';
-import { getFeatureFlags, updateFeatureFlags } from '@/shared/lib/features';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { useForceUpdate } from '@/shared/render/forceUpdate';
+
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxRedesigned } from '@/shared/ui/redesigned/Popups';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text as TextRedesigned } from '@/shared/ui/redesigned/Text';
 
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getFeatureFlags, updateFeatureFlags } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import cls from './UIDesignSwitcher.module.scss';
-import { HStack } from '@/shared/ui/redesigned/Stack';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface UIDesignSwitcherProps {
   className?: string;
@@ -25,6 +28,8 @@ export const UIDesignSwitcher = memo((props: UIDesignSwitcherProps) => {
 
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+
+  const forceUpdate = useForceUpdate();
 
   const authData = useSelector(getUserAuthData);
 
@@ -57,6 +62,8 @@ export const UIDesignSwitcher = memo((props: UIDesignSwitcherProps) => {
       ).unwrap();
 
       setIsLoading(false);
+
+      forceUpdate();
     }
   };
 
