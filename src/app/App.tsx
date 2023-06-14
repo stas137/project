@@ -15,6 +15,7 @@ import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
@@ -22,6 +23,7 @@ import './styles/index.scss';
 export const App = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
+  const toolbar = useAppToolbar();
 
   const inited = useSelector(getUserInited);
 
@@ -32,15 +34,6 @@ export const App = () => {
   }, [dispatch, inited]);
 
   if (!inited) {
-    // return (
-    //   <div
-    //     id="app"
-    //     className={classNames('app_redesign', {}, [theme])}
-    //   >
-    //     <AppLoaderLayout />
-    //   </div>
-    // );
-
     return (
       <ToggleFeatures
         feature="isAppRedesigned"
@@ -70,7 +63,7 @@ export const App = () => {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
-              toolbar={<div>toolbar</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
