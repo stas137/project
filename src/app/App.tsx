@@ -7,6 +7,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 
 import { getUserInited, initAuthData } from '@/entities/User';
 
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -31,7 +32,29 @@ export const App = () => {
   }, [dispatch, inited]);
 
   if (!inited) {
-    return <PageLoader />;
+    // return (
+    //   <div
+    //     id="app"
+    //     className={classNames('app_redesign', {}, [theme])}
+    //   >
+    //     <AppLoaderLayout />
+    //   </div>
+    // );
+
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <div
+            id="app"
+            className={classNames('app_redesign', {}, [theme])}
+          >
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (
