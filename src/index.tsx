@@ -3,13 +3,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
+// import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ForceUpdateProvider } from '@/shared/render/forceUpdate';
 
 import '@/shared/config/i18n/i18n';
 
-import { App } from './app/App';
+// import { App } from './app/App';
+import App from './app/App';
 
 import './app/styles/index.scss';
 
@@ -26,9 +27,9 @@ root.render(
     <StoreProvider>
       <ErrorBoundary>
         <ForceUpdateProvider>
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
+          {/* <ThemeProvider> */}
+          <App />
+          {/* </ThemeProvider> */}
         </ForceUpdateProvider>
       </ErrorBoundary>
     </StoreProvider>

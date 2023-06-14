@@ -1,9 +1,14 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import AvatarImg from '@/shared/assets/tests/avatar.jpg';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+
 import { Theme } from '@/shared/const/theme';
+
+import AvatarImg from '@/shared/assets/tests/avatar.jpg';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -19,8 +24,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const primaryArgs = {
   data: {
     firstname: 'Ivan',
     lastname: 'Ivanov',
@@ -32,6 +36,14 @@ Primary.args = {
     country: Country.Russia,
   },
 };
+
+export const Primary = Template.bind({});
+Primary.args = { ...primaryArgs };
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = { ...primaryArgs };
+PrimaryRedesigned.decorators = [NewDesignDecorator];
+// PrimaryRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
 
 export const WithError = Template.bind({});
 WithError.args = {

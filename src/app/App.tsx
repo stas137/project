@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Navbar } from '@/widgets/Navbar';
@@ -16,11 +16,12 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
 
-export const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const toolbar = useAppToolbar();
@@ -84,4 +85,6 @@ export const App = () => {
       }
     />
   );
-};
+});
+
+export default withTheme(App);
