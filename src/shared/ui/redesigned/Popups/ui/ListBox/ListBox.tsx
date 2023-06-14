@@ -1,17 +1,19 @@
-import { ReactNode, Fragment, useMemo } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropdownDirection } from '@/shared/types/ui';
-import { HStack } from '../../../../redesigned/Stack';
-import { mapDirectonClass } from '../../styles/consts';
+import { Fragment, ReactNode, useMemo } from 'react';
 
-import { Button } from '../../../Button';
-import { Icon } from '../../../Icon';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
-import cls from './ListBox.module.scss';
+import { DropdownDirection } from '@/shared/types/ui';
+
+import { HStack } from '../../../../redesigned/Stack';
+import { Button } from '../../../Button';
+import { Icon } from '../../../Icon';
+import { mapDirectonClass } from '../../styles/consts';
+
 import popupCls from '../../styles/popup.module.scss';
+import cls from './ListBox.module.scss';
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -65,14 +67,11 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       >
         <HListBox.Button
           // className={cls.trigger}
-          as={Fragment}
+          as={Button}
+          variant="filled"
+          addonRight={<Icon Svg={ArrowIcon} />}
         >
-          <Button
-            variant="filled"
-            addonRight={<Icon Svg={ArrowIcon} />}
-          >
-            {selectedItem?.content || defaultValue}
-          </Button>
+          {selectedItem?.content || defaultValue}
         </HListBox.Button>
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}
